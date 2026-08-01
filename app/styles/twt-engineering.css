@@ -1,0 +1,65 @@
+.twt-technical-grid {
+  background-image:
+    linear-gradient(to right, rgb(29 134 200 / 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(29 134 200 / 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.twt-technical-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(234 243 250 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(234 243 250 / 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.twt-spec-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.twt-spec-label::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid currentColor;
+  content: "";
+}
+
+.twt-thermal-line {
+  transform-origin: left center;
+  animation: twt-thermal-pulse 3.6s ease-in-out infinite;
+}
+
+.twt-thermal-line:nth-child(2) {
+  animation-delay: -1.15s;
+}
+
+.twt-thermal-line:nth-child(3) {
+  animation-delay: -2.3s;
+}
+
+@keyframes twt-thermal-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scaleX(0.94);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .twt-thermal-line {
+    animation: none;
+  }
+}
+

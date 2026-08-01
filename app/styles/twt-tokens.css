@@ -1,0 +1,119 @@
+/*
+ * TWT shared design tokens
+ *
+ * Use the `--twt-*` custom properties from CSS and CSS Modules.
+ * Tailwind color utilities are registered below with the same readable names,
+ * for example: `bg-twt-primary-navy` and `text-twt-primary-orange`.
+ */
+
+:root {
+  /* Primary brand colors */
+  --twt-primary-navy: #062a5e;
+  --twt-primary-orange: #ff5a00;
+  --twt-primary-white: #ffffff;
+
+  /* Secondary brand colors */
+  --twt-deep-navy: #031a3d;
+  --twt-medium-navy: #0a3f7a;
+  --twt-blueprint-blue: #1d86c8;
+  --twt-sky-blue: #42a9e8;
+  --twt-warm-orange: #f47a24;
+  --twt-light-orange: #f7931e;
+
+  /* Cool neutral foundation ? approximately 85% of the interface */
+  --twt-text-dark: #334155;
+  --twt-slate-gray: #536273;
+  --twt-light-gray: #e8edf2;
+  --twt-soft-white: #f7f9fb;
+  --twt-blue-white: #eaf3fa;
+  --twt-light-blue: #ddf2ff;
+  --twt-pale-blue: #f1f8fc;
+  --twt-pale-orange: #fff1e8;
+
+  /* Material accents ? use selectively, approximately 15% of the interface */
+  --twt-concrete: #d7d5cf;
+  --twt-concrete-light: #efeee9;
+  --twt-eps-white: #fbfaf6;
+  --twt-cedar: #9a7455;
+  --twt-cedar-light: #d8c3ad;
+
+  /* Semantic aliases */
+  --twt-background: var(--twt-primary-white);
+  --twt-surface: var(--twt-soft-white);
+  --twt-surface-technical: var(--twt-pale-blue);
+  --twt-foreground: var(--twt-text-dark);
+  --twt-heading: var(--twt-deep-navy);
+  --twt-border: var(--twt-light-gray);
+  --twt-link: var(--twt-medium-navy);
+  --twt-focus: var(--twt-blueprint-blue);
+  --twt-accent: var(--twt-primary-orange);
+  --twt-on-accent: var(--twt-deep-navy);
+
+  /* Brand gradients */
+  --twt-gradient-navy: linear-gradient(
+    135deg,
+    var(--twt-deep-navy) 0%,
+    var(--twt-primary-navy) 55%,
+    var(--twt-medium-navy) 100%
+  );
+  --twt-gradient-orange: linear-gradient(
+    135deg,
+    #ff4d00 0%,
+    #ff6a00 55%,
+    var(--twt-light-orange) 100%
+  );
+  --twt-gradient-thermal: linear-gradient(
+    90deg,
+    var(--twt-blueprint-blue) 0%,
+    var(--twt-sky-blue) 35%,
+    var(--twt-primary-white) 50%,
+    var(--twt-warm-orange) 70%,
+    var(--twt-primary-orange) 100%
+  );
+  --twt-gradient-light: linear-gradient(
+    180deg,
+    var(--twt-primary-white) 0%,
+    var(--twt-soft-white) 55%,
+    var(--twt-blue-white) 100%
+  );
+}
+
+/*
+ * Tailwind CSS 4 theme registration.
+ * These generate utilities such as:
+ * `bg-twt-primary-navy`, `text-twt-heading`, and `border-twt-border`.
+ */
+@theme inline {
+  --color-twt-primary-navy: var(--twt-primary-navy);
+  --color-twt-primary-orange: var(--twt-primary-orange);
+  --color-twt-primary-white: var(--twt-primary-white);
+  --color-twt-deep-navy: var(--twt-deep-navy);
+  --color-twt-medium-navy: var(--twt-medium-navy);
+  --color-twt-blueprint-blue: var(--twt-blueprint-blue);
+  --color-twt-sky-blue: var(--twt-sky-blue);
+  --color-twt-warm-orange: var(--twt-warm-orange);
+  --color-twt-light-orange: var(--twt-light-orange);
+  --color-twt-text-dark: var(--twt-text-dark);
+  --color-twt-slate-gray: var(--twt-slate-gray);
+  --color-twt-light-gray: var(--twt-light-gray);
+  --color-twt-soft-white: var(--twt-soft-white);
+  --color-twt-blue-white: var(--twt-blue-white);
+  --color-twt-light-blue: var(--twt-light-blue);
+  --color-twt-pale-blue: var(--twt-pale-blue);
+  --color-twt-pale-orange: var(--twt-pale-orange);
+  --color-twt-concrete: var(--twt-concrete);
+  --color-twt-concrete-light: var(--twt-concrete-light);
+  --color-twt-eps-white: var(--twt-eps-white);
+  --color-twt-cedar: var(--twt-cedar);
+  --color-twt-cedar-light: var(--twt-cedar-light);
+  --color-twt-background: var(--twt-background);
+  --color-twt-surface: var(--twt-surface);
+  --color-twt-surface-technical: var(--twt-surface-technical);
+  --color-twt-foreground: var(--twt-foreground);
+  --color-twt-heading: var(--twt-heading);
+  --color-twt-border: var(--twt-border);
+  --color-twt-link: var(--twt-link);
+  --color-twt-focus: var(--twt-focus);
+  --color-twt-accent: var(--twt-accent);
+  --color-twt-on-accent: var(--twt-on-accent);
+}
