@@ -14,3 +14,12 @@ body {
   color: var(--twt-foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+
+/* Temporarily keep every route static for reliable automated screenshots. */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+}

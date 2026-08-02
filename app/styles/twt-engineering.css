@@ -30,36 +30,3 @@
   border: 1px solid currentColor;
   content: "";
 }
-
-.twt-thermal-line {
-  transform-origin: left center;
-  animation: twt-thermal-pulse 3.6s ease-in-out infinite;
-}
-
-.twt-thermal-line:nth-child(2) {
-  animation-delay: -1.15s;
-}
-
-.twt-thermal-line:nth-child(3) {
-  animation-delay: -2.3s;
-}
-
-@keyframes twt-thermal-pulse {
-  0%,
-  100% {
-    opacity: 0.72;
-    transform: scaleX(0.94);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .twt-thermal-line {
-    animation: none;
-  }
-}
-

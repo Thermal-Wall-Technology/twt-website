@@ -6,7 +6,6 @@ import {
   FutureApplicationsPreview,
   ResearchAndCredibilityPreview,
 } from "./components/home/research-first-sections";
-import { Reveal } from "./components/motion/reveal";
 import {
   ArrowRight,
   CircleCheckBig,
@@ -235,15 +234,9 @@ export default function Home() {
           </article>
         </div>
       </section>
-      <Reveal>
-        <CoreAndMechanismPreview />
-      </Reveal>
-      <Reveal>
-        <EvidenceSection />
-      </Reveal>
-      <Reveal>
-        <ResearchAndCredibilityPreview />
-      </Reveal>
+      <CoreAndMechanismPreview />
+      <EvidenceSection />
+      <ResearchAndCredibilityPreview />
       <section
         id="about"
         className="relative isolate min-h-svh overflow-hidden bg-twt-primary-white px-[clamp(28px,5vw,84px)] py-[clamp(64px,5.5vw,96px)]"
@@ -373,9 +366,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Reveal>
-        <FutureApplicationsPreview />
-      </Reveal>
+      <FutureApplicationsPreview />
     </main>
   );
 }
