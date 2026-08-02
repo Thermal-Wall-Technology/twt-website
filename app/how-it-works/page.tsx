@@ -24,18 +24,18 @@ export const metadata: Metadata = {
 };
 
 const ASSEMBLY_PARTS = [
-  ["01", "Exterior insulation", "Continuous exterior EPS limits outward heat flow while keeping the concrete mass coupled to the conditioned space."],
-  ["02", "Concrete thermal mass", "The structure stores sensible heat and moderates rapid temperature changes rather than acting only as a structural shell."],
-  ["03", "Embedded hydronics", "Water-filled tubing charges or discharges the concrete. Water temperature is separate from wall temperature."],
-  ["04", "Conductive interior finish", "The room-facing finish must preserve useful thermal exchange between the concrete and the occupied space."],
+  ["01", "Exterior insulation", "Expanded-polystyrene (EPS) insulation on the exterior limits outward heat flow while keeping the concrete mass coupled to the conditioned space."],
+  ["02", "Concrete thermal mass", "The proposed dry-stack block system forms continuous concrete walls and floors that store heat and moderate rapid temperature changes."],
+  ["03", "Embedded hydronics", "Water-filled tubing adds or removes heat from the concrete. Water temperature is separate from wall-surface temperature."],
+  ["04", "Conductive interior finish", "The room-facing finish must preserve useful heat exchange; an insulating interior layer would reduce the wall's connection to the room."],
 ] as const;
 
 const MODES = [
   {
     icon: Flame,
     label: "Heating mode",
-    range: "Toward 75\u00b0F wall temperature",
-    text: "The hydronic loop adds heat to the concrete. When the wall is warmer than the room's operative temperature, its large surface transfers heat to occupants, furnishings, and air.",
+    range: "Toward 75°F wall temperature",
+    text: "The hydronic loop adds heat to the concrete. When the wall surface is warmer than the room, its large area transfers heat to occupants, furnishings, and air.",
     status: "Established mechanism; TWT performance unmeasured",
     tone: "border-twt-primary-orange",
     iconTone: "bg-twt-pale-orange text-twt-primary-orange",
@@ -52,8 +52,8 @@ const MODES = [
   {
     icon: Snowflake,
     label: "Cooling mode",
-    range: "Toward 65\u00b0F wall temperature",
-    text: "When the wall is cooler than the room, it absorbs sensible heat. The controller must keep every surface safely above the room dew point and reject collected heat elsewhere.",
+    range: "Toward 65°F wall temperature",
+    text: "When the wall is cooler than the room, it absorbs heat. The controller must keep every surface safely above the room dew point and use a separately specified system to reject that heat.",
     status: "Established mechanism; climate-specific validation required",
     tone: "border-twt-blueprint-blue",
     iconTone: "bg-twt-light-blue text-twt-medium-navy",
@@ -65,7 +65,7 @@ const CONSTRAINTS = [
   ["Condensation protection", "Sense room temperature and humidity, calculate dew point, and reset or stop cooling before condensation can form."],
   ["Controls and thermal lag", "Coordinate weather, occupancy, solar gain, zones, storage, pumps, and the concrete's slower response."],
   ["Buildable block geometry", "Finalize tubing paths, reinforcement, finishes, connections, serviceability, and code compliance."],
-  ["Whole-building integration", "Size ventilation, latent-load control, heat sources, heat rejection, domestic hot water, and backup capacity."],
+  ["Whole-building integration", "Size ventilation, humidity control, heat sources, heat rejection, domestic hot water, and backup capacity."],
   ["Measured performance", "Test representative assemblies, instrument a prototype building, and compare results with a matched reference."],
 ] as const;
 
@@ -117,23 +117,23 @@ export default function HowItWorksPage() {
               <span className="block text-twt-primary-orange">the thermal system.</span>
             </h1>
             <p className="mt-7 max-w-[820px] text-[clamp(19px,1.5vw,24px)] leading-[1.58] font-medium text-twt-blue-white">
-              TWT proposes placing insulation outside a concrete wall and embedding hydronic tubing within the mass. The room-facing structure then stores and exchanges heat across a large surface area.
+              TWT proposes placing insulation outside a concrete building envelope—the walls and floors—and embedding hydronic tubing within the mass. The room-facing structure then stores and exchanges heat across a large surface area.
             </p>
           </div>
           <aside className="border border-white/15 bg-white/[0.07] p-[clamp(24px,3.3vw,46px)]" aria-label="Proposed wall operating range">
             <div className="flex items-start justify-between gap-5">
               <div>
                 <p className="text-xs font-extrabold tracking-[0.18em] text-twt-light-orange uppercase">Proposed wall operating band</p>
-                <p className="mt-3 text-[clamp(44px,5vw,76px)] leading-none font-extrabold tracking-[-0.055em]">65-75\u00b0F</p>
+                <p className="mt-3 text-[clamp(44px,5vw,76px)] leading-none font-extrabold tracking-[-0.055em]">65–75°F</p>
               </div>
               <Thermometer className="size-11 shrink-0 text-twt-sky-blue" strokeWidth={1.6} aria-hidden="true" />
             </div>
             <div className="mt-9">
               <div className="h-3 rounded-full bg-[linear-gradient(90deg,var(--twt-blueprint-blue),var(--twt-sky-blue)_32%,white_50%,var(--twt-warm-orange)_70%,var(--twt-primary-orange))]" aria-hidden="true" />
               <div className="mt-3 grid grid-cols-3 text-xs font-bold sm:text-sm">
-                <span className="text-twt-sky-blue">65\u00b0F<br />Cooling side</span>
-                <span className="text-center text-white">~72\u00b0F<br />Room reference</span>
-                <span className="text-right text-twt-light-orange">75\u00b0F<br />Heating side</span>
+                <span className="text-twt-sky-blue">65°F<br />Cooling side</span>
+                <span className="text-center text-white">~72°F<br />Room reference</span>
+                <span className="text-right text-twt-light-orange">75°F<br />Heating side</span>
               </div>
             </div>
             <p className="mt-8 border-l-2 border-twt-primary-orange pl-4 text-sm leading-6 font-medium text-twt-blue-white">
@@ -196,7 +196,7 @@ export default function HowItWorksPage() {
 
       <section id="principle" className="scroll-mt-16 bg-twt-pale-blue px-[clamp(22px,5vw,84px)] py-[clamp(76px,8vw,128px)]">
         <div className="mx-auto max-w-[1480px]">
-          <SectionHeading eyebrow="02 / Core operating principle" title="More surface area. Smaller temperature difference." description="Heat transfer rises with both active surface area and the temperature difference between that surface and the room. TWT proposes using room-scale walls and floors so each surface can operate close to indoor temperature." />
+          <SectionHeading eyebrow="02 / Core operating principle" title="More surface area. Smaller temperature difference." description="For a given assembly and set of conditions, heat transfer rises with active surface area and the temperature difference between that surface and the room. TWT proposes using room-scale walls and floors so each surface can operate close to indoor temperature." />
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <article className="bg-white p-[clamp(28px,4vw,52px)] shadow-[0_14px_36px_rgba(3,26,61,0.07)]">
               <p className="text-xs font-extrabold tracking-[0.16em] text-twt-slate-gray uppercase">Concentrated emitter</p>
@@ -214,8 +214,8 @@ export default function HowItWorksPage() {
             </article>
           </div>
           <div className="mt-6 grid gap-6 bg-twt-deep-navy p-[clamp(26px,4vw,52px)] text-white lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <p className="text-[clamp(28px,3vw,46px)] leading-[1.12] font-extrabold tracking-[-0.04em]">Heat flow depends on<span className="block text-twt-primary-orange">area x temperature difference.</span></p>
-            <p className="border-l-2 border-twt-primary-orange pl-6 text-lg leading-8 font-medium text-twt-blue-white">A wall heats only when its surface is warmer than the room&apos;s effective temperature; it cools only when it is lower. The 65-75\u00b0F band spans two modes rather than one constant setpoint.</p>
+            <p className="text-[clamp(28px,3vw,46px)] leading-[1.12] font-extrabold tracking-[-0.04em]">For a given assembly,<span className="block text-twt-primary-orange">area and temperature difference matter.</span></p>
+            <p className="border-l-2 border-twt-primary-orange pl-6 text-lg leading-8 font-medium text-twt-blue-white">A wall heats only when its surface is warmer than the room; it cools only when it is lower. The 65–75°F band spans two modes rather than one constant setpoint.</p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[
@@ -246,7 +246,7 @@ export default function HowItWorksPage() {
           </div>
           <aside className="mt-6 flex gap-5 bg-twt-pale-orange p-[clamp(24px,3vw,38px)]">
             <Droplets className="size-9 shrink-0 text-twt-primary-orange" strokeWidth={1.7} aria-hidden="true" />
-            <div><h3 className="text-xl font-extrabold text-twt-deep-navy">Cooling has a hard moisture boundary</h3><p className="mt-2 max-w-[1040px] leading-7 font-medium text-twt-text-dark">The usable lower wall temperature is not fixed by the 65\u00b0F target alone. It must remain above the room dew point with an engineering safety margin, supported by humidity control and automatic shutoff or temperature reset.</p></div>
+            <div><h3 className="text-xl font-extrabold text-twt-deep-navy">Cooling has a hard moisture boundary</h3><p className="mt-2 max-w-[1040px] leading-7 font-medium text-twt-text-dark">The usable lower wall temperature is not fixed by the 65°F target alone. It must remain above the room dew point with an engineering safety margin, supported by humidity control and automatic shutoff or temperature reset.</p></div>
           </aside>
         </div>
       </section>
@@ -257,7 +257,7 @@ export default function HowItWorksPage() {
           <div className="mt-12 grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] lg:items-stretch">
             {[
               [Sun, "Energy source", "Heat pump, solar thermal, or another compatible source"],
-              [Gauge, "Exchange + storage", "Heat exchanger and optional thermal reserve"],
+              [Gauge, "Exchange + storage", "Heat exchanger and, if selected, water storage"],
               [Waves, "Control + distribution", "Sensors, controller, pumps, manifolds, and zones"],
               [Building2, "Walls + floors", "Concrete surfaces store energy and exchange it with the room"],
             ].map(([Icon, title, text], index) => {
@@ -265,13 +265,13 @@ export default function HowItWorksPage() {
               return <div className="contents" key={title as string}><article className="border border-white/15 bg-white/[0.06] p-6"><ItemIcon className="size-8 text-twt-sky-blue" strokeWidth={1.7} aria-hidden="true" /><p className="mt-6 text-xs font-bold tracking-[0.12em] text-twt-light-orange uppercase">Step 0{index + 1}</p><h3 className="mt-2 text-xl font-extrabold">{title as string}</h3><p className="mt-3 text-sm leading-6 font-medium text-twt-blue-white">{text as string}</p></article>{index < 3 ? <ArrowRight className="mx-auto size-7 rotate-90 self-center text-twt-primary-orange lg:rotate-0" aria-hidden="true" /> : null}</div>;
             })}
           </div>
-          <p className="mt-6 border-l-2 border-twt-primary-orange pl-5 text-sm leading-6 font-medium text-twt-blue-white">Conceptual reference architecture only. Final equipment, loop temperatures, tubing, flow rates, storage volume, zoning, backup systems, and control sequences are not yet specified.</p>
+          <p className="mt-6 border-l-2 border-twt-primary-orange pl-5 text-sm leading-6 font-medium text-twt-blue-white">Conceptual system sequence only. Final equipment, loop temperatures, tubing, flow rates, storage volume, zoning, backup systems, and control sequences are not yet specified.</p>
         </div>
       </section>
 
       <section id="comparison" className="scroll-mt-16 px-[clamp(22px,5vw,84px)] py-[clamp(76px,8vw,128px)]">
         <div className="mx-auto max-w-[1480px]">
-          <SectionHeading eyebrow="05 / Construction distinction" title="TWT is not simply a conventional ICF wall" description="Both systems use insulation and concrete, but their room-side thermal coupling and intended mechanical roles differ." />
+          <SectionHeading eyebrow="05 / Construction distinction" title="TWT is not simply a conventional ICF wall" description="A conventional insulated concrete form (ICF) wall and the TWT concept both use insulation and concrete, but their room-side thermal coupling and intended mechanical roles differ." />
           <div className="mt-12 overflow-x-auto border border-twt-light-gray">
             <table className="w-full min-w-[760px] border-collapse text-left">
               <thead className="bg-twt-deep-navy text-white"><tr><th className="w-[25%] px-6 py-5 text-sm font-extrabold tracking-[0.1em] uppercase">Design question</th><th className="w-[37.5%] px-6 py-5 text-sm font-extrabold tracking-[0.1em] uppercase">Conventional ICF</th><th className="w-[37.5%] px-6 py-5 text-sm font-extrabold tracking-[0.1em] text-twt-light-orange uppercase">TWT concept</th></tr></thead>
@@ -288,13 +288,13 @@ export default function HowItWorksPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-5 text-sm leading-6 font-medium text-twt-slate-gray">Evidence boundary: the 2016 USI analysis evaluated an earlier one-sided insulated wall case, not the complete current dry-stack block geometry or a finished TWT building.</p>
+          <p className="mt-5 border-l-2 border-twt-primary-orange bg-twt-pale-orange px-5 py-4 text-sm leading-6 font-semibold text-twt-text-dark">Evidence boundary: the 2016 USI analysis evaluated an earlier one-sided insulated wall case, not the complete current dry-stack block geometry or a finished TWT building.</p>
         </div>
       </section>
 
       <section id="constraints" className="scroll-mt-16 bg-twt-pale-blue px-[clamp(22px,5vw,84px)] py-[clamp(76px,8vw,128px)]">
         <div className="mx-auto max-w-[1480px]">
-          <SectionHeading eyebrow="06 / Engineering constraints" title="What a research program must resolve" description="These are design inputs and validation requirements, not finished specifications. Publishing them makes the collaboration ask concrete and testable." />
+          <SectionHeading eyebrow="06 / Engineering constraints" title="What a research program must resolve" description="These are design inputs and validation requirements, not finished specifications. They define the work needed for a rigorous, testable research collaboration." />
           <div className="mt-12 grid gap-px overflow-hidden bg-twt-light-gray sm:grid-cols-2 lg:grid-cols-3">
             {CONSTRAINTS.map(([title, text], index) => (
               <article className="bg-white p-[clamp(24px,3vw,38px)]" key={title}>
@@ -307,9 +307,9 @@ export default function HowItWorksPage() {
             <p className="text-xs font-extrabold tracking-[0.15em] text-twt-primary-orange uppercase">Mechanism references</p>
             <div className="mt-5 flex flex-wrap gap-x-8 gap-y-4">
               {[
-                ["ASHRAE: Radiant heating and cooling", "https://handbook.ashrae.org/Handbooks/A23/IP/a23_ch55/a23_ch55_ip.aspx"],
-                ["U.S. DOE: Thermal mass and passive design", "https://www.energy.gov/eere/buildings/zeb-technologies-passive-design-techniques"],
-                ["ASTM C1363: Assembly hot-box testing", "https://store.astm.org/standards/c1363"],
+                ["ASHRAE guidance: radiant heating and cooling", "https://handbook.ashrae.org/Handbooks/A23/IP/a23_ch55/a23_ch55_ip.aspx"],
+                ["U.S. DOE guide: thermal mass and passive design", "https://www.energy.gov/eere/buildings/zeb-technologies-passive-design-techniques"],
+                ["ASTM C1363: hot-box testing standard", "https://store.astm.org/standards/c1363"],
               ].map(([label, href]) => (
                 <a className="group inline-flex items-center gap-2 font-bold text-twt-medium-navy underline decoration-twt-light-gray underline-offset-4 hover:text-twt-primary-orange focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-twt-focus" href={href} key={href} rel="noreferrer" target="_blank">{label}<ExternalLink className="size-4" aria-hidden="true" /></a>
               ))}
@@ -320,7 +320,7 @@ export default function HowItWorksPage() {
 
       <section className="bg-twt-pale-orange px-[clamp(22px,5vw,84px)] py-[clamp(68px,7vw,104px)]">
         <div className="mx-auto flex max-w-[1480px] flex-col justify-between gap-10 lg:flex-row lg:items-center">
-          <div className="max-w-[900px]"><p className="text-sm font-extrabold tracking-[0.18em] text-twt-primary-orange uppercase">Evidence &amp; validation</p><h2 className="mt-4 text-[clamp(36px,4vw,62px)] leading-[1.05] font-extrabold tracking-[-0.045em] text-twt-deep-navy">The mechanism is the beginning. Measurement is the proof.</h2><p className="mt-5 max-w-[800px] text-lg leading-8 font-medium text-twt-slate-gray">Review which parts are established physics, founder-modeled, independently analyzed, and still awaiting real-building data.</p></div>
+          <div className="max-w-[900px]"><p className="text-sm font-extrabold tracking-[0.18em] text-twt-primary-orange uppercase">Evidence &amp; validation</p><h2 className="mt-4 text-[clamp(36px,4vw,62px)] leading-[1.05] font-extrabold tracking-[-0.045em] text-twt-deep-navy">The mechanism is the beginning. Measurement is the proof.</h2><p className="mt-5 max-w-[800px] text-lg leading-8 font-medium text-twt-slate-gray">Review which parts are established physics, company-modeled, independently analyzed, and still awaiting real-building data.</p></div>
           <Link href="/evidence" className="group inline-flex min-h-16 shrink-0 items-center justify-center gap-4 bg-twt-deep-navy px-8 py-5 text-lg font-bold text-white outline-offset-4 transition-colors hover:bg-twt-medium-navy focus-visible:outline-2 focus-visible:outline-twt-focus">Review evidence &amp; limitations<ArrowRight className="size-6 transition-transform group-hover:translate-x-1" aria-hidden="true" /></Link>
         </div>
       </section>

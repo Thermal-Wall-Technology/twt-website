@@ -23,7 +23,7 @@ const EVIDENCE_STEPS = [
     label: "Founder-modeled",
     title: "Defined thermal scenarios",
     description:
-      "Initial calculations evaluated heat loss, stored energy, and one-sided versus two-sided insulation under documented boundary conditions.",
+      "Founder calculations modeled heat loss, insulation placement, and stored energy\u2014projecting a 39\u201360% heat-pump efficiency gain and a 69% solar-thermal collector efficiency gain from the lower 65\u201375\u00b0F operating range.",
     icon: Calculator,
     accent: "bg-twt-blueprint-blue",
     iconStyle: "bg-twt-light-blue text-twt-medium-navy",
@@ -33,7 +33,7 @@ const EVIDENCE_STEPS = [
     label: "Independently analyzed",
     title: "USI engineering analysis",
     description:
-      "A 2016 University of Southern Indiana one-dimensional model reached similar results\u2014within approximately 2% for the report's cited daily heat-flux comparison.",
+      "A 2016 University of Southern Indiana thermal-wall model reached results within approximately 2% of the founder's own figures, and a separate USI heat-pump efficiency analysis independently supported the 39\u201360% modeled gain.",
     icon: University,
     accent: "bg-twt-primary-navy",
     iconStyle: "bg-twt-blue-white text-twt-primary-navy",

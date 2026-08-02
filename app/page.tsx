@@ -22,20 +22,20 @@ import {
 
 const BENEFITS = [
   {
-    icon: Landmark,
-    text: "A building-system concept informed by thermal mass and radiant exchange.",
+    icon: Thermometer,
+    text: "Concrete walls and floors become the heating and cooling surface — engineered to run at 65–75°F instead of the 105–120°F conventional systems need.",
   },
   {
-    icon: Thermometer,
-    text: "A patented design seeking independent research and validation partners.",
+    icon: Landmark,
+    text: "A patented building-system concept, with its underlying calculations independently reviewed by university engineering faculty.",
   },
   {
     icon: Shield,
-    text: "A proposed low-temperature thermal surface integrated into walls and floors.",
+    text: "Not yet tested in a real building — TWT is seeking research and validation partners to change that.",
   },
   {
     icon: Leaf,
-    text: "A research pathway toward durable, energy-conscious human shelter.",
+    text: "A research pathway toward more durable, energy-conscious human shelter.",
   },
 ] as const;
 const PROBLEM_ITEMS = [
@@ -45,7 +45,7 @@ const PROBLEM_ITEMS = [
 ] as const;
 
 const SOLUTION_ITEMS = [
-  "TWT turns the walls and floors into the heating and cooling surface.",
+  "TWT turns your walls and floors into active heating and cooling surfaces—delivering even, whisper-quiet comfort at a fraction of the operating cost.",
   "The proposed wall operating range is 65\u201375\u00b0F.",
   "The system hypothesis requires validation for each climate, building, control strategy, and comfort condition.",
 ] as const;
@@ -137,7 +137,7 @@ export default function Home() {
             className="flex flex-col pr-[clamp(38px,4.5vw,76px)] max-[900px]:pr-0 max-[900px]:pb-16"
           >
             <h2 className="m-0 text-[clamp(42px,3.35vw,58px)] leading-none font-extrabold tracking-[-0.045em] text-twt-deep-navy">
-              2. The Problem
+              The Problem
             </h2>
             <p className="mt-8 text-[clamp(24px,1.75vw,31px)] leading-[1.15] font-bold tracking-[-0.025em] text-twt-primary-orange">
               Rising Energy Costs and the Limits of Insulation
@@ -173,16 +173,16 @@ export default function Home() {
               </ul>
             </div>
 
-            <a
-              href="#problem"
+            <Link
+              href="/evidence"
               className="group mt-auto inline-flex w-fit items-center gap-7 pt-14 text-[clamp(20px,1.35vw,24px)] font-bold text-twt-medium-navy outline-offset-8 transition-colors hover:text-twt-primary-orange focus-visible:outline-2 focus-visible:outline-twt-focus max-[900px]:mt-10 max-[900px]:pt-0"
             >
-              Learn more about the problem
+              See the evidence
               <ArrowRight
                 className="size-8 transition-transform group-hover:translate-x-1"
                 aria-hidden="true"
               />
-            </a>
+            </Link>
           </article>
 
           <article
@@ -190,7 +190,7 @@ export default function Home() {
             className="flex flex-col pl-[clamp(38px,4.5vw,76px)] max-[900px]:pt-16 max-[900px]:pl-0"
           >
             <h2 className="m-0 text-[clamp(42px,3.35vw,58px)] leading-none font-extrabold tracking-[-0.045em] text-twt-deep-navy">
-              3. The Solution
+              The Solution
             </h2>
             <p className="mt-8 text-[clamp(24px,1.75vw,31px)] leading-[1.15] font-bold tracking-[-0.025em] text-twt-primary-orange">
               Lower Temperature. Higher Efficiency.
@@ -308,13 +308,21 @@ export default function Home() {
             />
 
             <p className="mt-7 max-w-[760px] text-[clamp(19px,1.48vw,25px)] leading-[1.48] font-medium tracking-[-0.025em] text-twt-deep-navy max-[900px]:mx-auto">
-              Michael Sandefur is the inventor and patent holder of Thermal Wall
-              Technology. A prolific innovator, he holds twelve patents spanning
-              security and drone systems, pollution abatement, blade
-              maintenance, and advanced building and energy technologies. As an
-              Executive Project Manager, he has also directed complex projects
-              valued at more than $100 million, combining technical innovation
-              with proven leadership and large-scale project experience.
+              Michael Sandefur invented Thermal Wall Technology while building
+              a tornado-safe room addition for a family member using insulated
+              concrete forms. Embedding hydronic tubing in the concrete to
+              qualify for a state solar-energy incentive, he began asking what
+              would happen if the wall&apos;s thermal mass could communicate
+              directly with the room instead of staying sealed behind interior
+              insulation. Years of heat-loss calculations on later projects led
+              to the current patented design.
+            </p>
+            <p className="mt-4 max-w-[760px] text-[clamp(17px,1.2vw,20px)] leading-[1.5] font-medium text-twt-slate-gray max-[900px]:mx-auto">
+              Independent of TWT, Sandefur holds twelve patents spanning
+              building and energy technologies, security and drone systems,
+              pollution abatement, and industrial equipment, and has worked as
+              an Executive Project Manager directing projects valued at more
+              than $100 million.
             </p>
 
             <div className="mt-[clamp(36px,3.5vw,58px)] grid max-w-[620px] grid-cols-2 gap-6 max-[900px]:mx-auto max-[620px]:grid-cols-1">
