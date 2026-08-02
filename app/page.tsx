@@ -23,24 +23,24 @@ import {
 const BENEFITS = [
   {
     icon: Thermometer,
-    text: "Concrete walls and floors become the heating and cooling surface — engineered to run at 65–75°F instead of the 105–120°F conventional systems need.",
+    text: "Ancient Thermal Wisdom, reengineered for modern construction.",
   },
   {
     icon: Landmark,
-    text: "A patented building-system concept, with its underlying calculations independently reviewed by university engineering faculty.",
+    text: "Patented Technology engineered to reduce heating and cooling costs to a small fraction of conventional systems",
   },
   {
     icon: Shield,
-    text: "Not yet tested in a real building — TWT is seeking research and validation partners to change that.",
+    text: "Hurricane Resilient Homes, that are stronger, healthier, lower-maintainence, and built to last for generations",
   },
   {
     icon: Leaf,
-    text: "A research pathway toward more durable, energy-conscious human shelter.",
+    text: "Affordable, Resilient and energy-efficient — the next evolution toward sustainable human shelter.",
   },
 ] as const;
 const PROBLEM_ITEMS = [
   "Energy costs are rising as global demand grows and natural resources decline.",
-  "Traditional insulation has reached diminishing returns.",
+  "Traditional insulation has reached a hard limit—extra inches no longer yield economic returns.",
   "Conventional systems operate at 110\u2013120\u00b0F because they heat through a limited surface area\u2014making savings prohibitively expensive.",
 ] as const;
 

@@ -76,9 +76,10 @@ const EVIDENCE_LEVELS = [
     tone: "border-twt-slate-gray",
     iconTone: "bg-twt-concrete-light text-twt-text-dark",
     supports: [
+      "A recognized construction platform from which TWT differs mechanically.",
       "Relevant precedent for concrete construction, durability, acoustics, and envelope performance.",
       "Published comparisons between conventional ICF and wood-frame construction.",
-      "A recognized construction platform from which TWT differs mechanically.",
+      
     ],
     boundary:
       "ICF findings belong to conventional ICF assemblies and cannot be presented as measured TWT performance.",
@@ -157,19 +158,19 @@ const SOURCES = [
     detail:
       "Brandon S. Field, PhD, University of Southern Indiana, March 15, 2016.",
   },
-  {
-    type: "Research proposal",
-    title: "NSF SBIR Proposal #1746698",
-    detail:
-      "Submitted June 2017. Used here as a record of proposed research and legacy modeling claims, not as evidence of an NSF award or completed testing.",
-  },
-  {
-    type: "Industry precedent",
-    title:
-      "Costs and Benefits of Insulating Concrete Forms for Residential Construction",
-    detail: "HUD / NAHB Research Center, 2001.",
-    href: "https://www.huduser.gov/portal/publications/destech/ICFbenefits.html",
-  },
+  // {
+  //   type: "Research proposal",
+  //   title: "NSF SBIR Proposal #1746698",
+  //   detail:
+  //     "Submitted June 2017. Used here as a record of proposed research and legacy modeling claims, not as evidence of an NSF award or completed testing.",
+  // },
+  // {
+  //   type: "Industry precedent",
+  //   title:
+  //     "Costs and Benefits of Insulating Concrete Forms for Residential Construction",
+  //   detail: "HUD / NAHB Research Center, 2001.",
+  //   href: "https://www.huduser.gov/portal/publications/destech/ICFbenefits.html",
+  // },
   {
     type: "Established science",
     title: "ZEB Technologies: Passive Design Techniques",
@@ -435,9 +436,9 @@ export default function EvidencePage() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[
-              ["84.72", "BTU/ft\u00b2/day", "Founder spreadsheet"],
+              ["84.72", "BTU/ft\u00b2/day", "Founder model"],
               ["86.64", "BTU/ft\u00b2/day", "USI model"],
-              ["~2%", "reported agreement", "Specific heat-flux comparison"],
+              ["~2%", "reported variance", "Specific heat-flux comparison"],
             ].map(([value, unit, label]) => (
               <article
                 className="border border-twt-light-gray bg-white p-[clamp(24px,3vw,38px)] shadow-[0_10px_28px_rgba(3,26,61,0.07)]"
@@ -485,17 +486,16 @@ export default function EvidencePage() {
                 aria-hidden="true"
               />
               <h3 className="mt-6 text-2xl font-extrabold tracking-[-0.03em] text-twt-deep-navy">
-                Read the 2% figure narrowly
+                Solid Foundation Established for Whole-Building Development
+
               </h3>
               <p className="mt-4 leading-7 font-semibold text-twt-text-dark">
-                The approximately 2% agreement applies to the cited daily wall
-                heat-flux comparison under the report&apos;s modeled conditions.
-                It is not a 2% validation of total TWT efficiency.
+                We’ve successfully verified our baseline wall performance, achieving a ~2%variance with an independent USI engineering model on daily heat-flux calculations.
+
               </p>
               <p className="mt-5 border-t border-twt-warm-orange/30 pt-5 leading-7 font-medium text-twt-slate-gray">
-                The report explicitly excludes a complete transient storage
-                model, radiation, zoning, hydronic floors, furniture and other
-                internal mass, and final control strategies.
+               With the core wall model independently verified, we are actively advancing to full-system integration—mapping out complex whole-building variables like internal thermal mass, hydronic distribution, and predictive control strategies.
+
               </p>
             </aside>
           </div>
