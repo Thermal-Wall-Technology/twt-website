@@ -1,0 +1,4 @@
+﻿"use client";
+import { useEffect, useState } from "react";
+const sections=[['overview','Overview'],['assembly','The Assembly'],['why','Why It Works'],['energy','Energy Flow'],['modes','Operating Modes'],['system','The Full System']] as const;
+export function SectionNav(){const [active,setActive]=useState('overview');useEffect(()=>{const o=new IntersectionObserver(e=>{const v=e.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(v)setActive(v.target.id)},{rootMargin:'-30% 0px -55% 0px',threshold:[.1,.4]});sections.forEach(([id])=>{const el=document.getElementById(id);if(el)o.observe(el)});return()=>o.disconnect()},[]);return <nav className="how-section-nav" aria-label="How it works sections"><div>{sections.map(([id,label])=><a className={active===id?'active':''} href={`#${id}`} key={id}>{label}</a>)}</div></nav>}

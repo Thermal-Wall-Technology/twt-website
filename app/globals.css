@@ -1,25 +1,13 @@
 @import "tailwindcss";
 @import "./styles/twt-tokens.css";
 @import "./styles/twt-engineering.css";
-
-@theme inline {
-  --color-background: var(--twt-background);
-  --color-foreground: var(--twt-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@import "./styles/home.css";
 
 body {
+  margin: 0;
   background: var(--twt-background);
   color: var(--twt-foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-
-/* Temporarily keep every route static for reliable automated screenshots. */
-*,
-*::before,
-*::after {
-  animation: none !important;
-  transition: none !important;
-}
+* { box-sizing: border-box; }
