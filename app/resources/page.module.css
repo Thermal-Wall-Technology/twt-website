@@ -1,0 +1,155 @@
+@reference "../globals.css";
+
+.page {
+  @apply bg-twt-primary-white text-twt-text-dark;
+}
+
+.hero {
+  @apply relative isolate overflow-hidden bg-twt-deep-navy px-[clamp(22px,5vw,84px)] py-[clamp(78px,9vw,142px)] text-white;
+}
+
+.heroGrid {
+  @apply mx-auto grid max-w-[1480px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end;
+}
+
+.sectionHeader {
+  @apply max-w-[920px];
+}
+
+.sectionHeading {
+  @apply mt-4 text-[clamp(36px,4.2vw,66px)] leading-[1.03] font-extrabold tracking-[-0.045em];
+}
+
+.sectionDescription {
+  @apply mt-5 max-w-[820px] text-[clamp(17px,1.3vw,21px)] leading-[1.65] font-medium;
+}
+
+.sectionNav {
+  @apply sticky top-[76px] z-20 overflow-x-auto border-b border-twt-light-gray bg-white/95 px-[clamp(22px,5vw,84px)] py-0 backdrop-blur;
+}
+
+.sectionNavInner {
+  @apply mx-auto flex min-h-16 w-max max-w-[1480px] items-center gap-8 pr-6 text-sm font-extrabold whitespace-nowrap text-twt-medium-navy;
+}
+
+.contentSection {
+  @apply scroll-mt-36 px-[clamp(22px,5vw,84px)] py-[clamp(76px,8vw,128px)];
+}
+
+.sectionInner {
+  @apply mx-auto max-w-[1480px];
+}
+
+.paleSection {
+  @apply bg-twt-pale-blue;
+}
+
+.orangeSection {
+  @apply bg-twt-pale-orange;
+}
+
+.darkSection {
+  @apply bg-twt-deep-navy text-white;
+}
+
+.sectionHeadingLight {
+  @apply text-white;
+}
+
+.sectionDescriptionLight {
+  @apply text-twt-blue-white;
+}
+
+.sectionHeadingDark {
+  @apply text-twt-deep-navy;
+}
+
+.sectionDescriptionDark {
+  @apply text-twt-slate-gray;
+}
+
+.guideGrid {
+  @apply mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4;
+}
+
+.guideCard {
+  @apply border-t-4 border-twt-blueprint-blue bg-twt-soft-white p-[clamp(24px,3vw,36px)] outline-offset-4 transition-colors hover:bg-twt-pale-blue focus-visible:outline-2 focus-visible:outline-twt-focus;
+}
+
+.guideIcon {
+  @apply size-9 text-twt-medium-navy;
+}
+
+.guideTitle {
+  @apply mt-7 text-2xl font-extrabold tracking-[-0.03em] text-twt-deep-navy;
+}
+
+.guideText {
+  @apply mt-3 leading-7 font-medium text-twt-slate-gray;
+}
+
+.guideLink {
+  @apply mt-7 inline-flex items-center gap-2 font-bold text-twt-medium-navy;
+}
+
+.guideArrow {
+  @apply size-4 transition-transform;
+}
+
+.faqNotice {
+  @apply mt-9 border-l-2 border-twt-primary-orange bg-twt-pale-orange p-6;
+}
+
+.faqNoticeIcon {
+  @apply size-7 text-twt-primary-orange;
+}
+
+.faqNoticeText {
+  @apply mt-4 text-sm leading-6 font-semibold text-twt-deep-navy;
+}
+
+.faqList {
+  @apply divide-y divide-twt-light-gray border-y border-twt-light-gray bg-white;
+}
+
+.faqItem {
+  @apply p-6 open:bg-twt-soft-white;
+}
+
+.faqSummary {
+  @apply flex cursor-pointer list-none items-start justify-between gap-6 text-xl font-extrabold tracking-[-0.025em] text-twt-deep-navy outline-offset-4 focus-visible:outline-2 focus-visible:outline-twt-focus;
+}
+
+.faqToggle {
+  @apply grid size-7 shrink-0 place-items-center border border-twt-medium-navy text-twt-medium-navy transition-transform;
+}
+
+.faqAnswer {
+  @apply mt-5 max-w-[940px] pr-8 leading-7 font-medium text-twt-slate-gray;
+}
+
+.glossaryGrid {
+  @apply mt-12 grid gap-px overflow-hidden border border-twt-light-gray bg-twt-light-gray md:grid-cols-2 lg:grid-cols-3;
+}
+
+.glossaryCard {
+  @apply bg-white p-[clamp(22px,2.6vw,34px)];
+}
+
+.glossaryTitle {
+  @apply text-xl font-extrabold tracking-[-0.025em] text-twt-deep-navy;
+}
+
+.glossaryText {
+  @apply mt-3 leading-7 font-medium text-twt-slate-gray;
+}
+
+.guideLink:hover {
+  color: var(--twt-primary-orange);
+}
+.guideLink:hover .guideArrow {
+  transform: translateX(0.25rem);
+}
+.faqItem[open] .faqToggle {
+  transform: rotate(45deg);
+}

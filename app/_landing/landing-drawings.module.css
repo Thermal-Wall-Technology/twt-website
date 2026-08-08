@@ -1,0 +1,21 @@
+﻿/* Decorative radial-line artwork for the landing hero. */
+.heroLines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.52;
+  background:
+    radial-gradient(
+      circle at 9% 12%,
+      rgba(66, 169, 232, 0.12),
+      transparent 24%
+    ),
+    radial-gradient(circle at 91% 16%, rgba(255, 90, 0, 0.09), transparent 22%),
+    linear-gradient(rgba(6, 42, 94, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 42, 94, 0.025) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    42px 42px,
+    42px 42px;
+}

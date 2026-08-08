@@ -1,0 +1,503 @@
+@reference "../globals.css";
+
+/* Shared layout ---------------------------------------------------------- */
+
+.shell {
+  @apply mx-auto w-[min(1240px,calc(100%-48px))] max-sm:w-[min(1240px,calc(100%-32px))];
+}
+
+.eyebrow {
+  @apply mb-3 text-[11px] font-black tracking-[0.16em] text-twt-primary-orange;
+}
+
+.button {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border px-5 py-3 text-sm font-extrabold no-underline transition-all duration-200;
+  @apply hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-twt-focus;
+  @apply max-sm:w-full;
+}
+
+.buttonPrimary {
+  @apply border-twt-primary-orange bg-twt-primary-orange text-white shadow-[0_10px_25px_rgba(255,90,0,0.22)] hover:bg-[#e94f00];
+}
+
+.buttonSecondary {
+  @apply border-twt-light-gray bg-white text-twt-primary-navy shadow-sm hover:border-twt-primary-navy;
+}
+
+.section {
+  @apply py-24 max-sm:py-16;
+}
+
+.centeredTitle {
+  @apply mx-auto max-w-[800px] text-center;
+}
+
+.centeredTitle h2,
+.sectionTitle {
+  @apply m-0 text-[clamp(2rem,3.7vw,3.3rem)] leading-[1.05] font-extrabold tracking-[-0.045em] text-twt-deep-navy;
+}
+
+.centeredTitle em {
+  @apply not-italic text-twt-primary-orange;
+}
+
+/* Hero ------------------------------------------------------------------- */
+
+.hero {
+  @apply relative overflow-hidden border-b border-twt-light-gray bg-white py-16;
+  @apply max-[900px]:pt-10 max-[900px]:pb-14 max-sm:pt-7;
+}
+
+.heroGrid {
+  @apply relative grid min-h-[650px] grid-cols-[0.92fr_1.08fr] items-center gap-16;
+  @apply max-[1100px]:gap-10 max-[900px]:min-h-0 max-[900px]:grid-cols-1 max-[900px]:gap-8;
+}
+
+.heroCopy {
+  @apply relative z-10 max-w-[650px] max-[900px]:mx-auto max-[900px]:w-full;
+}
+
+.heroTitle {
+  @apply m-0 text-[clamp(3rem,4.5vw,4.8rem)] leading-[0.99] font-extrabold tracking-[-0.06em] text-twt-deep-navy;
+  @apply max-sm:text-[clamp(2.55rem,12vw,3.7rem)];
+}
+
+.heroTitle span {
+  @apply block text-twt-primary-orange;
+}
+
+.heroBrand {
+  @apply relative z-10 flex items-center justify-center max-[900px]:mx-auto max-[900px]:max-w-[590px];
+}
+
+.heroBrand::before {
+  content: "";
+  @apply pointer-events-none absolute inset-[12%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(66,169,232,0.16),transparent_70%)] blur-2xl;
+}
+
+.heroLogo {
+  @apply h-auto w-full max-w-[570px] object-contain drop-shadow-[0_22px_34px_rgba(3,26,61,0.14)];
+  @apply max-[900px]:max-w-[520px] max-sm:max-w-[410px];
+}
+
+.benefitStrip {
+  @apply relative mt-9 grid overflow-hidden rounded-2xl border border-twt-light-gray bg-white shadow-[0_18px_50px_rgba(3,26,61,0.08)];
+  @apply max-sm:mt-7 max-sm:rounded-xl;
+}
+
+.benefit {
+  @apply flex items-center gap-4 border-b border-twt-light-gray px-5 py-4 last:border-b-0;
+  @apply transition-colors duration-200 hover:bg-twt-soft-white max-sm:items-start max-sm:px-4;
+}
+
+.benefitIcon {
+  @apply grid size-11 shrink-0 place-items-center rounded-xl bg-twt-deep-navy text-white shadow-[0_7px_16px_rgba(3,26,61,0.16)];
+}
+
+.benefitIcon svg {
+  @apply size-[21px];
+}
+
+.benefit p {
+  @apply m-0 text-[14px] leading-[1.5] font-bold text-twt-deep-navy;
+  @apply max-sm:text-[13px];
+}
+
+/* Challenge comparison -------------------------------------------------- */
+
+.challengeGrid {
+  @apply mt-12 grid grid-cols-[1fr_250px_1fr] items-stretch gap-5;
+  @apply max-[1000px]:grid-cols-1;
+}
+
+.challengePanel {
+  @apply flex flex-col rounded-2xl border px-8 py-8 shadow-[0_14px_42px_rgba(3,26,61,0.06)] max-sm:px-5;
+}
+
+.problemPanel {
+  @apply border-[#ffdcca] bg-[#fffaf7];
+}
+
+.solutionPanel {
+  @apply border-[#d9e8f6] bg-[#f8fbff];
+}
+
+.panelLabel {
+  @apply m-0 flex items-center gap-3 text-[11px] font-black tracking-[0.12em] text-twt-deep-navy;
+}
+
+.panelLabel b {
+  @apply grid size-8 place-items-center rounded-full bg-twt-primary-orange text-[10px] text-white;
+}
+
+.challengePanel h3 {
+  @apply mt-5 mb-4 text-2xl leading-[1.15] font-extrabold tracking-[-0.025em] text-twt-primary-orange;
+}
+
+.solutionPanel h3 {
+  @apply text-twt-medium-navy;
+}
+
+.problemList,
+.solutionList {
+  @apply m-0 mb-7 list-none p-0;
+}
+
+.problemList li {
+  @apply grid grid-cols-[42px_30px_1fr] items-center gap-3 border-t border-[#fedecb] py-4;
+}
+
+.problemNumber {
+  @apply text-2xl leading-none font-black text-twt-primary-orange;
+}
+
+.problemList svg {
+  @apply size-6 text-twt-primary-orange;
+}
+
+.problemList p,
+.solutionList p {
+  @apply m-0 text-[14px] leading-[1.55] font-medium text-twt-text-dark;
+}
+
+.comparison {
+  @apply relative grid min-h-full grid-rows-[1fr_auto_1fr] overflow-hidden rounded-2xl border border-twt-light-gray bg-white text-center shadow-[0_14px_42px_rgba(3,26,61,0.08)];
+  @apply max-[1000px]:min-h-[420px];
+}
+
+.hotComparison,
+.coolComparison {
+  @apply flex flex-col items-center justify-center gap-2 px-5 py-7;
+}
+
+.hotComparison {
+  @apply bg-[#fff6ef] text-twt-primary-orange;
+}
+
+.coolComparison {
+  @apply bg-[#eff7ff] text-twt-medium-navy;
+}
+
+.comparison strong {
+  @apply text-[11px] font-black tracking-[0.1em];
+}
+
+.comparison b {
+  @apply text-3xl leading-none font-black;
+}
+
+.heatIcon,
+.coolIcon {
+  @apply mt-2 size-12;
+}
+
+.vsBadge {
+  @apply z-10 grid size-14 translate-y-1/2 place-items-center justify-self-center rounded-full bg-twt-deep-navy text-sm font-black text-white ring-8 ring-white;
+}
+
+.comparisonArrow {
+  @apply absolute top-1/2 left-1/2 z-0 size-6 -translate-x-1/2 translate-y-10 text-twt-medium-navy;
+}
+
+.solutionList li {
+  @apply flex items-start gap-3 border-t border-[#dce8f8] py-4;
+}
+
+.solutionList li > span {
+  @apply grid size-9 shrink-0 place-items-center rounded-full bg-twt-medium-navy text-white;
+}
+
+.solutionList li svg {
+  @apply size-4;
+}
+
+.challengePanel .button {
+  @apply mt-auto self-start border-0 bg-transparent px-0 py-0 shadow-none;
+}
+
+.problemPanel .button {
+  @apply text-twt-primary-orange;
+}
+
+.solutionPanel .button {
+  @apply text-twt-medium-navy;
+}
+
+/* How it works ----------------------------------------------------------- */
+
+.howSection {
+  @apply border-y border-twt-light-gray bg-[#f8fbfe];
+}
+
+.howGrid {
+  @apply grid grid-cols-[0.72fr_1.28fr] items-start gap-14 max-[1000px]:grid-cols-1;
+}
+
+.howCopy {
+  @apply sticky top-28 pb-4 max-[1000px]:static;
+}
+
+.bodyCopy {
+  @apply mb-4 max-w-[560px] text-[15px] leading-[1.7] font-medium text-twt-slate-gray;
+}
+
+.howAction {
+  @apply mt-8;
+}
+
+.processPanel {
+  @apply rounded-2xl border border-[#dce8f4] bg-white p-6 shadow-[0_16px_45px_rgba(3,26,61,0.06)];
+}
+
+.processHeading {
+  @apply mt-0 mb-6 text-[11px] font-black tracking-[0.14em] text-twt-primary-navy;
+}
+
+.process {
+  @apply grid gap-3;
+}
+
+.processStep {
+  @apply relative grid grid-cols-[36px_48px_1fr] items-center gap-4 rounded-xl border border-twt-light-gray bg-twt-soft-white p-4 text-left;
+  @apply max-sm:grid-cols-[32px_40px_1fr] max-sm:gap-3;
+}
+
+.processNumber {
+  @apply flex size-8 items-center justify-center rounded-full bg-twt-primary-orange text-[10px] font-black text-white;
+}
+
+.processStep > svg {
+  @apply size-8 text-twt-primary-navy;
+}
+
+.processStep h3 {
+  @apply m-0 text-[14px] leading-[1.25] font-extrabold text-twt-deep-navy;
+}
+
+.processStep p {
+  @apply col-start-3 mt-1 mb-0 text-[12px] leading-[1.55] text-twt-slate-gray;
+}
+
+.assemblyPanel {
+  @apply mt-10 grid grid-cols-[210px_minmax(0,1.25fr)_minmax(260px,0.75fr)] items-center gap-8 rounded-2xl border border-[#dce8f4] bg-white p-8 shadow-[0_16px_45px_rgba(3,26,61,0.06)];
+  @apply max-[1100px]:grid-cols-1 max-sm:p-5;
+}
+
+.assemblyTitle {
+  @apply m-0 text-xl font-black tracking-[-0.02em] text-twt-primary-navy;
+}
+
+.assemblyIntro > span {
+  @apply my-4 block h-0.5 w-24 bg-twt-light-orange;
+}
+
+.assemblyIntro > p:last-child {
+  @apply m-0 text-sm leading-[1.6] font-medium text-twt-slate-gray;
+}
+
+.assemblyImageWrap {
+  @apply relative;
+}
+
+.assemblyImage {
+  @apply h-auto w-full object-contain;
+}
+
+.assemblyList {
+  @apply grid gap-4;
+}
+
+.assemblyList article {
+  @apply flex items-start gap-3;
+}
+
+.assemblyList article > span {
+  @apply grid size-10 shrink-0 place-items-center rounded-xl bg-twt-deep-navy text-twt-light-orange;
+}
+
+.assemblyList svg {
+  @apply size-5;
+}
+
+.assemblyList h3 {
+  @apply m-0 text-[13px] font-extrabold text-twt-deep-navy;
+}
+
+.assemblyList p {
+  @apply mt-1 mb-0 text-[11px] leading-[1.5] text-twt-slate-gray;
+}
+
+.howConclusion {
+  @apply mx-auto mt-8 max-w-[850px] border-l-2 border-twt-primary-orange pl-5 text-[15px] leading-[1.6] font-medium text-twt-deep-navy;
+}
+
+.howConclusion strong {
+  @apply text-twt-primary-orange;
+}
+
+/* Story ------------------------------------------------------------------ */
+
+.storySection {
+  @apply bg-white py-24 max-sm:py-16;
+}
+
+.storyLayout {
+  @apply grid grid-cols-[0.78fr_1.22fr] items-center gap-20 max-[900px]:grid-cols-1 max-[900px]:gap-10;
+}
+
+.storyVisual {
+  @apply relative min-h-[540px] overflow-hidden rounded-[28px] bg-twt-pale-blue shadow-[0_25px_65px_rgba(3,26,61,0.14)] max-sm:min-h-[420px];
+}
+
+.storyImage {
+  @apply h-full w-full object-cover object-[center_25%];
+}
+
+.placeholderLabel {
+  @apply absolute bottom-5 left-5 rounded-md bg-twt-deep-navy/90 px-3 py-2 text-[9px] font-black tracking-[0.12em] text-white backdrop-blur-sm;
+}
+
+.storyCopy h2 {
+  @apply m-0 text-[clamp(2.3rem,4.2vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.05em] text-twt-deep-navy;
+}
+
+.storyCopy > p:not(.eyebrow) {
+  @apply mt-5 mb-0 max-w-[650px] text-[16px] leading-[1.75] font-medium text-twt-slate-gray;
+}
+
+.storyCopy blockquote {
+  @apply relative mt-8 mb-6 rounded-r-xl border-l-4 border-twt-primary-orange bg-[#fff8f3] py-6 pr-6 pl-16;
+}
+
+.storyCopy blockquote > span {
+  @apply absolute top-4 left-5 text-5xl leading-none font-black text-twt-primary-orange;
+}
+
+.storyCopy blockquote p {
+  @apply m-0 text-xl leading-[1.45] font-bold italic text-twt-medium-navy;
+}
+
+.storyCopy cite {
+  @apply mt-3 block text-right text-xs font-bold not-italic text-twt-deep-navy;
+}
+
+.storyLink,
+.benefitsLink {
+  @apply inline-flex items-center gap-2 text-sm font-black text-twt-medium-navy no-underline hover:text-twt-primary-orange;
+}
+
+/* Potential benefits ----------------------------------------------------- */
+
+.benefitsSection {
+  @apply border-y border-twt-light-gray bg-twt-soft-white py-20 max-sm:py-16;
+}
+
+.benefitsLayout {
+  @apply grid grid-cols-[320px_1fr] items-start gap-10 max-[1100px]:grid-cols-1;
+}
+
+.benefitsIntro {
+  @apply border-r border-twt-light-gray pr-10 max-[1100px]:border-r-0 max-[1100px]:border-b max-[1100px]:pb-8;
+}
+
+.benefitsIntro h2 {
+  @apply m-0 text-[clamp(2rem,3vw,2.8rem)] leading-[1.13] font-extrabold tracking-[-0.04em] text-twt-deep-navy;
+}
+
+.benefitsLink {
+  @apply mt-7;
+}
+
+.benefitsGroups {
+  @apply grid grid-cols-2 gap-4 max-sm:grid-cols-1;
+}
+
+.benefitGroup {
+  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-5 shadow-sm;
+}
+
+.benefitGroupIcon {
+  @apply grid size-12 shrink-0 place-items-center rounded-xl text-white;
+}
+
+.benefitGroupIcon svg {
+  @apply size-6;
+}
+
+.benefitGroup h3 {
+  @apply m-0 text-sm leading-[1.3] font-extrabold text-twt-deep-navy;
+}
+
+.benefitGroup ul {
+  @apply mt-3 mb-0 list-none p-0;
+}
+
+.benefitGroup li {
+  @apply mt-2 flex gap-2 text-[11px] leading-[1.4] font-medium text-twt-slate-gray;
+}
+
+.benefitGroup li svg {
+  @apply mt-0.5 size-3.5 shrink-0;
+}
+
+.orange .benefitGroupIcon {
+  @apply bg-twt-primary-orange;
+}
+.orange li svg {
+  @apply text-twt-primary-orange;
+}
+.blue .benefitGroupIcon {
+  @apply bg-twt-medium-navy;
+}
+.blue li svg {
+  @apply text-twt-medium-navy;
+}
+.green .benefitGroupIcon {
+  @apply bg-[#2e8147];
+}
+.green li svg {
+  @apply text-[#2e8147];
+}
+.gold .benefitGroupIcon {
+  @apply bg-[#d89500];
+}
+.gold li svg {
+  @apply text-[#d89500];
+}
+
+/* Credibility ------------------------------------------------------------ */
+
+.credibility {
+  @apply bg-twt-deep-navy py-12 text-white;
+}
+
+.credibilityTitle {
+  @apply mb-7 text-center text-[11px] font-black tracking-[0.15em];
+}
+
+.credibilityGrid {
+  @apply grid grid-cols-3 divide-x divide-[#4d607f] max-[900px]:grid-cols-1 max-[900px]:divide-x-0;
+}
+
+.credibilityItem {
+  @apply flex gap-4 px-8 py-3 first:pl-0 last:pr-0;
+  @apply max-[900px]:border-b max-[900px]:border-[#4d607f] max-[900px]:px-0 max-[900px]:py-5 max-[900px]:last:border-0;
+}
+
+.credibilityItem > span {
+  @apply grid size-12 shrink-0 place-items-center rounded-xl bg-twt-primary-orange;
+}
+
+.credibilityItem h3 {
+  @apply m-0 text-sm font-extrabold;
+}
+
+.credibilityItem p {
+  @apply mt-2 mb-0 text-[11px] leading-[1.5] text-white/70;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    @apply transition-none hover:translate-y-0;
+  }
+}

@@ -1,0 +1,309 @@
+﻿/* Complex explanatory diagrams for the How It Works page only. */
+.buildingDiagram {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 330px;
+  align-items: center;
+}
+.callouts {
+  z-index: 1;
+}
+.callouts p {
+  display: grid;
+  grid-template-columns: 33px 1fr;
+  margin: 8px 0;
+  padding: 7px;
+  border-right: 1px dotted #1d86c8;
+  color: #062a5e;
+}
+.callouts svg {
+  grid-row: span 2;
+  width: 24px;
+  color: #1d86c8;
+}
+.callouts b,
+.callouts span {
+  font-size: 9px;
+}
+.callouts span {
+  line-height: 1.3;
+  color: #536273;
+}
+.cutaway {
+  position: relative;
+  height: 280px;
+  border: 9px solid #aeb3b8;
+  border-top-width: 11px;
+  background: #f3eee7;
+  box-shadow: inset 0 0 0 6px #ddd3c6;
+}
+.roof {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  left: -10px;
+  height: 24px;
+  background: #737a81;
+  clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+}
+.room {
+  position: absolute;
+  inset: 30px 25px 25px 56px;
+  border: 5px solid #b8b7b4;
+  background: #ead6c2;
+}
+.window {
+  display: block;
+  width: 58px;
+  height: 80px;
+  margin: 24px;
+  border: 5px solid #fff;
+  background: #dceefa;
+}
+.sofa {
+  position: absolute;
+  right: 23px;
+  bottom: 20px;
+  width: 115px;
+  height: 45px;
+  border-radius: 8px 8px 0 0;
+  background: #b8a89b;
+}
+.wallLoop,
+.floorLoop {
+  position: absolute;
+  border: 3px solid #ff5a00;
+  border-radius: 9px;
+}
+.wallLoop {
+  top: 10px;
+  left: -38px;
+  width: 24px;
+  height: 170px;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 13px,
+    #ff5a00 14px 17px
+  );
+}
+.floorLoop {
+  right: 4px;
+  bottom: -24px;
+  left: 4px;
+  height: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 22px,
+    #1d86c8 23px 26px
+  );
+}
+.equipment {
+  position: absolute;
+  top: 128px;
+  left: 7px;
+  background: #6c7075;
+  padding: 7px;
+  color: #fff;
+}
+.radiatorIcon {
+  margin: 25px 0 8px;
+  font-size: 48px;
+  color: #ff5a00;
+}
+.roomIcon {
+  position: relative;
+  height: 75px;
+  margin: 21px 0 10px;
+  border: 2px solid #75849a;
+  border-top: 0;
+}
+.roomIcon::before {
+  position: absolute;
+  top: 16%;
+  left: 20%;
+  width: 60%;
+  height: 45%;
+  border: 2px solid #ff5a00;
+  border-bottom: 0;
+  content: "";
+}
+.roomIcon span {
+  position: absolute;
+  right: 13%;
+  bottom: 8px;
+  left: 13%;
+  height: 5px;
+  border-top: 2px solid #ff5a00;
+}
+.houseLoop {
+  position: relative;
+  display: grid;
+  height: 80px;
+  place-items: center;
+  color: #ff5a00;
+}
+.houseLoop svg:first-child {
+  width: 70px;
+  height: 70px;
+}
+.houseLoop svg:last-child {
+  position: absolute;
+  width: 42px;
+}
+.solar {
+  color: #399558;
+}
+.cool {
+  color: #2371d8;
+}
+.systemDiagram {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr 30px 1fr 30px 1.5fr;
+  gap: 7px;
+  align-items: center;
+  margin-top: 30px;
+  border: 1px solid #486188;
+  background: linear-gradient(135deg, #062a5e, #031a3d);
+  padding: 20px;
+}
+.sources,
+.systemNode,
+.storage {
+  display: flex;
+  min-height: 155px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #5d7aa8;
+  padding: 14px;
+  text-align: center;
+}
+.sources svg {
+  color: #ff5a00;
+}
+.sources span,
+.systemNode small,
+.storage small {
+  font-size: 10px;
+  color: #dce8f4;
+}
+.systemNode svg,
+.storage svg {
+  color: #42a9e8;
+}
+.systemNode b,
+.storage b,
+.zoneBuilding b {
+  font-size: 10px;
+}
+.systemArrow {
+  font-size: 25px;
+  text-align: center;
+  color: #ff5a00;
+}
+.zoneBuilding {
+  position: relative;
+  min-height: 190px;
+  border: 6px solid #aeb3b8;
+  background: #e7e1d9;
+  color: #031a3d;
+}
+.zoneRoof {
+  height: 20px;
+  background: #6b737a;
+  clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+}
+.zoneRoom {
+  position: absolute;
+  inset: 35px 22px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 3px solid #b9b5ad;
+  background: #faf8f5;
+  padding: 10px;
+}
+.zoneRoom small {
+  font-size: 9px;
+}
+.orangeLoop,
+.blueLoop {
+  position: absolute;
+  top: 20px;
+  right: 12px;
+  left: 12px;
+  height: 16px;
+  border: 3px solid #ff5a00;
+  border-radius: 50%;
+}
+.blueLoop {
+  top: 45px;
+  border-color: #42a9e8;
+}
+.returnLoop {
+  grid-column: 1/-1;
+  border-top: 2px solid #42a9e8;
+  padding-top: 10px;
+  color: #dce8f4;
+  text-align: center;
+  font-size: 11px;
+}
+.returnLoop span {
+  font-size: 22px;
+  color: #42a9e8;
+}
+.legend {
+  display: flex;
+  grid-column: 1/-1;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #dce8f4;
+  font-size: 9px;
+}
+.legend span {
+  width: 18px;
+  border-top: 3px solid #ff5a00;
+}
+.return {
+  border-color: #42a9e8 !important;
+}
+.signal {
+  border-top-style: dotted !important;
+  border-color: #42a9e8 !important;
+}
+@media (max-width: 900px) {
+  .buildingDiagram {
+    margin-top: 25px;
+  }
+  .systemDiagram {
+    grid-template-columns: 1fr;
+  }
+  .systemArrow {
+    transform: rotate(90deg);
+  }
+  .storage,
+  .returnLoop,
+  .legend {
+    grid-column: auto;
+  }
+}
+@media (max-width: 560px) {
+  .buildingDiagram {
+    grid-template-columns: 1fr;
+  }
+  .callouts {
+    display: none;
+  }
+  .cutaway {
+    height: 230px;
+  }
+  .systemDiagram {
+    padding: 12px;
+  }
+  .legend {
+    display: none;
+  }
+}

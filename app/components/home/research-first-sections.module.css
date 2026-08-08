@@ -1,0 +1,21 @@
+@reference "../../globals.css";
+
+.researchHero {
+  @apply relative overflow-hidden bg-twt-deep-navy px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,130px)] text-white;
+}
+
+.researchStructure {
+  @apply bg-twt-primary-white px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,132px)];
+}
+
+.researchEvidence {
+  @apply bg-twt-pale-blue px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,132px)];
+}
+
+.researchValidation {
+  @apply bg-twt-primary-white px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,124px)];
+}
+
+.researchCta {
+  @apply border-b border-white/10 bg-twt-deep-navy px-[clamp(24px,5vw,84px)] py-[clamp(76px,8vw,120px)] text-white;
+}

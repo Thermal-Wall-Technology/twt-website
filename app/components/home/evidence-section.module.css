@@ -1,0 +1,11 @@
+@reference "../../globals.css";
+
+.evidenceSection {
+  @apply relative isolate overflow-hidden px-[clamp(24px,5vw,84px)] py-[clamp(82px,8vw,136px)];
+  background: linear-gradient(
+    180deg,
+    var(--twt-primary-white) 0%,
+    var(--twt-pale-blue) 48%,
+    var(--twt-primary-white) 100%
+  );
+}

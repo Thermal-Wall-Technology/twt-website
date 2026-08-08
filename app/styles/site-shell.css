@@ -1,0 +1,161 @@
+.shell {
+  width: min(1440px, calc(100% - 48px));
+  margin: auto;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #031a3d;
+  color: #fff;
+}
+.site-header > .shell {
+  display: flex;
+  height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  font-weight: 900;
+  line-height: 0.95;
+  text-decoration: none;
+}
+.brand > b {
+  border: 2px solid #ff5a00;
+  padding: 8px 5px;
+  font-size: 14px;
+}
+.brand span {
+  font-size: 15px;
+}
+.brand small {
+  display: block;
+  margin-top: 5px;
+  color: #ff5a00;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+.site-header nav {
+  display: flex;
+  gap: 25px;
+}
+.site-header nav a {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 3px;
+  background: #ff5a00;
+  padding: 12px 17px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+.site-header details {
+  display: none;
+}
+.site-footer {
+  background: #031a3d;
+  padding: 35px 0;
+  color: #fff;
+}
+.site-footer > .shell {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  gap: 15px;
+}
+.site-footer p {
+  max-width: 440px;
+  margin: 0;
+  color: #dce8f8;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+.site-footer nav a,
+.site-footer > .shell > a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-footer small {
+  grid-column: 1 / -1;
+  border-top: 1px solid #455777;
+  padding-top: 11px;
+  color: #dce8f8;
+}
+@media (max-width: 900px) {
+  .site-header nav,
+  .header-cta {
+    display: none;
+  }
+  .site-header details {
+    display: block;
+    position: relative;
+  }
+  .site-header summary {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    font-weight: 800;
+  }
+  .site-header details nav {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    display: grid;
+    width: 230px;
+    gap: 0;
+    border: 1px solid #536273;
+    background: #031a3d;
+    padding: 10px;
+    color: #fff;
+  }
+  .site-header details nav a {
+    padding: 10px;
+  }
+  .site-footer > .shell {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .shell {
+    width: min(100% - 32px, 1440px);
+  }
+  .site-header > .shell {
+    height: 60px;
+  }
+  .site-footer > .shell {
+    gap: 17px;
+  }
+}
+
+.site-header.about-header {
+  background: #031a3d;
+  color: #fff;
+  border-color: #223c64;
+}
+.site-header.about-header .brand,
+.site-header.about-header nav a {
+  color: #fff;
+}

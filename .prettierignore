@@ -1,0 +1,8 @@
+node_modules
+.next
+package-lock.json
+tsconfig.tsbuildinfo
+.claude
+AGENTS.md
+CLAUDE.md
+public

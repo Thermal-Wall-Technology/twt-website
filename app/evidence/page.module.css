@@ -1,0 +1,637 @@
+@reference "../globals.css";
+
+/* Evidence overview */
+
+.evidenceSubnav {
+  position: sticky;
+  top: 62px;
+  z-index: 14;
+  background: #fff;
+  border-bottom: 1px solid #e8edf2;
+}
+.evidenceSubnav > div {
+  width: min(1240px, calc(100% - 40px));
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.evidenceSubnav a {
+  padding: 14px 0 12px;
+  color: #062a5e;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 900;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.evidenceSubnav a.active {
+  border-color: #ff5a00;
+}
+.evShell {
+  width: min(1360px, calc(100% - 64px));
+  margin: auto;
+}
+.evidenceHero {
+  background: #031a3d;
+  color: #fff;
+  padding: 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+.evidenceHero:after {
+  content: "";
+  position: absolute;
+  right: -10%;
+  bottom: -80%;
+  width: 75%;
+  height: 160%;
+  opacity: 0.22;
+  background: radial-gradient(
+    circle,
+    transparent 0 4px,
+    #1d86c8 5px 6px,
+    transparent 7px
+  );
+  background-size: 17px 17px;
+  border-radius: 50%;
+}
+.evidenceHero .heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.65fr;
+  gap: 70px;
+  position: relative;
+  z-index: 1;
+}
+.evLabel {
+  margin: 0 0 10px;
+  color: #ff5a00;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+}
+.evidencePage h1,
+.evidencePage h2 {
+  margin: 0;
+  color: #031a3d;
+  letter-spacing: -0.05em;
+  line-height: 1.06;
+  font-weight: 850;
+}
+.evidenceHero h1 {
+  font-size: 39px;
+  color: #fff;
+}
+.evidenceHero h1 span {
+  color: #ff5a00;
+}
+.evidenceHero > div > div > p:not(.evLabel) {
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 680px;
+  color: #edf6ff;
+  font-weight: 600;
+}
+.evidencePillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+.evidencePillars article {
+  border-right: 1px solid #365173;
+  padding-right: 13px;
+}
+.evidencePillars article:last-child {
+  border: 0;
+}
+.evidencePillars svg {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  padding: 9px;
+  background: #0a3f7a;
+  color: #dceeff;
+}
+.evidencePillars h3 {
+  font-size: 11px;
+  margin: 9px 0 5px;
+}
+.evidencePillars p {
+  font-size: 10px;
+  line-height: 1.4;
+  color: #dce8f4;
+  margin: 0;
+}
+.corePanel {
+  border: 1px solid #385275;
+  padding: 22px;
+  background: #0a315f99;
+}
+.corePanel > p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #fff;
+}
+.corePanel .evLabel {
+  font-size: 11px;
+}
+.evBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #0a3f7a;
+  color: #062a5e;
+  text-decoration: none;
+  padding: 12px 15px;
+  font-size: 11px;
+  font-weight: 900;
+  background: #fff;
+}
+.evBtn.primary,
+.corePanel .evBtn {
+  background: #062a5e;
+  color: #fff;
+  border-color: #b7cff0;
+}
+.evSection {
+  padding: 38px 0;
+  background: #fff;
+}
+.metricsLayout {
+  display: grid;
+  grid-template-columns: 235px 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+.metricsLayout h2,
+.modelGrid h2,
+.detailIntro h2 {
+  font-size: 25px;
+}
+.metricsLayout > div > p,
+.modelGrid > div > p,
+.detailIntro p {
+  font-size: 11px;
+  line-height: 1.55;
+  color: #536273;
+  font-weight: 600;
+}
+.metricsLayout .evBtn {
+  margin-top: 15px;
+}
+.metricCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.metricCards article {
+  border: 1px solid #e2e9f1;
+  text-align: center;
+  padding: 16px 12px;
+  min-height: 160px;
+}
+.metricCards svg {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #eef6ff;
+  color: #176cc8;
+}
+.metricCards small {
+  display: block;
+  font-size: 8px;
+  color: #062a5e;
+  font-weight: 900;
+  margin: 10px 0 8px;
+}
+.metricCards strong {
+  display: block;
+  color: #031a3d;
+  font-size: 23px;
+}
+.metricCards p {
+  font-size: 10px;
+  line-height: 1.35;
+  color: #536273;
+  margin: 8px 0;
+}
+.boundary {
+  max-width: 1360px;
+  width: calc(100% - 64px);
+  margin: 18px auto 0;
+  border: 1px solid #dbeafa;
+  background: #f6faff;
+  padding: 12px 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.boundary svg {
+  width: 21px;
+  color: #176cc8;
+  flex: none;
+}
+.boundary p {
+  font-size: 10px;
+  line-height: 1.4;
+  color: #062a5e;
+  margin: 0;
+  flex: 1;
+}
+.boundary a,
+.roadmapLine a {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: #0a3f7a;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.modelSection {
+  border-top: 1px solid #e8edf2;
+}
+.modelGrid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 28px;
+  align-items: start;
+}
+.resultList {
+  margin: 18px 0;
+}
+.resultList article {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+}
+.resultList svg {
+  width: 22px;
+  color: #27a152;
+  flex: none;
+}
+.resultList article:nth-child(2) svg,
+.resultList article:nth-child(3) svg {
+  color: #ff5a00;
+}
+.resultList b {
+  display: block;
+  color: #031a3d;
+  font-size: 11px;
+}
+.resultList span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #536273;
+  margin-top: 3px;
+}
+.chartCard {
+  border: 1px solid #e2e9f1;
+}
+.chartHead {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 18px 0;
+  color: #031a3d;
+}
+.chartHead b {
+  font-size: 11px;
+}
+.chartHead span {
+  font-size: 10px;
+  text-align: right;
+  font-weight: 800;
+}
+.chartCard svg {
+  width: 100%;
+  height: auto;
+  margin-top: 7px;
+}
+.chartKey {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 9px;
+  color: #062a5e;
+  padding: 0 18px;
+}
+.chartKey span {
+  width: 18px;
+  border-top: 3px solid #ff5a00;
+}
+.chartKey .blue {
+  border-color: #1d86c8;
+}
+.chartCard > p {
+  font-size: 9px;
+  color: #536273;
+  margin: 12px 18px;
+}
+.chartCard footer {
+  border-top: 1px solid #e8edf2;
+  padding: 10px 18px;
+  font-size: 9px;
+  line-height: 1.4;
+  color: #536273;
+}
+.chartCard footer a {
+  float: right;
+  color: #0a3f7a;
+  text-decoration: none;
+  font-weight: 900;
+}
+.coverage {
+  padding-top: 0;
+}
+.coverageGrid {
+  border: 1px solid #e2e9f1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 16px;
+}
+.coverageGrid article {
+  padding: 0 16px;
+  border-right: 1px solid #e2e9f1;
+}
+.coverageGrid article:last-child {
+  border: 0;
+}
+.coverageGrid h3 {
+  font-size: 11px;
+  color: #031a3d;
+  margin: 0 0 10px;
+}
+.coverageGrid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.coverageGrid li {
+  display: flex;
+  gap: 6px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: #334155;
+  margin: 7px 0;
+}
+.coverageGrid li svg {
+  width: 14px;
+  color: #29a259;
+  flex: none;
+}
+.coverageGrid article:last-child li svg {
+  color: #ff5a00;
+}
+.roadmapLine {
+  max-width: 1360px;
+  width: calc(100% - 64px);
+  margin: 0 auto;
+  border: 1px solid #e2e9f1;
+  border-top: 0;
+  padding: 10px 15px;
+  color: #062a5e;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+}
+.detailNav {
+  background: #fff;
+}
+.detailNav > .evShell {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 25px;
+}
+.detailCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.detailCards article {
+  border: 1px solid #bdcce0;
+  padding: 17px;
+  min-height: 156px;
+}
+.detailCards svg {
+  width: 28px;
+  color: #0a3f7a;
+}
+.detailCards h3 {
+  font-size: 12px;
+  color: #031a3d;
+}
+.detailCards p {
+  font-size: 10px;
+  line-height: 1.35;
+  color: #536273;
+}
+.detailCards a {
+  display: flex;
+  gap: 6px;
+  color: #0a3f7a;
+  font-size: 10px;
+  font-weight: 900;
+  text-decoration: none;
+}
+.evidenceFooterNote {
+  background: #f6faff;
+  border: 1px solid #dbeafa;
+  padding: 12px 0;
+}
+.evidenceFooterNote > .evShell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.evidenceFooterNote svg {
+  width: 20px;
+  color: #0a3f7a;
+}
+.evidenceFooterNote p {
+  margin: 0;
+  flex: 1;
+  color: #062a5e;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.evidenceFooterNote a {
+  font-size: 10px;
+  display: flex;
+  gap: 5px;
+  color: #0a3f7a;
+  text-decoration: none;
+  font-weight: 900;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .evidenceSubnav {
+    top: 60px;
+    overflow: auto;
+  }
+  .evidenceSubnav > div {
+    width: max-content;
+    padding: 0 20px;
+  }
+  .evidenceHero .heroGrid,
+  .modelGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .evidencePillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .metricsLayout {
+    grid-template-columns: 1fr;
+  }
+  .metricCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detailNav > .evShell {
+    grid-template-columns: 1fr;
+  }
+  .coverageGrid {
+    grid-template-columns: 1fr;
+  }
+  .coverageGrid article {
+    padding: 14px 0;
+    border-right: 0;
+    border-bottom: 1px solid #e2e9f1;
+  }
+  .coverageGrid article:last-child {
+    border: 0;
+  }
+  .detailCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .evShell {
+    width: min(100% - 32px, 1360px);
+  }
+  .evidenceHero {
+    padding: 35px 0;
+  }
+  .evidenceHero h1 {
+    font-size: 32px;
+  }
+  .evidencePillars {
+    gap: 14px;
+  }
+  .evidencePillars article {
+    border: 0;
+  }
+  .boundary,
+  .roadmapLine {
+    width: calc(100% - 32px);
+    align-items: flex-start;
+  }
+  .boundary a {
+    display: none;
+  }
+  .metricCards,
+  .detailCards {
+    grid-template-columns: 1fr;
+  }
+  .chartHead {
+    display: block;
+  }
+  .chartHead span {
+    text-align: left;
+    display: block;
+    margin-top: 5px;
+  }
+  .chartKey {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .chartCard footer a {
+    float: none;
+    display: flex;
+    margin-top: 5px;
+  }
+  .evidenceFooterNote > .evShell {
+    align-items: flex-start;
+  }
+  .evidenceFooterNote a {
+    display: none;
+  }
+}
+
+/* Tailwind compositions for standard Evidence layout primitives. Charts remain custom CSS above. */
+.evidenceSubnav {
+  @apply sticky top-[62px] z-[14] border-b border-twt-light-gray bg-white;
+}
+
+.evShell {
+  @apply mx-auto w-full max-w-[1360px];
+}
+
+.evidenceHero {
+  @apply relative overflow-hidden bg-twt-deep-navy py-12 text-white;
+}
+
+.evidencePillars {
+  @apply mt-[25px] grid grid-cols-4 gap-5;
+}
+
+.corePanel {
+  @apply border border-[#385275] bg-[#0a315f99] p-[22px];
+}
+
+.evBtn {
+  @apply inline-flex items-center gap-2.5 border border-twt-medium-navy bg-white px-[15px] py-3 text-[11px] font-black text-twt-primary-navy no-underline;
+}
+
+.evSection {
+  @apply border-t border-twt-light-gray px-0 py-[38px];
+}
+
+.metricsLayout {
+  @apply grid grid-cols-[235px_1fr] items-stretch gap-[25px];
+}
+
+.metricCards {
+  @apply grid grid-cols-4 gap-3;
+}
+
+.boundary {
+  @apply mx-auto mt-[18px] flex w-full max-w-[1360px] items-center gap-2.5 border border-[#dbeafa] bg-[#f6faff] px-[15px] py-3;
+}
+
+.modelGrid {
+  @apply grid grid-cols-[0.72fr_1.28fr] items-start gap-7;
+}
+
+.resultList {
+  @apply my-[18px];
+}
+
+.chartCard {
+  @apply border border-twt-light-gray;
+}
+
+.coverageGrid {
+  @apply grid grid-cols-3 border border-twt-light-gray p-4;
+}
+
+.roadmapLine {
+  @apply mx-auto flex w-full max-w-[1360px] justify-between border border-twt-light-gray border-t-0 px-[15px] py-2.5 text-[10px] font-extrabold text-twt-primary-navy;
+}
+
+.detailNav {
+  @apply bg-white;
+}
+
+.detailCards {
+  @apply grid grid-cols-4 gap-3;
+}
+
+.evidenceFooterNote {
+  @apply border border-[#dbeafa] bg-[#f6faff] py-3;
+}

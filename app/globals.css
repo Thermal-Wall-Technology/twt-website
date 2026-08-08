@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "./styles/twt-tokens.css";
 @import "./styles/twt-engineering.css";
-@import "./styles/home.css";
+@import "./styles/site-shell.css";
 
 body {
   margin: 0;
@@ -10,4 +10,6 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}

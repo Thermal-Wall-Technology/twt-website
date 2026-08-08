@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./research-first-sections.module.css";
 import {
   ArrowRight,
   Building2,
@@ -10,17 +11,13 @@ import {
 } from "lucide-react";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="twt-spec-label text-twt-primary-orange">
-      {children}
-    </p>
-  );
+  return <p className="twt-spec-label text-twt-primary-orange">{children}</p>;
 }
 
 export function CoreAndMechanismPreview() {
   return (
     <>
-      <section className="twt-technical-grid-dark relative overflow-hidden bg-twt-deep-navy px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,130px)] text-white">
+      <section className={`${styles.researchHero} twt-technical-grid-dark`}>
         <div className="mx-auto grid max-w-[1480px] gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <Eyebrow>Core operating principle</Eyebrow>
@@ -29,8 +26,8 @@ export function CoreAndMechanismPreview() {
             </h2>
             <p className="mt-7 max-w-[760px] text-[clamp(18px,1.45vw,23px)] leading-[1.6] font-medium text-twt-blue-white">
               TWT proposes to distribute hydronic heating and cooling through
-              concrete walls and floors, using the structure&apos;s thermal mass and
-              surface area instead of relying on a small, high-temperature
+              concrete walls and floors, using the structure&apos;s thermal mass
+              and surface area instead of relying on a small, high-temperature
               heat-emitting surface.
             </p>
             <p className="mt-6 max-w-[720px] border-l-2 border-twt-primary-orange pl-5 text-base leading-7 font-semibold text-twt-blue-white">
@@ -83,7 +80,7 @@ export function CoreAndMechanismPreview() {
         </div>
       </section>
 
-      <section className="bg-twt-primary-white px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,132px)]">
+      <section className={styles.researchStructure}>
         <div className="mx-auto grid max-w-[1480px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <div className="twt-technical-grid relative min-h-[410px] overflow-hidden border border-twt-light-gray bg-twt-pale-blue p-8 sm:min-h-[500px]">
@@ -132,11 +129,11 @@ export function CoreAndMechanismPreview() {
               <p className="mt-2 leading-7 font-medium text-twt-slate-gray">
                 Insulated concrete forms are relevant construction precedent.
                 TWT&apos;s blocks add lowered end and center webs so concrete
-                can flow diagonally as well as vertically, and a
-                pin-and-channel system locks exterior insulation and the
-                finish fa&ccedil;ade in place. The research question is how
-                that additional, integrated hydronic thermal-mass system
-                performs&mdash;not whether ICFs work.
+                can flow diagonally as well as vertically, and a pin-and-channel
+                system locks exterior insulation and the finish fa&ccedil;ade in
+                place. The research question is how that additional, integrated
+                hydronic thermal-mass system performs&mdash;not whether ICFs
+                work.
               </p>
             </div>
             <Link
@@ -159,7 +156,7 @@ export function CoreAndMechanismPreview() {
 export function ResearchAndCredibilityPreview() {
   return (
     <>
-      <section className="bg-twt-pale-blue px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,132px)]">
+      <section className={styles.researchEvidence}>
         <div className="mx-auto max-w-[1480px]">
           <Eyebrow>Research & validation</Eyebrow>
           <div className="mt-5 grid gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
@@ -220,7 +217,7 @@ export function ResearchAndCredibilityPreview() {
         </div>
       </section>
 
-      <section className="bg-twt-primary-white px-[clamp(24px,5vw,84px)] py-[clamp(78px,8vw,124px)]">
+      <section className={styles.researchValidation}>
         <div className="mx-auto grid max-w-[1480px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <Eyebrow>Credentials & IP</Eyebrow>
@@ -228,10 +225,9 @@ export function ResearchAndCredibilityPreview() {
               Protect the idea. Test the outcome.
             </h2>
             <p className="mt-6 max-w-[665px] text-[clamp(18px,1.35vw,22px)] leading-[1.62] font-medium text-twt-slate-gray">
-              TWT has a documented inventor history and an active patent
-              record covering the block geometry and insulation-attachment
-              system. That establishes origin and ownership&mdash;not
-              performance.
+              TWT has a documented inventor history and an active patent record
+              covering the block geometry and insulation-attachment system. That
+              establishes origin and ownership&mdash;not performance.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -246,8 +242,8 @@ export function ResearchAndCredibilityPreview() {
               </h3>
               <p className="mt-3 leading-7 font-medium text-twt-slate-gray">
                 United States, Canadian, and UK patent records identify the
-                protected building-system concept, active in the U.S.
-                through 2039.
+                protected building-system concept, active in the U.S. through
+                2039.
               </p>
             </article>
             <article className="border-l-4 border-twt-blueprint-blue bg-twt-soft-white p-8">
@@ -262,8 +258,7 @@ export function ResearchAndCredibilityPreview() {
               <p className="mt-3 leading-7 font-medium text-twt-slate-gray">
                 The patents cover the block&apos;s diagonal concrete flow and
                 pin-and-channel insulation system&mdash;not the thermal or
-                efficiency outcomes, which the evidence page tracks
-                separately.
+                efficiency outcomes, which the evidence page tracks separately.
               </p>
             </article>
           </div>
@@ -275,7 +270,7 @@ export function ResearchAndCredibilityPreview() {
 
 export function FutureApplicationsPreview() {
   return (
-    <section className="border-b border-white/10 bg-twt-deep-navy px-[clamp(24px,5vw,84px)] py-[clamp(76px,8vw,120px)] text-white">
+    <section className={styles.researchCta}>
       <div className="mx-auto grid max-w-[1480px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <Eyebrow>Future potential</Eyebrow>
