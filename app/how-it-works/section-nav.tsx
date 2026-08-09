@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useEffect, useState } from "react";
+import styles from "./section-nav.module.css";
 
 const sections = [
   ["overview", "Overview"],
@@ -30,14 +31,11 @@ export function SectionNav() {
     return () => observer.disconnect();
   }, []);
   return (
-    <nav
-      className="sticky top-[62px] z-15 overflow-x-auto border-b border-twt-light-gray bg-white max-[900px]:top-[60px]"
-      aria-label="How it works sections"
-    >
-      <div className="mx-auto flex w-[min(760px,calc(100%-32px))] justify-between gap-[22px] max-[900px]:w-max max-[900px]:gap-[25px] max-[900px]:px-5">
+    <nav className={styles.sectionNav} aria-label="How it works sections">
+      <div>
         {sections.map(([id, label]) => (
           <a
-            className={`whitespace-nowrap border-b-2 py-[15px] pb-3 text-[11px] font-extrabold text-twt-primary-navy no-underline ${active === id ? "border-twt-primary-orange" : "border-transparent"}`}
+            className={active === id ? styles.active : undefined}
             href={`#${id}`}
             key={id}
           >

@@ -1,0 +1,414 @@
+@reference "../globals.css";
+
+.shell {
+  @apply mx-auto w-[min(1320px,calc(100%-48px))] max-sm:w-[min(1320px,calc(100%-32px))];
+}
+
+.eyebrow {
+  @apply mt-0 mb-3 text-[11px] font-black tracking-[0.15em] text-twt-primary-orange;
+}
+
+.button {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border px-5 py-3 text-sm font-extrabold no-underline shadow-sm transition-all duration-200;
+  @apply hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-twt-focus max-sm:w-full;
+}
+
+.buttonPrimary {
+  @apply border-twt-primary-orange bg-twt-primary-orange text-white shadow-[0_10px_25px_rgba(255,90,0,0.2)] hover:bg-[#e94f00];
+}
+
+.buttonSecondary {
+  @apply border-twt-light-gray bg-white text-twt-primary-navy hover:border-twt-primary-navy;
+}
+
+.hero {
+  @apply overflow-hidden border-b border-twt-light-gray bg-[linear-gradient(120deg,#fff_48%,#f2f8fd)] py-20 max-sm:py-14;
+}
+
+.heroGrid {
+  @apply grid grid-cols-[1.04fr_0.96fr] items-center gap-20 max-[1000px]:grid-cols-1 max-[1000px]:gap-10;
+}
+
+.heroCopy h1 {
+  @apply m-0 text-[clamp(3.2rem,5.1vw,5.2rem)] leading-[0.98] font-extrabold tracking-[-0.065em] text-twt-deep-navy;
+  @apply max-sm:text-[clamp(2.7rem,12vw,3.8rem)];
+}
+
+.heroCopy > p:not(.eyebrow) {
+  @apply mt-6 mb-0 max-w-[680px] text-[17px] leading-[1.7] font-medium text-twt-slate-gray max-sm:text-base;
+}
+
+.heroActions {
+  @apply mt-8 flex flex-wrap gap-3 max-sm:grid;
+}
+
+.principleCard {
+  @apply rounded-[28px] border border-twt-light-gray bg-white p-7 shadow-[0_28px_75px_rgba(3,26,61,0.12)] max-sm:p-5;
+}
+
+.principleCard > p {
+  @apply mt-0 mb-2 text-[10px] font-black tracking-[0.15em] text-twt-primary-orange;
+}
+
+.principleCard > h2 {
+  @apply m-0 text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.08] font-extrabold tracking-[-0.04em] text-twt-deep-navy;
+}
+
+.principleSteps {
+  @apply mt-7 grid gap-3;
+}
+
+.principleSteps article {
+  @apply grid grid-cols-[30px_42px_1fr] items-center gap-3 rounded-xl border border-twt-light-gray bg-twt-soft-white p-3;
+}
+
+.principleSteps article > span {
+  @apply text-[9px] font-black text-twt-primary-orange;
+}
+
+.principleSteps article > svg {
+  @apply size-9 rounded-lg bg-twt-deep-navy p-2 text-white;
+}
+
+.principleSteps b {
+  @apply block text-sm font-extrabold text-twt-deep-navy;
+}
+
+.principleSteps small {
+  @apply mt-1 block text-[11px] font-medium text-twt-slate-gray;
+}
+
+.temperatureBadge {
+  @apply mt-4 flex items-center gap-4 rounded-xl bg-twt-deep-navy px-5 py-4 text-white;
+}
+
+.temperatureBadge > svg {
+  @apply size-8 text-twt-primary-orange;
+}
+
+.temperatureBadge strong {
+  @apply block text-3xl leading-none font-extrabold;
+}
+
+.temperatureBadge span {
+  @apply mt-1 block text-[10px] font-semibold text-white/65;
+}
+
+.assemblySection,
+.whySection,
+.energySection,
+.modesSection,
+.systemSection {
+  @apply py-24 max-sm:py-16;
+}
+
+.sectionIntro {
+  @apply flex items-end justify-between gap-12 max-[900px]:grid;
+}
+
+.sectionIntro > div {
+  @apply max-w-[720px];
+}
+
+.sectionIntro h2,
+.systemIntro h2,
+.ctaLayout h2 {
+  @apply m-0 text-[clamp(2.4rem,4vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.05em] text-twt-deep-navy;
+}
+
+.sectionIntro > p {
+  @apply mb-1 max-w-[500px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
+}
+
+.assemblyVisual {
+  @apply mx-auto mt-12 max-w-[1160px] overflow-hidden rounded-[28px] border border-twt-light-gray bg-white p-3 shadow-[0_24px_65px_rgba(3,26,61,0.1)] max-sm:rounded-2xl;
+}
+
+.assemblyVisual img,
+.systemVisual img,
+.comparisonImage img {
+  @apply h-auto w-full object-contain;
+}
+
+.assemblyVisual img {
+  @apply rounded-2xl max-sm:rounded-xl;
+}
+
+.assemblyCards {
+  @apply mt-6 grid grid-cols-4 gap-4 max-[1000px]:grid-cols-2 max-sm:grid-cols-1;
+}
+
+.assemblyCards article {
+  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-5 shadow-sm;
+}
+
+.assemblyIcon {
+  @apply grid size-11 shrink-0 place-items-center rounded-xl bg-twt-pale-orange text-twt-primary-orange;
+}
+
+.assemblyIcon svg {
+  @apply size-5;
+}
+
+.assemblyCards b {
+  @apply text-[9px] font-black text-twt-primary-orange;
+}
+
+.assemblyCards h3 {
+  @apply mt-1 mb-2 text-sm leading-[1.3] font-extrabold text-twt-deep-navy;
+}
+
+.assemblyCards p {
+  @apply m-0 text-xs leading-[1.55] font-medium text-twt-slate-gray;
+}
+
+.constructionDetail {
+  @apply mx-auto mt-6 max-w-[1100px] rounded-xl border border-[#dce8f4] bg-[#f7fbff] px-5 py-4;
+}
+
+.constructionDetail summary {
+  @apply flex cursor-pointer list-none items-center justify-between gap-6 max-[700px]:grid;
+}
+
+.constructionDetail summary > span {
+  @apply flex items-start gap-3;
+}
+
+.constructionDetail summary svg {
+  @apply size-5 shrink-0 text-twt-blueprint-blue;
+}
+
+.constructionDetail summary b {
+  @apply block text-sm text-twt-deep-navy;
+}
+
+.constructionDetail summary small {
+  @apply mt-1 block max-w-[720px] text-xs leading-[1.5] text-twt-slate-gray;
+}
+
+.constructionDetail summary em {
+  @apply flex shrink-0 items-center gap-2 text-xs font-extrabold not-italic text-twt-blueprint-blue;
+}
+
+.constructionDetail > p {
+  @apply mb-0 border-t border-[#dce8f4] pt-4 text-xs leading-[1.6] text-twt-slate-gray;
+}
+
+.whySection {
+  @apply border-y border-twt-light-gray bg-twt-soft-white;
+}
+
+.comparisonGrid {
+  @apply relative mt-12 grid grid-cols-[1fr_64px_1fr] items-center max-[850px]:grid-cols-1;
+}
+
+.comparisonCard {
+  @apply overflow-hidden rounded-[24px] border border-twt-light-gray bg-white shadow-[0_18px_55px_rgba(3,26,61,0.08)];
+}
+
+.comparisonImage {
+  @apply aspect-[1.42] overflow-hidden bg-white;
+}
+
+.comparisonImage img {
+  @apply h-full object-cover;
+}
+
+.comparisonCopy {
+  @apply border-t border-twt-light-gray p-6;
+}
+
+.comparisonCopy > span {
+  @apply text-[9px] font-black tracking-[0.12em] text-twt-primary-orange;
+}
+
+.comparisonCopy h3 {
+  @apply mt-2 mb-4 text-xl leading-[1.2] font-extrabold text-twt-deep-navy;
+}
+
+.comparisonCopy strong {
+  @apply text-3xl leading-none font-extrabold text-twt-primary-orange;
+}
+
+.comparisonCard:last-child .comparisonCopy strong {
+  @apply text-twt-medium-navy;
+}
+
+.comparisonCopy p {
+  @apply mt-2 mb-0 text-xs font-medium text-twt-slate-gray;
+}
+
+.vsBadge {
+  @apply z-2 grid size-16 place-items-center justify-self-center rounded-full bg-twt-deep-navy text-sm font-black text-white ring-8 ring-twt-soft-white;
+  @apply max-[850px]:my-[-8px] max-[850px]:size-14;
+}
+
+.whyBenefits {
+  @apply mt-6 grid grid-cols-3 gap-4 max-[800px]:grid-cols-1;
+}
+
+.whyBenefits article {
+  @apply flex gap-3 rounded-xl border border-twt-light-gray bg-white p-5;
+}
+
+.whyBenefits article > svg {
+  @apply mt-0.5 size-5 shrink-0 text-[#30a55b];
+}
+
+.whyBenefits h3 {
+  @apply m-0 text-sm font-extrabold text-twt-deep-navy;
+}
+
+.whyBenefits p {
+  @apply mt-1 mb-0 text-xs leading-[1.5] font-medium text-twt-slate-gray;
+}
+
+.energySection {
+  @apply bg-white;
+}
+
+.energyFlow {
+  @apply mt-12 grid grid-cols-5 gap-4 max-[1050px]:grid-cols-3 max-[700px]:grid-cols-1;
+}
+
+.energyFlow article {
+  @apply relative rounded-2xl border border-twt-light-gray bg-white p-5 shadow-sm;
+}
+
+.energyTopline {
+  @apply flex items-center justify-between;
+}
+
+.energyTopline span {
+  @apply grid size-11 place-items-center rounded-xl bg-twt-deep-navy text-white;
+}
+
+.energyTopline svg {
+  @apply size-5;
+}
+
+.energyTopline b {
+  @apply text-[10px] text-twt-primary-orange;
+}
+
+.energyFlow h3 {
+  @apply mt-5 mb-2 text-base leading-[1.25] font-extrabold text-twt-deep-navy;
+}
+
+.energyFlow p {
+  @apply m-0 text-xs leading-[1.55] font-medium text-twt-slate-gray;
+}
+
+.energyFlow article > svg {
+  @apply absolute top-1/2 -right-[27px] z-1 size-5 -translate-y-1/2 text-twt-primary-orange max-[1050px]:hidden;
+}
+
+.modesSection {
+  @apply border-y border-twt-light-gray bg-[#f8fbfe];
+}
+
+.modeGrid {
+  @apply mt-12 grid grid-cols-3 gap-5 max-[800px]:grid-cols-1;
+}
+
+.modeGrid article {
+  @apply rounded-2xl border border-twt-light-gray bg-white p-6 shadow-sm;
+}
+
+.modeIcon {
+  @apply grid size-13 place-items-center rounded-xl;
+}
+
+.modeIcon svg {
+  @apply size-6;
+}
+
+.warm .modeIcon {
+  @apply bg-twt-pale-orange text-twt-primary-orange;
+}
+
+.solar .modeIcon {
+  @apply bg-[#edf8ef] text-[#399558];
+}
+
+.cool .modeIcon {
+  @apply bg-[#edf5ff] text-[#2371d8];
+}
+
+.modeGrid h3 {
+  @apply mt-5 mb-2 text-xl font-extrabold text-twt-deep-navy;
+}
+
+.modeGrid article > p {
+  @apply mt-0 min-h-[48px] text-sm leading-[1.55] font-medium text-twt-slate-gray;
+}
+
+.modeGrid ul {
+  @apply mt-6 mb-0 list-none border-t border-twt-light-gray p-0 pt-4;
+}
+
+.modeGrid li {
+  @apply mt-3 flex gap-2 text-xs font-medium text-twt-slate-gray;
+}
+
+.modeGrid li svg {
+  @apply size-4 shrink-0 text-[#30a55b];
+}
+
+.dewPointNote {
+  @apply mt-5 flex items-start gap-3 rounded-xl border border-[#dce8f4] bg-white p-4 text-xs leading-[1.55] font-medium text-twt-slate-gray;
+}
+
+.dewPointNote svg {
+  @apply size-5 shrink-0 text-twt-blueprint-blue;
+}
+
+.systemSection {
+  @apply bg-twt-deep-navy text-white;
+}
+
+.systemIntro {
+  @apply grid grid-cols-[1fr_0.8fr] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-6;
+}
+
+.systemIntro h2 {
+  @apply max-w-[760px] text-white;
+}
+
+.systemIntro > div:last-child p {
+  @apply mt-0 mb-3 text-sm leading-[1.65] font-medium text-white/70;
+}
+
+.systemVisual {
+  @apply mt-12 overflow-hidden rounded-[24px] border border-white/15 bg-white p-3 shadow-[0_30px_80px_rgba(0,0,0,0.22)];
+}
+
+.systemVisual img {
+  @apply rounded-2xl;
+}
+
+.systemSection blockquote {
+  @apply mx-auto mt-10 mb-0 max-w-[900px] border-l-4 border-twt-primary-orange py-2 pl-6 text-xl leading-[1.55] font-bold text-white;
+}
+
+.ctaSection {
+  @apply bg-[#fff4ed] py-14;
+}
+
+.ctaLayout {
+  @apply flex items-center justify-between gap-10 max-[1000px]:grid;
+}
+
+.ctaLayout h2 {
+  @apply text-[clamp(2rem,3vw,2.8rem)];
+}
+
+.ctaActions {
+  @apply flex flex-wrap justify-end gap-3 max-[1000px]:justify-start max-sm:grid;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    @apply transition-none hover:translate-y-0;
+  }
+}

@@ -1,0 +1,396 @@
+@reference "../globals.css";
+
+.shell {
+  @apply mx-auto w-[min(1240px,calc(100%-48px))] max-sm:w-[min(1240px,calc(100%-32px))];
+}
+
+.eyebrow {
+  @apply mt-0 mb-3 text-[11px] font-black tracking-[0.15em] text-twt-primary-orange;
+}
+
+.button {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border px-5 py-3 text-sm font-extrabold no-underline transition-all duration-200;
+  @apply hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-twt-focus max-sm:w-full;
+}
+
+.buttonPrimary {
+  @apply border-twt-primary-orange bg-twt-primary-orange text-white shadow-[0_10px_25px_rgba(255,90,0,0.2)] hover:bg-[#e94f00];
+}
+
+.buttonSecondary {
+  @apply border-twt-light-gray bg-white text-twt-primary-navy shadow-sm hover:border-twt-primary-navy;
+}
+
+.hero {
+  @apply relative overflow-hidden border-b border-twt-light-gray bg-[#f8fbfe] pt-20 pb-10 max-sm:pt-12;
+}
+
+.heroBackdrop {
+  @apply pointer-events-none object-cover opacity-65 max-sm:opacity-10;
+}
+
+.hero::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(248,251,254,0.3),rgba(248,251,254,0.88)_45%,rgba(248,251,254,0.2))];
+}
+
+.heroGrid {
+  @apply relative z-1 grid min-h-[570px] grid-cols-[1.15fr_0.85fr] items-center gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-10;
+}
+
+.heroCopy h1 {
+  @apply m-0 text-[clamp(3.2rem,4.7vw,4.7rem)] leading-[0.98] font-extrabold tracking-[-0.065em] text-twt-deep-navy;
+  @apply max-sm:text-[clamp(2.7rem,13vw,4rem)];
+}
+
+.heroCopy h1 span {
+  @apply block;
+}
+
+.heroCopy h1 span:last-child {
+  @apply text-twt-primary-orange;
+}
+
+.heroBody {
+  @apply mt-6 mb-0 max-w-[650px] text-[17px] leading-[1.7] font-medium text-twt-slate-gray max-sm:text-base;
+}
+
+.heroActions {
+  @apply mt-8 flex flex-wrap gap-3 max-sm:grid;
+}
+
+.founderCard {
+  @apply overflow-hidden rounded-[28px] border border-white bg-white p-3 shadow-[0_30px_80px_rgba(3,26,61,0.16)] max-[900px]:mx-auto max-[900px]:w-full max-[900px]:max-w-[560px];
+}
+
+.founderImageWrap {
+  @apply relative min-h-[460px] overflow-hidden rounded-2xl bg-twt-pale-blue max-sm:min-h-[390px];
+}
+
+.founderImage {
+  @apply object-cover object-[center_22%];
+}
+
+.founderCaption {
+  @apply px-4 py-4;
+}
+
+.founderCaption p {
+  @apply m-0 text-[10px] font-black tracking-[0.15em] text-twt-primary-orange;
+}
+
+.founderCaption h2 {
+  @apply mt-1 mb-1 text-xl font-extrabold text-twt-deep-navy;
+}
+
+.founderCaption span {
+  @apply text-xs font-medium text-twt-slate-gray;
+}
+
+.proofGrid {
+  @apply relative z-1 mt-10 grid grid-cols-3 divide-x divide-twt-light-gray rounded-2xl border border-twt-light-gray bg-white p-3 shadow-[0_18px_55px_rgba(3,26,61,0.07)];
+  @apply max-[800px]:grid-cols-1 max-[800px]:divide-x-0;
+}
+
+.proofGrid article {
+  @apply flex items-start gap-4 px-6 py-5 max-[800px]:border-b max-[800px]:border-twt-light-gray max-[800px]:last:border-b-0 max-sm:px-3;
+}
+
+.proofIcon {
+  @apply grid size-11 shrink-0 place-items-center rounded-xl bg-twt-deep-navy text-white;
+}
+
+.proofIcon svg {
+  @apply size-5;
+}
+
+.proofGrid b {
+  @apply text-[10px] font-black text-twt-primary-orange;
+}
+
+.proofGrid p {
+  @apply mt-1 mb-0 text-[13px] leading-[1.5] font-bold text-twt-deep-navy;
+}
+
+.storySection,
+.assemblySection,
+.inventorSection,
+.patentSection,
+.analysisSection {
+  @apply py-24 max-sm:py-16;
+}
+
+.storyGrid {
+  @apply grid grid-cols-[0.82fr_1.18fr] items-start gap-20 max-[1000px]:grid-cols-1 max-[1000px]:gap-12;
+}
+
+.storyVisual {
+  @apply sticky top-28 h-[650px] overflow-hidden rounded-[28px] border border-twt-light-gray bg-white shadow-[0_25px_65px_rgba(3,26,61,0.12)];
+  @apply max-[1000px]:relative max-[1000px]:top-auto max-[1000px]:h-[480px] max-sm:h-[360px];
+}
+
+.storyImage {
+  @apply h-full w-full object-cover object-left-bottom;
+}
+
+.storyVisualLabel {
+  @apply absolute right-6 bottom-6 left-6 z-2 rounded-xl bg-twt-deep-navy/92 px-5 py-4 text-white shadow-xl backdrop-blur-sm;
+}
+
+.storyVisualLabel span {
+  @apply text-[9px] font-black tracking-[0.15em] text-twt-primary-orange;
+}
+
+.storyVisualLabel strong {
+  @apply mt-1 block text-lg leading-tight;
+}
+
+.storyCopy h2,
+.sectionIntro h2,
+.inventorCopy h2,
+.patentGrid h2 {
+  @apply m-0 text-[clamp(2.4rem,4vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.05em] text-twt-deep-navy;
+}
+
+.storyBody {
+  @apply mt-7 text-[16px] leading-[1.75] font-medium text-twt-slate-gray;
+}
+
+.storyBody p {
+  @apply mt-0 mb-5;
+}
+
+.storyCopy blockquote {
+  @apply relative mt-9 mb-0 rounded-2xl border border-[#ffd7c1] bg-[#fff8f3] px-7 py-7 pl-20;
+}
+
+.storyCopy blockquote > svg {
+  @apply absolute top-7 left-6 size-9 fill-twt-primary-orange text-twt-primary-orange;
+}
+
+.storyCopy blockquote > p {
+  @apply m-0 text-xl leading-[1.5] font-bold italic text-twt-medium-navy;
+}
+
+.storyCopy blockquote footer {
+  @apply mt-5 flex flex-col text-xs text-twt-deep-navy;
+}
+
+.storyCopy blockquote footer span {
+  @apply mt-1 text-twt-slate-gray;
+}
+
+.timelineSection {
+  @apply border-y border-twt-light-gray bg-twt-soft-white py-20 max-sm:py-16;
+}
+
+.sectionIntro {
+  @apply flex items-end justify-between gap-12 max-[900px]:grid;
+}
+
+.sectionIntro > div {
+  @apply max-w-[700px];
+}
+
+.sectionIntro > p {
+  @apply mb-1 max-w-[440px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
+}
+
+.timelineGrid {
+  @apply mt-12 grid grid-cols-3 gap-4 max-[900px]:grid-cols-2 max-sm:grid-cols-1;
+}
+
+.timelineGrid article {
+  @apply rounded-2xl border border-twt-light-gray bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1;
+}
+
+.timelineTopline {
+  @apply flex items-center justify-between;
+}
+
+.timelineTopline span {
+  @apply grid size-11 place-items-center rounded-xl bg-twt-deep-navy text-white;
+}
+
+.timelineTopline svg {
+  @apply size-5;
+}
+
+.timelineTopline b {
+  @apply text-xs text-twt-primary-orange;
+}
+
+.timelineGrid h3 {
+  @apply mt-5 mb-2 text-lg font-extrabold text-twt-deep-navy;
+}
+
+.timelineGrid p {
+  @apply m-0 text-[13px] leading-[1.6] font-medium text-twt-slate-gray;
+}
+
+.assemblySection {
+  @apply bg-white;
+}
+
+.assemblyGrid {
+  @apply mt-12 grid grid-cols-[1.18fr_0.82fr] items-center gap-10 max-[1000px]:grid-cols-1;
+}
+
+.assemblyImageWrap {
+  @apply overflow-hidden rounded-2xl border border-twt-light-gray bg-white p-3 shadow-[0_18px_55px_rgba(3,26,61,0.08)];
+}
+
+.assemblyImage {
+  @apply h-auto w-full rounded-xl object-contain;
+}
+
+.assemblyCards {
+  @apply grid gap-3;
+}
+
+.assemblyCards article {
+  @apply flex items-start gap-4 rounded-xl border border-twt-light-gray bg-twt-soft-white p-4;
+}
+
+.assemblyCards article > span {
+  @apply grid size-9 shrink-0 place-items-center rounded-full bg-twt-primary-orange text-[10px] font-black text-white;
+}
+
+.assemblyCards h3 {
+  @apply m-0 text-sm font-extrabold text-twt-deep-navy;
+}
+
+.assemblyCards p {
+  @apply mt-1 mb-0 text-xs leading-[1.55] font-medium text-twt-slate-gray;
+}
+
+.inventorSection {
+  @apply border-y border-twt-light-gray bg-[#f8fbfe];
+}
+
+.inventorGrid {
+  @apply grid grid-cols-[0.85fr_1.15fr] items-center gap-20 max-[900px]:grid-cols-1 max-[900px]:gap-10;
+}
+
+.inventorImageWrap {
+  @apply relative min-h-[520px] overflow-hidden rounded-[28px] border border-twt-light-gray bg-white shadow-[0_25px_65px_rgba(3,26,61,0.1)] max-sm:min-h-[360px];
+}
+
+.inventorImage {
+  @apply object-cover;
+}
+
+.inventorLead {
+  @apply mt-6 text-[16px] leading-[1.75] font-medium text-twt-slate-gray;
+}
+
+.inventorCards {
+  @apply mt-8 grid gap-3;
+}
+
+.inventorCards article {
+  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-4;
+}
+
+.inventorCards article > svg {
+  @apply mt-0.5 size-5 shrink-0 text-twt-primary-orange;
+}
+
+.inventorCards h3 {
+  @apply m-0 text-sm font-extrabold text-twt-deep-navy;
+}
+
+.inventorCards p {
+  @apply mt-1 mb-0 text-xs leading-[1.5] font-medium text-twt-slate-gray;
+}
+
+.patentGrid {
+  @apply grid grid-cols-[0.72fr_1.28fr] items-center gap-16 max-[900px]:grid-cols-1;
+}
+
+.patentGrid > div:first-child > p:not(.eyebrow) {
+  @apply mt-5 mb-7 text-sm leading-[1.65] font-medium text-twt-slate-gray;
+}
+
+.patentCards {
+  @apply grid grid-cols-3 gap-4 max-[700px]:grid-cols-1;
+}
+
+.patentCards article {
+  @apply relative rounded-2xl border border-twt-light-gray bg-white p-6 shadow-[0_12px_35px_rgba(3,26,61,0.06)];
+}
+
+.patentCards article > span {
+  @apply text-3xl;
+}
+
+.patentCards h3 {
+  @apply mt-4 mb-1 text-base font-extrabold text-twt-deep-navy;
+}
+
+.patentCards p {
+  @apply m-0 text-[11px] text-twt-slate-gray;
+}
+
+.patentCards b {
+  @apply mt-1 block text-xs text-twt-primary-navy;
+}
+
+.patentCards em {
+  @apply absolute top-5 right-5 rounded-full bg-[#eaf8ef] px-2.5 py-1 text-[9px] font-black not-italic text-[#267a45];
+}
+
+.analysisSection {
+  @apply border-t border-twt-light-gray bg-twt-pale-blue;
+}
+
+.analysisFlow {
+  @apply mt-12 grid grid-cols-[1fr_120px_1fr] items-stretch gap-5 max-[800px]:grid-cols-1;
+}
+
+.analysisFlow article {
+  @apply rounded-2xl border border-[#d7e5f0] bg-white p-7 shadow-sm;
+}
+
+.analysisFlow article > span {
+  @apply grid size-9 place-items-center rounded-full bg-twt-primary-orange text-[10px] font-black text-white;
+}
+
+.analysisFlow h3 {
+  @apply mt-5 mb-4 text-xl font-extrabold text-twt-deep-navy;
+}
+
+.analysisFlow ul {
+  @apply m-0 list-none p-0;
+}
+
+.analysisFlow li {
+  @apply mt-3 flex gap-2 text-[13px] leading-[1.5] font-medium text-twt-slate-gray;
+}
+
+.analysisFlow li svg {
+  @apply mt-0.5 size-4 shrink-0 text-[#278d55];
+}
+
+.analysisArrow {
+  @apply flex flex-col items-center justify-center gap-2 text-twt-primary-orange max-[800px]:py-2;
+}
+
+.analysisArrow svg {
+  @apply size-8 max-[800px]:rotate-90;
+}
+
+.analysisArrow small {
+  @apply text-center text-[9px] font-black tracking-[0.12em] text-twt-slate-gray uppercase;
+}
+
+.analysisAction {
+  @apply mt-8 flex justify-center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .timelineGrid article {
+    @apply transition-none hover:translate-y-0;
+  }
+}

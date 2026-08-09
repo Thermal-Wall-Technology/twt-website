@@ -6,6 +6,7 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
+
 export const aboutContent = {
   hero: {
     eyebrow: "ABOUT THERMAL WALL TECHNOLOGY",

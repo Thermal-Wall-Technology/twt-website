@@ -1,0 +1,22 @@
+@reference "../globals.css";
+
+.sectionNav {
+  @apply sticky top-[62px] z-15 overflow-x-auto border-b border-twt-light-gray bg-white/95 backdrop-blur-md max-[900px]:top-[60px];
+  scrollbar-width: none;
+}
+
+.sectionNav::-webkit-scrollbar {
+  display: none;
+}
+
+.sectionNav > div {
+  @apply mx-auto flex w-[min(880px,calc(100%-48px))] min-w-max justify-between gap-8 max-[900px]:w-max max-[900px]:px-5;
+}
+
+.sectionNav a {
+  @apply border-b-2 border-transparent py-4 text-[10px] font-black whitespace-nowrap text-twt-primary-navy no-underline;
+}
+
+.sectionNav a.active {
+  @apply border-twt-primary-orange;
+}

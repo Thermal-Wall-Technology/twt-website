@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -26,7 +27,7 @@ const metrics = [
   [
     Thermometer,
     "MODELED OPERATING RANGE",
-    "65ï¿½75ï¿½F",
+    "65–75°F",
     "Low-temperature wall operation used throughout TWT system modeling.",
   ],
   [
@@ -104,7 +105,7 @@ function Chart() {
       <div className={styles.chartHead}>
         <b>Interior surface temperature over time</b>
         <span>
-          0ï¿½F outdoor / 72ï¿½F indoor
+          0°F outdoor / 72°F indoor
           <br />6 hours of solar input
         </span>
       </div>
@@ -117,7 +118,7 @@ function Chart() {
         <rect x="334" y="30" width="255" height="205" fill="#f3f8ff" />
         <path d="M56 30V235H590M56 157H590" stroke="#7b91ad" fill="none" />
         <text x="13" y="160" fontSize="11" fill="#1d86c8">
-          72ï¿½F
+          72°F
         </text>
         <text x="100" y="258" fontSize="11" fill="#ff5a00">
           Solar charging period
@@ -217,12 +218,22 @@ export default function Evidence() {
             </div>
           </div>
           <aside className={styles.corePanel}>
+            <div className={styles.coreVisual}>
+              <Image
+                src="/evidence/twt-wall.png"
+                alt="Concrete thermal wall with embedded hydronic tubing and exterior insulation"
+                width={1600}
+                height={1067}
+                sizes="(max-width: 900px) 100vw, 34vw"
+                loading="eager"
+              />
+            </div>
             <Label>Core finding</Label>
             <p>
               A transient heat-flow model was independently developed by the
               University of Southern Indiana to evaluate the core TWT wall
-              principle. Under a severe winter scenarioï¿½0ï¿½F outdoors, 72ï¿½F
-              indoors, and six hours of modeled solar inputï¿½the
+              principle. Under a severe winter scenario—0°F outdoors, 72°F
+              indoors, and six hours of modeled solar input—the
               exterior-insulated wall delivered stored heat to the room for
               approximately five hours after sunset, while the conventional
               two-sided insulated wall did not.
@@ -308,8 +319,8 @@ export default function Evidence() {
                   <b>Bottom line</b>
                   <span>
                     Insulation placement determines whether the concrete merely
-                    contains thermal massï¿½or actively stores and delivers
-                    energy to the room.
+                    contains thermal mass—or actively stores and delivers energy
+                    to the room.
                   </span>
                 </div>
               </article>
@@ -335,7 +346,7 @@ export default function Evidence() {
               {[
                 "Wall thermal storage and delivery",
                 "One-sided versus two-sided insulation placement",
-                "Response under the defined 0ï¿½F / 72ï¿½F scenario",
+                "Response under the defined 0°F / 72°F scenario",
                 "Six-hour modeled solar loading",
                 "Relevant heat-flux agreement of approximately 2%",
               ].map((x) => (
@@ -350,7 +361,7 @@ export default function Evidence() {
             <h3>What founder-developed modeling addresses</h3>
             <ul>
               {[
-                "Modeled 65ï¿½75ï¿½F operating range",
+                "Modeled 65–75°F operating range",
                 "Wall and floor system scenarios",
                 "Controls, equipment, and climate configurations",
                 "Potential system integration pathways",
@@ -422,7 +433,7 @@ export default function Evidence() {
                 [
                   ShieldCheck,
                   "Assumptions & boundaries",
-                  "Scenario definitions, limitations, and whatï¿½s not included.",
+                  "Scenario definitions, limitations, and what’s not included.",
                   "View assumptions",
                 ],
                 [
