@@ -207,7 +207,7 @@
 }
 
 .modelGrid {
-  @apply grid grid-cols-[0.78fr_1.22fr] items-start gap-12 max-[1050px]:grid-cols-1;
+  @apply grid grid-cols-[0.72fr_1.28fr] items-start gap-12 max-[1050px]:grid-cols-1;
 }
 
 .resultList {
@@ -236,43 +236,196 @@
 }
 
 .chartCard {
-  @apply min-w-0 overflow-x-auto rounded-2xl border border-twt-light-gray bg-white shadow-[0_18px_55px_rgba(3,26,61,0.08)];
+  @apply m-0 min-w-0 overflow-hidden rounded-[22px] border border-[#dbe6f2] bg-white shadow-[0_24px_70px_rgba(3,26,61,0.12)];
 }
 
-.chartHead {
-  @apply sticky left-0 flex min-w-[620px] items-start justify-between gap-6 px-6 pt-6 text-twt-deep-navy;
+.chartIntro {
+  @apply flex items-end justify-between gap-6 px-6 pt-6 pb-4 max-sm:block max-sm:px-4 max-sm:pt-5;
 }
 
-.chartHead b {
-  @apply text-sm font-extrabold;
+.chartIntro span,
+.comfortLabel {
+  @apply mb-1 block text-[9px] font-black tracking-[0.12em] text-twt-primary-orange uppercase;
 }
 
-.chartHead span {
-  @apply text-right text-[10px] leading-[1.45] font-bold text-twt-slate-gray;
+.chartIntro strong {
+  @apply block text-xl leading-[1.2] font-extrabold text-twt-deep-navy max-sm:text-lg;
 }
 
-.chartCard > svg {
-  @apply h-auto min-w-[620px] w-full;
+.chartIntro p {
+  @apply m-0 max-w-[220px] text-right text-[10px] leading-[1.5] font-bold text-twt-slate-gray max-sm:mt-2 max-sm:max-w-none max-sm:text-left;
 }
 
-.chartKey {
-  @apply flex min-w-[620px] flex-wrap items-center justify-end gap-2 px-6 text-[9px] font-bold text-twt-primary-navy;
+.chartLegend {
+  @apply flex flex-wrap gap-x-5 gap-y-2 border-y border-twt-light-gray px-6 py-3 text-[10px] font-bold text-twt-primary-navy max-sm:px-4;
 }
 
-.chartKey span {
-  @apply w-5 border-t-[3px] border-twt-primary-orange;
+.chartLegend span {
+  @apply inline-flex items-center gap-2;
 }
 
-.chartKey .blue {
-  @apply border-twt-blueprint-blue;
+.chartLegend span::before {
+  content: "";
+  @apply h-2.5 w-2.5 rounded-full bg-twt-primary-orange;
 }
 
-.chartCard > p {
-  @apply sticky left-0 mx-6 my-4 max-w-[650px] text-[10px] leading-[1.5] text-twt-slate-gray;
+.chartLegend .icfLegend::before {
+  @apply bg-twt-blueprint-blue;
+}
+
+.chartImageFrame {
+  @apply overflow-x-auto overflow-y-hidden bg-[#f8fbff];
+  scrollbar-width: thin;
+  scrollbar-color: #9eb4ca transparent;
+}
+
+.chartImageFrame img {
+  @apply block h-auto w-full;
+}
+
+.chartInsight {
+  @apply m-0 border-t border-twt-light-gray bg-[#fff8f3] px-6 py-4 max-sm:px-4;
+}
+
+.chartInsight > div {
+  @apply flex items-center gap-3;
+}
+
+.chartInsight svg {
+  @apply size-9 shrink-0 rounded-xl bg-white p-2 text-twt-primary-orange shadow-sm;
+}
+
+.chartInsight p {
+  @apply m-0 text-xs leading-[1.45] font-medium text-twt-primary-navy;
+}
+
+.chartInsight b {
+  @apply mr-1 font-extrabold text-twt-primary-orange;
 }
 
 .chartCard footer {
-  @apply sticky left-0 border-t border-twt-light-gray px-6 py-4 text-[10px] leading-[1.5] text-twt-slate-gray;
+  @apply border-t border-twt-light-gray px-5 py-4 text-[10px] leading-[1.5] text-twt-slate-gray max-sm:px-3;
+}
+
+/* Thermal cycle -------------------------------------------------------- */
+
+.thermalCycle {
+  @apply bg-white;
+}
+
+.cycleIntro {
+  @apply mb-10 grid grid-cols-[1fr_0.85fr] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-5;
+}
+
+.cycleIntro p {
+  @apply m-0 text-sm leading-[1.7] font-medium text-twt-slate-gray;
+}
+
+.cycleGrid {
+  @apply grid grid-cols-[repeat(3,minmax(0,1fr))_0.85fr] gap-4 max-[1180px]:grid-cols-2 max-[680px]:grid-cols-1;
+}
+
+.phaseCard,
+.comfortPanel {
+  @apply relative min-w-0 overflow-visible rounded-2xl border border-twt-light-gray bg-white p-5 shadow-[0_14px_42px_rgba(3,26,61,0.06)];
+}
+
+.phaseCard {
+  @apply flex flex-col;
+}
+
+.phaseCard:nth-child(1) {
+  @apply border-[#f6dfc5] bg-[#fffdf9];
+}
+
+.phaseCard:nth-child(2) {
+  @apply border-[#f4dfc9] bg-[#fffaf5];
+}
+
+.phaseCard:nth-child(3) {
+  @apply border-[#d7e6fa] bg-[#f8fbff];
+}
+
+.phaseHead {
+  @apply flex items-center gap-2;
+}
+
+.phaseHead > span {
+  @apply grid size-7 place-items-center rounded-full bg-twt-primary-orange text-xs font-black text-white;
+}
+
+.phaseHead > svg {
+  @apply size-5 text-[#f5ad16];
+}
+
+.phaseCard:nth-child(2) .phaseHead > svg {
+  @apply text-twt-primary-orange;
+}
+
+.phaseCard:nth-child(3) .phaseHead > svg {
+  @apply text-twt-blueprint-blue;
+}
+
+.phaseHead small {
+  @apply ml-auto text-[9px] font-black tracking-[0.12em] text-twt-primary-orange uppercase;
+}
+
+.phaseCard:nth-child(3) .phaseHead > span {
+  @apply bg-twt-blueprint-blue;
+}
+
+.phaseCard:nth-child(3) .phaseHead small {
+  @apply text-twt-blueprint-blue;
+}
+
+.phaseCard h3,
+.comfortPanel h3 {
+  @apply mt-5 mb-2 text-xl leading-[1.18] font-extrabold tracking-[-0.035em] text-twt-deep-navy;
+}
+
+.phaseCard > p,
+.comfortPanel > p:not(.comfortLabel) {
+  @apply mt-0 mb-5 text-xs leading-[1.6] font-medium text-twt-slate-gray;
+}
+
+.phaseVisual {
+  @apply relative mt-auto aspect-[1.18/1] overflow-hidden rounded-xl border border-white/70 bg-[#edf3f8];
+}
+
+.phaseVisual img {
+  @apply h-full w-full object-cover;
+}
+
+.phaseArrow {
+  @apply absolute top-1/2 -right-8 z-2 size-12 -translate-y-1/2 rounded-full border border-twt-light-gray bg-white p-3 text-twt-slate-gray shadow-[0_8px_18px_rgba(3,26,61,0.12)] max-[1180px]:hidden;
+}
+
+.comfortPanel {
+  @apply border-[#d9e6f9] bg-[#fbfdff] p-6;
+}
+
+.comfortIcon {
+  @apply grid size-14 place-items-center rounded-full bg-twt-deep-navy text-twt-light-orange;
+}
+
+.comfortIcon svg {
+  @apply size-7;
+}
+
+.comfortPanel .comfortLabel {
+  @apply mt-6;
+}
+
+.comfortPanel ul {
+  @apply m-0 grid list-none gap-3 p-0;
+}
+
+.comfortPanel li {
+  @apply flex gap-2 text-xs leading-[1.4] font-bold text-twt-primary-navy;
+}
+
+.comfortPanel li svg {
+  @apply size-4 shrink-0 text-twt-primary-orange;
 }
 
 .chartCard footer a {
@@ -282,17 +435,57 @@
 /* Scope and boundaries -------------------------------------------------- */
 
 .coverage {
-  @apply bg-white pt-0;
+  @apply bg-white;
+}
+
+.coverageIntro {
+  @apply mb-10 grid grid-cols-[1fr_0.85fr] items-end gap-16 max-[850px]:grid-cols-1 max-[850px]:gap-5;
+}
+
+.coverageIntro p {
+  @apply m-0 text-sm leading-[1.7] font-medium text-twt-slate-gray;
 }
 
 .coverageGrid {
-  @apply grid grid-cols-3 overflow-hidden rounded-2xl border border-twt-light-gray bg-white shadow-[0_14px_40px_rgba(3,26,61,0.05)];
+  @apply grid grid-cols-3 gap-4;
   @apply max-[900px]:grid-cols-1;
 }
 
 .coverageGrid article {
-  @apply border-r border-twt-light-gray p-7 last:border-r-0;
-  @apply max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:last:border-b-0;
+  @apply relative overflow-hidden rounded-2xl border border-twt-light-gray bg-white p-7 shadow-[0_14px_42px_rgba(3,26,61,0.06)];
+}
+
+.coverageGrid article::before {
+  content: "";
+  @apply absolute inset-x-0 top-0 h-1 bg-[#27a152];
+}
+
+.coverageGrid article:nth-child(2)::before {
+  @apply bg-twt-blueprint-blue;
+}
+
+.coverageGrid article:nth-child(3)::before {
+  @apply bg-twt-primary-orange;
+}
+
+.scopeHead {
+  @apply mb-6 flex items-center justify-between gap-4;
+}
+
+.scopeHead span {
+  @apply text-3xl leading-none font-black tracking-[-0.05em] text-[#d9e4ef];
+}
+
+.scopeHead small {
+  @apply rounded-full bg-[#edf9f1] px-3 py-1.5 text-[8px] font-black tracking-[0.1em] text-[#208144];
+}
+
+.coverageGrid article:nth-child(2) .scopeHead small {
+  @apply bg-[#eef6ff] text-[#176cc8];
+}
+
+.coverageGrid article:nth-child(3) .scopeHead small {
+  @apply bg-[#fff3eb] text-[#d94900];
 }
 
 .coverageGrid h3 {
@@ -316,8 +509,16 @@
 }
 
 .roadmapLine {
-  @apply mx-auto flex w-[min(1320px,calc(100%-48px))] items-center justify-between gap-5 rounded-b-xl border border-t-0 border-twt-light-gray bg-twt-soft-white px-5 py-4 text-xs font-extrabold text-twt-primary-navy;
-  @apply max-sm:w-[min(1320px,calc(100%-32px))] max-sm:flex-wrap;
+  @apply mx-auto mt-5 flex w-[min(1320px,calc(100%-48px))] items-center justify-between gap-5 rounded-xl border border-[#dbeafa] bg-[#f6faff] px-6 py-5 text-xs font-extrabold text-twt-primary-navy;
+  @apply max-sm:w-[min(1320px,calc(100%-32px))] max-sm:items-start max-sm:px-5;
+}
+
+.roadmapLine > span {
+  @apply flex items-center gap-4 font-medium max-sm:block;
+}
+
+.roadmapLine b {
+  @apply rounded-full bg-twt-primary-navy px-3 py-1.5 text-[9px] font-black tracking-[0.08em] whitespace-nowrap text-white uppercase max-sm:mb-2 max-sm:inline-block;
 }
 
 /* Detail navigation ----------------------------------------------------- */
@@ -378,14 +579,6 @@
   @apply m-0 flex-1 text-xs leading-[1.55] font-medium text-twt-primary-navy;
 }
 
-@media (min-width: 1060px) {
-  .chartCard > svg,
-  .chartHead,
-  .chartKey {
-    min-width: 0;
-  }
-}
-
 @media (max-width: 640px) {
   .corePanel {
     @apply rounded-2xl;
@@ -398,6 +591,14 @@
 
   .evidenceFooterNote > .evShell {
     @apply flex-wrap;
+  }
+
+  .roadmapLine {
+    @apply flex-col;
+  }
+
+  .chartImageFrame img {
+    @apply min-w-[720px];
   }
 }
 

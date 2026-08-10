@@ -1,0 +1,492 @@
+@reference "../../globals.css";
+
+.modelPage {
+  @apply overflow-x-clip bg-[#f8fbff] text-twt-primary-navy;
+}
+
+.shell {
+  @apply mx-auto w-[min(1320px,calc(100%-48px))] max-sm:w-[min(1320px,calc(100%-32px))];
+}
+
+.subnav {
+  @apply sticky top-[62px] z-10 overflow-x-auto border-b border-[#dbe6f2] bg-white/95 backdrop-blur-md max-[900px]:top-[60px];
+  scrollbar-width: none;
+}
+
+.subnav::-webkit-scrollbar {
+  display: none;
+}
+
+.subnav > div {
+  @apply mx-auto flex w-[min(1320px,calc(100%-48px))] min-w-max justify-between gap-8 max-[900px]:w-max max-[900px]:px-5;
+}
+
+.subnav a {
+  @apply border-b-[3px] border-transparent px-1 py-4 text-[10px] font-black whitespace-nowrap text-twt-primary-navy no-underline;
+}
+
+.subnav a.active {
+  @apply border-twt-primary-orange;
+}
+
+.hero,
+.scenarioSection,
+.costSection,
+.tableSection,
+.assumptionSection {
+  @apply py-14 max-sm:py-11;
+}
+
+.hero {
+  @apply bg-white;
+}
+
+.backLink {
+  @apply mb-8 inline-flex items-center gap-1 text-xs font-extrabold text-twt-medium-navy no-underline;
+}
+
+.heroGrid {
+  @apply grid grid-cols-[1fr_0.96fr] gap-12 max-[980px]:grid-cols-1 max-[980px]:gap-8;
+}
+
+.eyebrow {
+  @apply mt-0 mb-3 text-[10px] font-black tracking-[0.12em] text-twt-primary-orange;
+}
+
+.hero h1,
+.sectionHeading h2,
+.tableHeading h2,
+.cycleHeading h2,
+.exploreCard h2 {
+  @apply m-0 font-extrabold tracking-[-0.05em] text-twt-deep-navy;
+}
+
+.hero h1 {
+  @apply max-w-[660px] text-[clamp(2.7rem,4.8vw,5rem)] leading-[0.98];
+}
+
+.lede {
+  @apply mt-5 mb-0 max-w-[600px] text-lg leading-[1.5] font-medium text-twt-primary-navy max-sm:text-base;
+}
+
+.context {
+  @apply mt-3 mb-0 max-w-[600px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
+}
+
+.importantNote {
+  @apply mt-6 flex max-w-[620px] gap-3 rounded-xl border border-[#ffd2b6] bg-[#fff7f1] p-4;
+}
+
+.importantNote svg {
+  @apply mt-0.5 size-6 shrink-0 text-twt-primary-orange;
+}
+
+.importantNote p {
+  @apply m-0 text-xs leading-[1.55] font-medium text-twt-primary-navy;
+}
+
+.readPanel,
+.scenarioCard,
+.costBoard,
+.tableCard,
+.whyStrip,
+.assumptionCard,
+.exploreCard,
+.boundaryNote {
+  @apply rounded-2xl border border-[#dbe6f2] bg-white shadow-[0_12px_35px_rgba(3,26,61,0.05)];
+}
+
+.readPanel {
+  @apply overflow-hidden p-6 max-sm:p-5;
+}
+
+.readPanelHead {
+  @apply flex items-start justify-between gap-5 border-b border-[#e4edf6] pb-5;
+}
+
+.readPanelHead h2 {
+  @apply m-0 text-sm font-extrabold text-twt-deep-navy;
+}
+
+.readPanelHead span {
+  @apply inline-flex shrink-0 items-center gap-1 rounded-full border border-[#8ba6d1] px-3 py-1.5 text-[9px] font-bold text-twt-primary-navy;
+}
+
+.readPanelHead span svg {
+  @apply size-3.5;
+}
+
+.readPanel ul,
+.scenarioCard ul,
+.comfortPanel ul,
+.assumptionCard ul {
+  @apply m-0 list-none p-0;
+}
+
+.readPanel li {
+  @apply mt-5 flex gap-3;
+}
+
+.readIcon {
+  @apply grid size-10 shrink-0 place-items-center rounded-xl border border-[#cfe0f6] bg-[#f2f7ff] text-twt-blueprint-blue;
+}
+
+.readIcon svg {
+  @apply size-5;
+}
+
+.readPanel li b {
+  @apply text-xs font-extrabold text-twt-deep-navy;
+}
+
+.readPanel li p {
+  @apply mt-1 mb-0 text-xs leading-[1.45] font-medium text-twt-slate-gray;
+}
+
+.scenarioSection {
+  @apply border-y border-[#e3edf7] bg-[#f8fbff];
+}
+
+.scenarioGrid {
+  @apply grid grid-cols-3 gap-4 max-[1060px]:grid-cols-2 max-[700px]:grid-cols-1;
+}
+
+.scenarioCard {
+  @apply overflow-hidden p-5;
+}
+
+.scenarioHead {
+  @apply flex items-start gap-4;
+}
+
+.scenarioHead > span {
+  @apply grid size-11 shrink-0 place-items-center rounded-full bg-twt-deep-navy text-xl font-black text-white;
+}
+
+.twt .scenarioHead > span {
+  @apply bg-twt-blueprint-blue;
+}
+
+.solar .scenarioHead > span {
+  @apply bg-twt-primary-orange;
+}
+
+.scenarioHead h2 {
+  @apply mt-1 mb-1 text-base leading-[1.2] font-extrabold text-twt-deep-navy;
+}
+
+.scenarioHead small {
+  @apply inline-block rounded-full border border-[#afc9ea] px-2.5 py-1 text-[8px] font-black text-twt-medium-navy;
+}
+
+.scenarioCard > p {
+  @apply mt-4 mb-4 min-h-[38px] text-xs leading-[1.5] font-medium text-twt-slate-gray;
+}
+
+.scenarioImage {
+  @apply relative aspect-[1.5/0.88] overflow-hidden rounded-xl border border-[#e1eaf4] bg-[#f6f9fd];
+}
+
+.scenarioImage img {
+  @apply h-full w-full object-contain p-2;
+}
+
+.solarBadge {
+  @apply absolute top-3 right-3 inline-flex items-center gap-1 rounded-full border border-[#fec791] bg-white px-2 py-1 text-[8px] font-black text-twt-primary-orange shadow-sm;
+}
+
+.solarBadge svg {
+  @apply size-3;
+}
+
+.scenarioCard ul {
+  @apply mt-5 grid gap-2;
+}
+
+.scenarioCard li {
+  @apply flex gap-2 text-[11px] leading-[1.4] font-medium text-twt-primary-navy;
+}
+
+.scenarioCard li svg {
+  @apply mt-0.5 size-3.5 shrink-0 text-twt-primary-orange;
+}
+
+.costSection {
+  @apply bg-white;
+}
+
+.sectionHeading,
+.tableHeading {
+  @apply mb-6 flex items-end justify-between gap-8 max-sm:block;
+}
+
+.sectionHeading h2,
+.tableHeading h2 {
+  @apply text-[clamp(1.85rem,3vw,3rem)] leading-[1.03];
+}
+
+.sectionHeading > p,
+.tableHeading > p {
+  @apply m-0 text-right text-xs font-medium text-twt-slate-gray max-sm:mt-3 max-sm:text-left;
+}
+
+.costBoard {
+  @apply grid grid-cols-[1fr_265px] gap-8 p-6 max-[850px]:grid-cols-1 max-sm:p-4;
+}
+
+.costBars {
+  @apply min-w-0;
+}
+
+.costRow {
+  @apply grid grid-cols-[180px_1fr_94px] items-center gap-4 py-3 max-[620px]:grid-cols-[1fr_78px] max-[620px]:gap-x-3;
+}
+
+.costName {
+  @apply flex items-center gap-3;
+}
+
+.costName > span {
+  @apply grid size-9 shrink-0 place-items-center rounded-full border border-[#99afd0] text-twt-primary-navy;
+}
+
+.costName svg {
+  @apply size-4;
+}
+
+.optimizedIcon {
+  @apply border-twt-blueprint-blue! text-twt-blueprint-blue!;
+}
+
+.solarIcon {
+  @apply border-twt-primary-orange! text-twt-primary-orange!;
+}
+
+.costName b,
+.costName small {
+  @apply block;
+}
+
+.costName b {
+  @apply text-[11px] font-extrabold text-twt-primary-navy;
+}
+
+.costName small {
+  @apply mt-0.5 text-[9px] font-medium text-twt-slate-gray;
+}
+
+.barTrack {
+  @apply h-8 overflow-hidden rounded-sm bg-[#eef3f9] max-[620px]:col-span-2 max-[620px]:col-start-1 max-[620px]:order-3;
+}
+
+.barTrack span {
+  @apply block h-full bg-twt-deep-navy;
+}
+
+.optimizedBar {
+  @apply w-[13%]! bg-twt-blueprint-blue!;
+}
+
+.solarBar {
+  @apply w-[5%]! bg-twt-primary-orange!;
+}
+
+.costRow > b {
+  @apply text-right text-sm font-extrabold text-twt-deep-navy;
+}
+
+.optimizedValue {
+  @apply text-twt-blueprint-blue!;
+}
+
+.solarValue {
+  @apply text-twt-primary-orange!;
+}
+
+.axis {
+  @apply ml-[196px] mt-2 flex justify-between border-t border-[#9eb4ce] pt-2 text-[9px] font-medium text-twt-slate-gray max-[620px]:ml-0;
+}
+
+.axisLabel {
+  @apply mb-0 ml-[196px] mt-2 text-center text-[10px] font-medium text-twt-primary-navy max-[620px]:ml-0;
+}
+
+.savingsCard {
+  @apply rounded-xl border border-[#bfe2d0] bg-[#f6fcf8] p-5;
+}
+
+.savingsCard p {
+  @apply m-0 text-[10px] font-black tracking-[0.1em] text-[#236e4b] uppercase;
+}
+
+.savingsCard > span,
+.savingsCard b,
+.savingsCard small {
+  @apply mt-1 block text-[10px] font-medium text-twt-slate-gray;
+}
+
+.savingsCard strong {
+  @apply mt-4 block text-2xl leading-none font-extrabold tracking-[-0.04em] text-[#147342];
+}
+
+.savingsCard b {
+  @apply text-[10px] font-extrabold text-[#147342];
+}
+
+.savingsCard .solarSaving {
+  @apply text-twt-primary-orange;
+}
+
+.savingsCard .solarText {
+  @apply text-twt-primary-orange;
+}
+
+.savingsCard small {
+  @apply mt-5 border-t border-[#cde8d9] pt-4 leading-[1.45] text-twt-primary-navy;
+}
+
+.tableSection {
+  @apply border-y border-[#e3edf7] bg-[#f8fbff];
+}
+
+.tableCard {
+  @apply overflow-hidden p-6 max-sm:p-4;
+}
+
+.tableWrap {
+  @apply overflow-x-auto rounded-xl border border-[#ccd9e8];
+}
+
+.tableWrap table {
+  @apply w-full min-w-[940px] border-collapse text-center text-[11px];
+}
+
+.tableWrap th {
+  @apply border-r border-white/20 bg-twt-deep-navy px-3 py-3 leading-[1.3] font-extrabold text-white last:border-r-0;
+}
+
+.tableWrap td {
+  @apply border-r border-t border-[#dbe6f2] px-3 py-2 font-medium text-twt-primary-navy last:border-r-0;
+}
+
+.tableWrap tr:nth-child(even) td {
+  @apply bg-[#f8fbff];
+}
+
+.tableWrap .savingsCell {
+  @apply font-extrabold text-[#147342];
+}
+
+.assumptionSection {
+  @apply bg-white;
+}
+
+.whyStrip {
+  @apply grid grid-cols-[175px_repeat(3,minmax(0,1fr))] items-stretch p-5 max-[1000px]:grid-cols-2 max-[680px]:grid-cols-1;
+}
+
+.whyStrip > div,
+.whyStrip article {
+  @apply flex items-center gap-3 border-r border-[#dce6f1] px-5 first:pl-0 last:border-r-0 max-[1000px]:border-b max-[1000px]:py-4 max-[1000px]:last:border-b-0 max-[1000px]:even:border-r-0 max-[680px]:border-r-0;
+}
+
+.whyStrip h2 {
+  @apply m-0 text-base leading-[1.2] font-extrabold text-twt-deep-navy;
+}
+
+.whyStrip article svg {
+  @apply size-10 shrink-0 rounded-full border border-[#9db3d1] p-2 text-twt-primary-navy;
+}
+
+.whyStrip p {
+  @apply m-0 text-[11px] leading-[1.45] font-medium text-twt-slate-gray;
+}
+
+.whyStrip b {
+  @apply mr-1 font-extrabold text-twt-primary-navy;
+}
+
+.bottomGrid {
+  @apply mt-5 grid grid-cols-2 gap-5 max-[820px]:grid-cols-1;
+}
+
+.assumptionCard,
+.exploreCard {
+  @apply p-6 max-sm:p-5;
+}
+
+.assumptionCard ul {
+  @apply mt-5 grid grid-cols-2 gap-x-6 gap-y-3 max-sm:grid-cols-1;
+}
+
+.assumptionCard li {
+  @apply flex gap-3 text-[11px] leading-[1.4] font-medium text-twt-primary-navy;
+}
+
+.assumptionCard li svg {
+  @apply size-4 shrink-0 text-twt-medium-navy;
+}
+
+.assumptionCard > a,
+.exploreCard a,
+.boundaryNote a {
+  @apply mt-5 inline-flex items-center gap-2 text-xs font-extrabold text-twt-medium-navy no-underline;
+}
+
+.assumptionCard > a svg,
+.exploreCard a svg,
+.boundaryNote a svg {
+  @apply size-4;
+}
+
+.exploreCard {
+  @apply bg-[#f7fbff];
+}
+
+.exploreCard h2 {
+  @apply text-2xl leading-[1.08];
+}
+
+.exploreCard > p:not(.eyebrow) {
+  @apply mt-3 mb-0 text-xs leading-[1.6] font-medium text-twt-slate-gray;
+}
+
+.exploreCard > div {
+  @apply mt-5 flex flex-wrap gap-3;
+}
+
+.exploreCard a {
+  @apply m-0 rounded-md border border-twt-primary-navy bg-twt-primary-navy px-4 py-3 text-white;
+}
+
+.exploreCard a + a {
+  @apply border-[#95acd0] bg-white text-twt-primary-navy;
+}
+
+.boundaryNote {
+  @apply mt-5 flex items-center gap-4 border-[#cfe0f3] bg-[#f5faff] px-5 py-4 max-[720px]:items-start max-[720px]:flex-wrap;
+}
+
+.boundaryNote > svg {
+  @apply size-7 shrink-0 text-twt-medium-navy;
+}
+
+.boundaryNote p {
+  @apply m-0 flex-1 text-xs leading-[1.55] font-medium text-twt-primary-navy;
+}
+
+.boundaryNote a {
+  @apply m-0 whitespace-nowrap;
+}
+
+@media (max-width: 620px) {
+  .chartImageFrame img {
+    @apply min-w-[720px];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modelPage * {
+    scroll-behavior: auto;
+  }
+}

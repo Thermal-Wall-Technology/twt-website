@@ -1,97 +1,63 @@
 @reference "../globals.css";
 
+.howPage {
+  @apply overflow-x-clip bg-white text-twt-primary-navy;
+}
 .shell {
   @apply mx-auto w-[min(1320px,calc(100%-48px))] max-sm:w-[min(1320px,calc(100%-32px))];
 }
-
 .eyebrow {
-  @apply mt-0 mb-3 text-[11px] font-black tracking-[0.15em] text-twt-primary-orange;
+  @apply mt-0 mb-3 text-[10px] font-black tracking-[0.14em] text-twt-primary-orange;
 }
-
 .button {
-  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border px-5 py-3 text-sm font-extrabold no-underline shadow-sm transition-all duration-200;
-  @apply hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-twt-focus max-sm:w-full;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2.5 text-xs font-extrabold no-underline transition-all duration-200 hover:-translate-y-0.5 max-sm:w-full;
 }
-
 .buttonPrimary {
-  @apply border-twt-primary-orange bg-twt-primary-orange text-white shadow-[0_10px_25px_rgba(255,90,0,0.2)] hover:bg-[#e94f00];
+  @apply border-twt-deep-navy bg-twt-deep-navy text-white shadow-[0_10px_22px_rgba(3,26,61,.16)];
 }
-
 .buttonSecondary {
-  @apply border-twt-light-gray bg-white text-twt-primary-navy hover:border-twt-primary-navy;
+  @apply border-[#9db7da] bg-white text-twt-primary-navy;
 }
 
 .hero {
-  @apply overflow-hidden border-b border-twt-light-gray bg-[linear-gradient(120deg,#fff_48%,#f2f8fd)] py-20 max-sm:py-14;
+  @apply border-b border-[#dfe9f3] bg-[radial-gradient(circle_at_78%_25%,#eef7ff_0,transparent_30%),linear-gradient(110deg,#fff_50%,#f8fbff)] py-12 max-sm:py-10;
 }
-
 .heroGrid {
-  @apply grid grid-cols-[1.04fr_0.96fr] items-center gap-20 max-[1000px]:grid-cols-1 max-[1000px]:gap-10;
+  @apply grid grid-cols-[.92fr_1.08fr] items-center gap-7 max-[1000px]:grid-cols-1;
 }
-
 .heroCopy h1 {
-  @apply m-0 text-[clamp(3.2rem,5.1vw,5.2rem)] leading-[0.98] font-extrabold tracking-[-0.065em] text-twt-deep-navy;
-  @apply max-sm:text-[clamp(2.7rem,12vw,3.8rem)];
+  @apply m-0 max-w-[600px] text-[clamp(2.65rem,4vw,4.6rem)] leading-[1.01] font-extrabold tracking-[-.06em] text-twt-deep-navy max-sm:text-[clamp(2.5rem,11vw,3.35rem)];
 }
-
 .heroCopy > p:not(.eyebrow) {
-  @apply mt-6 mb-0 max-w-[680px] text-[17px] leading-[1.7] font-medium text-twt-slate-gray max-sm:text-base;
+  @apply mt-5 mb-0 max-w-[580px] text-[15px] leading-[1.65] font-medium text-twt-primary-navy max-sm:text-sm;
 }
-
 .heroActions {
-  @apply mt-8 flex flex-wrap gap-3 max-sm:grid;
+  @apply mt-6 flex flex-wrap gap-3 max-sm:grid;
 }
-
-.principleCard {
-  @apply rounded-[28px] border border-twt-light-gray bg-white p-7 shadow-[0_28px_75px_rgba(3,26,61,0.12)] max-sm:p-5;
+.heroVisual {
+  @apply relative min-w-0;
 }
-
-.principleCard > p {
-  @apply mt-0 mb-2 text-[10px] font-black tracking-[0.15em] text-twt-primary-orange;
+.heroVisual > img {
+  @apply ml-auto block h-auto w-full max-w-[790px] object-contain;
 }
-
-.principleCard > h2 {
-  @apply m-0 text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.08] font-extrabold tracking-[-0.04em] text-twt-deep-navy;
+.heroLegend {
+  @apply absolute left-0 top-1/2 z-1 grid w-[220px] -translate-y-1/2 gap-2 rounded-xl border border-[#d7e6f5] bg-white/95 p-3 shadow-[0_12px_30px_rgba(3,26,61,.08)] max-[1150px]:hidden;
 }
-
-.principleSteps {
-  @apply mt-7 grid gap-3;
+.heroLegend article {
+  @apply flex gap-2;
 }
-
-.principleSteps article {
-  @apply grid grid-cols-[30px_42px_1fr] items-center gap-3 rounded-xl border border-twt-light-gray bg-twt-soft-white p-3;
+.heroLegend svg {
+  @apply mt-0.5 size-6 shrink-0 rounded-lg bg-[#f0f7ff] p-1.5 text-twt-blueprint-blue;
 }
-
-.principleSteps article > span {
-  @apply text-[9px] font-black text-twt-primary-orange;
+.heroLegend b,
+.heroLegend small {
+  @apply block;
 }
-
-.principleSteps article > svg {
-  @apply size-9 rounded-lg bg-twt-deep-navy p-2 text-white;
+.heroLegend b {
+  @apply text-[9px] font-extrabold text-twt-deep-navy;
 }
-
-.principleSteps b {
-  @apply block text-sm font-extrabold text-twt-deep-navy;
-}
-
-.principleSteps small {
-  @apply mt-1 block text-[11px] font-medium text-twt-slate-gray;
-}
-
-.temperatureBadge {
-  @apply mt-4 flex items-center gap-4 rounded-xl bg-twt-deep-navy px-5 py-4 text-white;
-}
-
-.temperatureBadge > svg {
-  @apply size-8 text-twt-primary-orange;
-}
-
-.temperatureBadge strong {
-  @apply block text-3xl leading-none font-extrabold;
-}
-
-.temperatureBadge span {
-  @apply mt-1 block text-[10px] font-semibold text-white/65;
+.heroLegend small {
+  @apply mt-0.5 text-[8px] leading-[1.35] font-medium text-twt-slate-gray;
 }
 
 .assemblySection,
@@ -99,314 +65,271 @@
 .energySection,
 .modesSection,
 .systemSection {
-  @apply py-24 max-sm:py-16;
+  @apply py-14 max-sm:py-11;
 }
-
-.sectionIntro {
-  @apply flex items-end justify-between gap-12 max-[900px]:grid;
-}
-
-.sectionIntro > div {
-  @apply max-w-[720px];
-}
-
-.sectionIntro h2,
-.systemIntro h2,
-.ctaLayout h2 {
-  @apply m-0 text-[clamp(2.4rem,4vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.05em] text-twt-deep-navy;
-}
-
-.sectionIntro > p {
-  @apply mb-1 max-w-[500px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
-}
-
-.assemblyVisual {
-  @apply mx-auto mt-12 max-w-[1160px] overflow-hidden rounded-[28px] border border-twt-light-gray bg-white p-3 shadow-[0_24px_65px_rgba(3,26,61,0.1)] max-sm:rounded-2xl;
-}
-
-.assemblyVisual img,
-.systemVisual img,
-.comparisonImage img {
-  @apply h-auto w-full object-contain;
-}
-
-.assemblyVisual img {
-  @apply rounded-2xl max-sm:rounded-xl;
-}
-
-.assemblyCards {
-  @apply mt-6 grid grid-cols-4 gap-4 max-[1000px]:grid-cols-2 max-sm:grid-cols-1;
-}
-
-.assemblyCards article {
-  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-5 shadow-sm;
-}
-
-.assemblyIcon {
-  @apply grid size-11 shrink-0 place-items-center rounded-xl bg-twt-pale-orange text-twt-primary-orange;
-}
-
-.assemblyIcon svg {
-  @apply size-5;
-}
-
-.assemblyCards b {
-  @apply text-[9px] font-black text-twt-primary-orange;
-}
-
-.assemblyCards h3 {
-  @apply mt-1 mb-2 text-sm leading-[1.3] font-extrabold text-twt-deep-navy;
-}
-
-.assemblyCards p {
-  @apply m-0 text-xs leading-[1.55] font-medium text-twt-slate-gray;
-}
-
-.constructionDetail {
-  @apply mx-auto mt-6 max-w-[1100px] rounded-xl border border-[#dce8f4] bg-[#f7fbff] px-5 py-4;
-}
-
-.constructionDetail summary {
-  @apply flex cursor-pointer list-none items-center justify-between gap-6 max-[700px]:grid;
-}
-
-.constructionDetail summary > span {
-  @apply flex items-start gap-3;
-}
-
-.constructionDetail summary svg {
-  @apply size-5 shrink-0 text-twt-blueprint-blue;
-}
-
-.constructionDetail summary b {
-  @apply block text-sm text-twt-deep-navy;
-}
-
-.constructionDetail summary small {
-  @apply mt-1 block max-w-[720px] text-xs leading-[1.5] text-twt-slate-gray;
-}
-
-.constructionDetail summary em {
-  @apply flex shrink-0 items-center gap-2 text-xs font-extrabold not-italic text-twt-blueprint-blue;
-}
-
-.constructionDetail > p {
-  @apply mb-0 border-t border-[#dce8f4] pt-4 text-xs leading-[1.6] text-twt-slate-gray;
-}
-
-.whySection {
-  @apply border-y border-twt-light-gray bg-twt-soft-white;
-}
-
-.comparisonGrid {
-  @apply relative mt-12 grid grid-cols-[1fr_64px_1fr] items-center max-[850px]:grid-cols-1;
-}
-
-.comparisonCard {
-  @apply overflow-hidden rounded-[24px] border border-twt-light-gray bg-white shadow-[0_18px_55px_rgba(3,26,61,0.08)];
-}
-
-.comparisonImage {
-  @apply aspect-[1.42] overflow-hidden bg-white;
-}
-
-.comparisonImage img {
-  @apply h-full object-cover;
-}
-
-.comparisonCopy {
-  @apply border-t border-twt-light-gray p-6;
-}
-
-.comparisonCopy > span {
-  @apply text-[9px] font-black tracking-[0.12em] text-twt-primary-orange;
-}
-
-.comparisonCopy h3 {
-  @apply mt-2 mb-4 text-xl leading-[1.2] font-extrabold text-twt-deep-navy;
-}
-
-.comparisonCopy strong {
-  @apply text-3xl leading-none font-extrabold text-twt-primary-orange;
-}
-
-.comparisonCard:last-child .comparisonCopy strong {
-  @apply text-twt-medium-navy;
-}
-
-.comparisonCopy p {
-  @apply mt-2 mb-0 text-xs font-medium text-twt-slate-gray;
-}
-
-.vsBadge {
-  @apply z-2 grid size-16 place-items-center justify-self-center rounded-full bg-twt-deep-navy text-sm font-black text-white ring-8 ring-twt-soft-white;
-  @apply max-[850px]:my-[-8px] max-[850px]:size-14;
-}
-
-.whyBenefits {
-  @apply mt-6 grid grid-cols-3 gap-4 max-[800px]:grid-cols-1;
-}
-
-.whyBenefits article {
-  @apply flex gap-3 rounded-xl border border-twt-light-gray bg-white p-5;
-}
-
-.whyBenefits article > svg {
-  @apply mt-0.5 size-5 shrink-0 text-[#30a55b];
-}
-
-.whyBenefits h3 {
-  @apply m-0 text-sm font-extrabold text-twt-deep-navy;
-}
-
-.whyBenefits p {
-  @apply mt-1 mb-0 text-xs leading-[1.5] font-medium text-twt-slate-gray;
-}
-
+.assemblySection,
 .energySection {
   @apply bg-white;
 }
-
-.energyFlow {
-  @apply mt-12 grid grid-cols-5 gap-4 max-[1050px]:grid-cols-3 max-[700px]:grid-cols-1;
-}
-
-.energyFlow article {
-  @apply relative rounded-2xl border border-twt-light-gray bg-white p-5 shadow-sm;
-}
-
-.energyTopline {
-  @apply flex items-center justify-between;
-}
-
-.energyTopline span {
-  @apply grid size-11 place-items-center rounded-xl bg-twt-deep-navy text-white;
-}
-
-.energyTopline svg {
-  @apply size-5;
-}
-
-.energyTopline b {
-  @apply text-[10px] text-twt-primary-orange;
-}
-
-.energyFlow h3 {
-  @apply mt-5 mb-2 text-base leading-[1.25] font-extrabold text-twt-deep-navy;
-}
-
-.energyFlow p {
-  @apply m-0 text-xs leading-[1.55] font-medium text-twt-slate-gray;
-}
-
-.energyFlow article > svg {
-  @apply absolute top-1/2 -right-[27px] z-1 size-5 -translate-y-1/2 text-twt-primary-orange max-[1050px]:hidden;
-}
-
+.whySection,
 .modesSection {
-  @apply border-y border-twt-light-gray bg-[#f8fbfe];
+  @apply border-y border-[#e4edf6] bg-[#f8fbfe];
 }
-
-.modeGrid {
-  @apply mt-12 grid grid-cols-3 gap-5 max-[800px]:grid-cols-1;
+.assemblyLayout {
+  @apply grid grid-cols-[230px_1fr] gap-x-7 gap-y-4 max-[900px]:grid-cols-1;
 }
-
-.modeGrid article {
-  @apply rounded-2xl border border-twt-light-gray bg-white p-6 shadow-sm;
+.compactIntro h2,
+.sectionHead h2,
+.whyIntro h2,
+.systemIntro h2,
+.ctaLayout h2 {
+  @apply m-0 text-[clamp(1.75rem,2.8vw,2.8rem)] leading-[1.07] font-extrabold tracking-[-.045em] text-twt-deep-navy;
 }
-
-.modeIcon {
-  @apply grid size-13 place-items-center rounded-xl;
+.assemblyCards {
+  @apply grid grid-cols-4 gap-3 max-[1120px]:grid-cols-2 max-sm:grid-cols-1;
 }
-
-.modeIcon svg {
-  @apply size-6;
+.assemblyCards article {
+  @apply relative rounded-xl border border-[#dfe9f3] bg-white p-4 shadow-[0_8px_22px_rgba(3,26,61,.04)];
 }
-
-.warm .modeIcon {
-  @apply bg-twt-pale-orange text-twt-primary-orange;
+.assemblyCards article:nth-child(1) {
+  @apply border-[#f6dfc4] bg-[#fffaf5];
 }
-
-.solar .modeIcon {
-  @apply bg-[#edf8ef] text-[#399558];
+.assemblyCards article:nth-child(2) {
+  @apply border-[#d8e6f7] bg-[#f7fbff];
 }
-
-.cool .modeIcon {
-  @apply bg-[#edf5ff] text-[#2371d8];
+.assemblyCards article:nth-child(3) {
+  @apply border-[#d8eddf] bg-[#f7fcf8];
 }
-
-.modeGrid h3 {
-  @apply mt-5 mb-2 text-xl font-extrabold text-twt-deep-navy;
+.assemblyCards article:nth-child(4) {
+  @apply border-[#e3dafa] bg-[#fbf9ff];
 }
-
-.modeGrid article > p {
-  @apply mt-0 min-h-[48px] text-sm leading-[1.55] font-medium text-twt-slate-gray;
+.assemblyNumber {
+  @apply absolute top-3 right-3 text-[9px] font-black text-twt-primary-orange;
 }
-
-.modeGrid ul {
-  @apply mt-6 mb-0 list-none border-t border-twt-light-gray p-0 pt-4;
+.assemblyCards svg {
+  @apply size-9 text-twt-primary-orange;
 }
-
-.modeGrid li {
-  @apply mt-3 flex gap-2 text-xs font-medium text-twt-slate-gray;
+.assemblyCards h3 {
+  @apply mt-4 mb-2 text-xs leading-[1.35] font-extrabold text-twt-deep-navy;
 }
-
-.modeGrid li svg {
-  @apply size-4 shrink-0 text-[#30a55b];
+.assemblyCards p {
+  @apply m-0 text-[10px] leading-[1.5] font-medium text-twt-slate-gray;
 }
-
-.dewPointNote {
-  @apply mt-5 flex items-start gap-3 rounded-xl border border-[#dce8f4] bg-white p-4 text-xs leading-[1.55] font-medium text-twt-slate-gray;
+.constructionDetail {
+  @apply col-span-2 flex rounded-xl border border-[#d5e5f6] bg-[#f6faff] px-4 py-3 max-[900px]:col-span-1;
 }
-
-.dewPointNote svg {
+.constructionDetail summary {
+  @apply flex w-full cursor-pointer list-none items-center justify-between gap-4 max-sm:block;
+}
+.constructionDetail summary > span {
+  @apply flex items-start gap-3;
+}
+.constructionDetail summary svg {
   @apply size-5 shrink-0 text-twt-blueprint-blue;
+}
+.constructionDetail b,
+.constructionDetail small {
+  @apply block;
+}
+.constructionDetail b {
+  @apply text-xs text-twt-deep-navy;
+}
+.constructionDetail small {
+  @apply mt-1 text-[10px] leading-[1.4] text-twt-slate-gray;
+}
+.constructionDetail em {
+  @apply flex shrink-0 items-center gap-1 text-[10px] font-extrabold not-italic text-twt-blueprint-blue max-sm:mt-3;
+}
+.constructionDetail > p {
+  @apply mb-0 text-xs text-twt-slate-gray;
+}
+
+.whyLayout {
+  @apply grid grid-cols-[210px_minmax(0,1fr)_230px] items-center gap-6 max-[1050px]:grid-cols-[190px_1fr] max-[780px]:grid-cols-1;
+}
+.whyIntro > p:not(.eyebrow) {
+  @apply mt-4 mb-5 text-xs leading-[1.6] font-medium text-twt-slate-gray;
+}
+.comparisonGrid {
+  @apply relative grid grid-cols-[1fr_34px_1fr] items-stretch gap-2;
+}
+.comparisonCard {
+  @apply rounded-xl border border-[#dfe9f3] bg-white p-3 text-center;
+}
+.comparisonCard > p {
+  @apply mt-0 mb-2 text-[10px] font-extrabold text-twt-primary-navy;
+}
+.comparisonCard img {
+  @apply h-[135px] w-full object-contain max-sm:h-[150px];
+}
+.comparisonCard strong {
+  @apply mt-1 block text-xl leading-none font-extrabold text-twt-primary-orange;
+}
+.comparisonCard small {
+  @apply mt-1 block text-[9px] font-medium text-twt-slate-gray;
+}
+.twtComparison strong {
+  @apply text-twt-blueprint-blue;
+}
+.vsBadge {
+  @apply z-1 grid size-9 place-self-center rounded-full border border-[#dfe9f3] bg-white text-[10px] font-black text-twt-primary-navy shadow-sm;
+}
+.whyBenefits {
+  @apply grid gap-3 max-[1050px]:col-span-2 max-[780px]:col-span-1;
+}
+.whyBenefits article {
+  @apply flex gap-2 rounded-xl border border-[#dfe9f3] bg-white p-3;
+}
+.whyBenefits svg {
+  @apply mt-0.5 size-4 shrink-0 text-[#27a152];
+}
+.whyBenefits b,
+.whyBenefits small {
+  @apply block;
+}
+.whyBenefits b {
+  @apply text-[10px] font-extrabold text-twt-deep-navy;
+}
+.whyBenefits small {
+  @apply mt-1 text-[9px] leading-[1.4] font-medium text-twt-slate-gray;
+}
+
+.energyLayout {
+  @apply grid grid-cols-[220px_1fr] items-center gap-6 max-[800px]:grid-cols-1;
+}
+.energyFlow {
+  @apply grid grid-cols-5 gap-2 max-[700px]:grid-cols-1;
+}
+.energyFlow article {
+  @apply relative text-center;
+}
+.energyIcon {
+  @apply mx-auto grid size-14 place-items-center rounded-full border border-[#dce7f2] bg-white text-twt-primary-orange shadow-sm;
+}
+.energyIcon svg {
+  @apply size-7;
+}
+.energyFlow article > b {
+  @apply mt-3 block text-[10px] font-black text-twt-primary-orange;
+}
+.energyFlow h3 {
+  @apply mt-1 mb-1 text-[10px] font-extrabold text-twt-deep-navy;
+}
+.energyFlow p {
+  @apply m-0 text-[9px] leading-[1.45] font-medium text-twt-slate-gray;
+}
+.energyFlow article > svg {
+  @apply absolute top-7 -right-3 size-5 text-[#91a9c4] max-[700px]:hidden;
+}
+
+.sectionHead {
+  @apply mb-7;
+}
+.modeGrid {
+  @apply grid grid-cols-3 gap-4 max-[760px]:grid-cols-1;
+}
+.modeGrid article {
+  @apply rounded-xl border border-[#dfe9f3] bg-white p-5;
+}
+.modeTitle {
+  @apply flex items-center gap-3;
+}
+.modeTitle > svg {
+  @apply size-8 text-twt-primary-orange;
+}
+.modeTitle h3 {
+  @apply m-0 text-base font-extrabold text-twt-deep-navy;
+}
+.modeGrid article > p {
+  @apply mt-3 mb-3 min-h-[38px] text-[10px] leading-[1.5] font-medium text-twt-slate-gray;
+}
+.modeSketch {
+  @apply relative grid h-25 place-items-center overflow-hidden rounded-lg border border-[#e3ecf5] bg-[#fbfdff];
+}
+.modeSketch > svg:first-child {
+  @apply size-15 text-twt-primary-navy;
+}
+.modeSketch > svg:last-child {
+  @apply absolute bottom-2 size-8 text-twt-primary-orange;
+}
+.solar .modeTitle > svg,
+.solar .modeSketch > svg:last-child {
+  @apply text-[#2b9b55];
+}
+.cool .modeTitle > svg,
+.cool .modeSketch > svg:last-child {
+  @apply text-twt-blueprint-blue;
+}
+.modeGrid ul {
+  @apply mt-4 mb-0 grid list-none gap-2 border-t border-[#e3ebf3] pt-3 p-0;
+}
+.modeGrid li {
+  @apply flex gap-2 text-[10px] font-medium text-twt-slate-gray;
+}
+.modeGrid li svg {
+  @apply size-3.5 shrink-0 text-[#28a054];
+}
+.modeGrid a {
+  @apply mt-4 inline-flex items-center gap-1 text-[10px] font-extrabold text-twt-primary-orange no-underline;
+}
+.dewPointNote {
+  @apply mt-4 flex gap-2 rounded-lg border border-[#d8e8f8] bg-white px-4 py-3 text-[10px] font-medium text-twt-slate-gray;
+}
+.dewPointNote svg {
+  @apply size-4 shrink-0 text-twt-blueprint-blue;
 }
 
 .systemSection {
-  @apply bg-twt-deep-navy text-white;
+  @apply bg-white;
 }
-
-.systemIntro {
-  @apply grid grid-cols-[1fr_0.8fr] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-6;
+.systemLayout {
+  @apply grid grid-cols-[220px_1fr_230px] gap-6 max-[950px]:grid-cols-1;
 }
-
-.systemIntro h2 {
-  @apply max-w-[760px] text-white;
+.systemNodes {
+  @apply flex items-start justify-between gap-2 max-[950px]:justify-start max-[620px]:grid max-[620px]:grid-cols-2;
 }
-
-.systemIntro > div:last-child p {
-  @apply mt-0 mb-3 text-sm leading-[1.65] font-medium text-white/70;
+.systemNodes > div {
+  @apply relative grid min-w-[70px] justify-items-center gap-2 text-center;
 }
-
-.systemVisual {
-  @apply mt-12 overflow-hidden rounded-[24px] border border-white/15 bg-white p-3 shadow-[0_30px_80px_rgba(0,0,0,0.22)];
+.systemNodes span {
+  @apply grid size-12 place-items-center rounded-full border border-[#dbe7f2] bg-white text-twt-blueprint-blue;
 }
-
-.systemVisual img {
-  @apply rounded-2xl;
+.systemNodes span svg {
+  @apply size-5;
 }
-
-.systemSection blockquote {
-  @apply mx-auto mt-10 mb-0 max-w-[900px] border-l-4 border-twt-primary-orange py-2 pl-6 text-xl leading-[1.55] font-bold text-white;
+.systemNodes b {
+  @apply text-[8px] leading-[1.3] font-extrabold text-twt-primary-navy;
 }
-
+.systemNodes > div > svg {
+  @apply absolute top-4 -right-3 size-4 text-[#8fa8c4] max-[620px]:hidden;
+}
+.systemFacts {
+  @apply rounded-xl border border-[#dbe7f2] bg-[#f8fbff] p-4;
+}
+.systemFacts p {
+  @apply m-0 text-[10px] leading-[1.45] text-twt-slate-gray;
+}
+.systemFacts p + p {
+  @apply mt-3 border-t border-[#dde8f3] pt-3;
+}
+.systemFacts b {
+  @apply text-twt-primary-navy;
+}
+.systemMap {
+  @apply col-span-3 mx-auto mt-2 max-w-[660px] overflow-hidden rounded-xl border border-[#dfe9f3] bg-white p-2 max-[950px]:col-span-1;
+}
+.systemMap img {
+  @apply h-auto w-full rounded-lg;
+}
 .ctaSection {
-  @apply bg-[#fff4ed] py-14;
+  @apply border-t border-[#f2d9c7] bg-[#fff6f0] py-8;
 }
-
 .ctaLayout {
-  @apply flex items-center justify-between gap-10 max-[1000px]:grid;
+  @apply flex items-center justify-between gap-6 max-[950px]:block;
 }
-
-.ctaLayout h2 {
-  @apply text-[clamp(2rem,3vw,2.8rem)];
+.ctaLayout > div {
+  @apply flex flex-wrap justify-end gap-3 max-[950px]:mt-5 max-[950px]:justify-start max-sm:grid;
 }
-
-.ctaActions {
-  @apply flex flex-wrap justify-end gap-3 max-[1000px]:justify-start max-sm:grid;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .button {
     @apply transition-none hover:translate-y-0;

@@ -12,8 +12,10 @@ import {
   FlaskConical,
   Gauge,
   Info,
+  MoonStar,
   ShieldCheck,
   Sun,
+  Sunset,
   Target,
   Thermometer,
   XCircle,
@@ -75,6 +77,7 @@ const subnav = [
   ["Overview", "#overview"],
   ["Evidence in Detail", "#details"],
   ["Modeling & Methods", "#model"],
+  ["Heat Cycle", "#thermal-cycle"],
   ["Assumptions & Boundaries", "#coverage"],
   ["Validation Roadmap", "#roadmap"],
   ["References", "#references"],
@@ -99,85 +102,75 @@ const Btn = ({
 const Label = ({ children }: { children: React.ReactNode }) => (
   <p className={styles.evLabel}>{children}</p>
 );
+
+const thermalCycle = [
+  [
+    Sun,
+    "01",
+    "Day",
+    "Sunlight charges the wall",
+    "Solar energy warms the concrete wall surface and begins charging the thermal mass.",
+    "/evidence/day.png",
+    "Sunlight warming a Thermal Wall",
+  ],
+  [
+    Sunset,
+    "02",
+    "Evening",
+    "Heat settles into the mass",
+    "As solar input fades, the wall retains thermal energy within the concrete mass.",
+    "/evidence/evening.png",
+    "Thermal energy stored within a Thermal Wall",
+  ],
+  [
+    MoonStar,
+    "03",
+    "Night",
+    "Stored heat returns indoors",
+    "After sunset, the stored heat radiates back toward the occupied space when it is needed.",
+    "/evidence/night.png",
+    "Stored heat radiating from a Thermal Wall at night",
+  ],
+] as const;
+
 function Chart() {
   return (
-    <div className={styles.chartCard}>
-      <div className={styles.chartHead}>
-        <b>Interior surface temperature over time</b>
-        <span>
-          0°F outdoor / 72°F indoor
-          <br />6 hours of solar input
-        </span>
+    <figure className={styles.chartCard}>
+      <div className={styles.chartIntro}>
+        <div>
+          <span>Modeled wall performance</span>
+          <strong>Daytime heat, released after sunset.</strong>
+        </div>
+        <p>0°F outside · 72°F inside · 6 hours of solar input</p>
       </div>
-      <svg
-        viewBox="0 0 640 310"
-        role="img"
-        aria-label="Qualitative modeled comparison: TWT exterior-insulation wall rises above the 72 degree indoor line after solar loading, while conventional two-sided ICF remains at the indoor line"
-      >
-        <rect x="56" y="30" width="278" height="205" fill="#fff7f0" />
-        <rect x="334" y="30" width="255" height="205" fill="#f3f8ff" />
-        <path d="M56 30V235H590M56 157H590" stroke="#7b91ad" fill="none" />
-        <text x="13" y="160" fontSize="11" fill="#1d86c8">
-          72°F
-        </text>
-        <text x="100" y="258" fontSize="11" fill="#ff5a00">
-          Solar charging period
-        </text>
-        <text x="385" y="258" fontSize="11" fill="#1d86c8">
-          Post-solar heat delivery
-        </text>
-        <path
-          d="M56 157 C100 120 170 77 255 75 C316 75 390 90 515 130"
-          fill="none"
-          stroke="#ff5a00"
-          strokeWidth="4"
-        />
-        <path
-          d="M56 157 C120 151 165 160 250 158 L515 158"
-          fill="none"
-          stroke="#1d86c8"
-          strokeWidth="4"
-        />
-        <path d="M56 157H590" stroke="#1d86c8" strokeDasharray="6 5" />
-        <g fill="#ff5a00">
-          <circle cx="135" cy="95" r="4" />
-          <circle cx="255" cy="75" r="4" />
-          <circle cx="385" cy="91" r="4" />
-          <circle cx="515" cy="130" r="4" />
-        </g>
-        <g fill="#1d86c8">
-          <circle cx="135" cy="156" r="4" />
-          <circle cx="255" cy="158" r="4" />
-          <circle cx="385" cy="158" r="4" />
-          <circle cx="515" cy="158" r="4" />
-        </g>
-        <path d="M386 70h140v-33" stroke="#ff5a00" fill="none" />
-        <text x="420" y="23" fontSize="11" fill="#ff5a00">
-          ~5 hours of delivered
-        </text>
-        <text x="430" y="36" fontSize="11" fill="#ff5a00">
-          heat to the room
-        </text>
-        <text x="150" y="290" fontSize="11" fill="#536273">
-          Time from start of modeled solar loading
-        </text>
-      </svg>
-      <div className={styles.chartKey}>
-        <span className="orange" /> TWT exterior-insulation wall{" "}
-        <span className={styles.blue} /> Conventional two-sided ICF
+      <div className={styles.chartLegend} aria-label="Temperature chart legend">
+        <span className={styles.twtLegend}>TWT thermal mass wall</span>
+        <span className={styles.icfLegend}>Conventional insulated wall</span>
       </div>
-      <p>
-        Qualitative visualization of the supplied model result; intermediate
-        hourly values are not presented.
-      </p>
+      <div className={styles.chartImageFrame}>
+        <Image
+          src="/evidence/only_graph.png"
+          alt="Modeled wall surface temperature graph showing the Thermal Wall holding heat above room temperature after sunset"
+          width={1691}
+          height={930}
+          sizes="(max-width: 1050px) calc(100vw - 32px), 58vw"
+        />
+      </div>
+      <figcaption className={styles.chartInsight}>
+        <div>
+          <Thermometer />
+          <p>
+            <b>Up to ~5 hours</b>
+            of stored heat delivered to the room after solar input ends.
+          </p>
+        </div>
+      </figcaption>
       <footer>
         Independent model by Dr. Brandon Field, University of Southern Indiana,
-        March 2016.
-        <br />
-        One-dimensional transient finite-difference wall model.{" "}
+        March 2016. One-dimensional transient finite-difference wall model.{" "}
         <a href="#references">Read technical note</a>
       </footer>
-    </div>
+    </figure>
   );
 }
 export default function Evidence() {
@@ -325,74 +318,170 @@ export default function Evidence() {
                 </div>
               </article>
             </div>
-            <Btn
-              href="/evidence/modeling-methods#independent-wall-model"
-              primary
-            >
-              Review model assumptions & inputs
+            <Btn href="/evidence/modeling-methods" primary>
+              Explore modeled scenarios
             </Btn>
           </div>
           <Chart />
         </div>
       </section>
       <section
+        id="thermal-cycle"
+        className={`${styles.evSection} ${styles.thermalCycle}`}
+      >
+        <div className={styles.evShell}>
+          <div className={styles.cycleIntro}>
+            <div>
+              <Label>FROM SUNLIGHT TO COMFORT</Label>
+              <h2>A wall that works with the rhythm of the day.</h2>
+            </div>
+            <p>
+              Thermal Wall Technology captures available solar energy, holds it
+              within the concrete mass, and releases it gradually after the sun
+              goes down.
+            </p>
+          </div>
+          <div className={styles.cycleGrid}>
+            {thermalCycle.map(
+              ([Icon, number, phase, title, text, src, alt], index) => (
+                <article className={styles.phaseCard} key={phase}>
+                  <div className={styles.phaseHead}>
+                    <span>{number}</span>
+                    <Icon aria-hidden="true" />
+                    <small>{phase}</small>
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                  <div className={styles.phaseVisual}>
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={1448}
+                      height={1086}
+                      sizes="(max-width: 680px) calc(100vw - 64px), (max-width: 1100px) calc(50vw - 44px), 22vw"
+                    />
+                  </div>
+                  {index < thermalCycle.length - 1 && (
+                    <ArrowRight
+                      className={styles.phaseArrow}
+                      aria-hidden="true"
+                    />
+                  )}
+                </article>
+              ),
+            )}
+            <aside className={styles.comfortPanel}>
+              <div className={styles.comfortIcon}>
+                <Thermometer aria-hidden="true" />
+              </div>
+              <p className={styles.comfortLabel}>The result</p>
+              <h3>Comfort that lasts longer.</h3>
+              <p>
+                Natural, renewable warmth delivered when your space needs it
+                most.
+              </p>
+              <ul>
+                {[
+                  "Reduces heating demand",
+                  "Improves thermal comfort",
+                  "Stores free solar energy",
+                ].map((item) => (
+                  <li key={item}>
+                    <Check />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section
         id="coverage"
         className={`${styles.evSection} ${styles.coverage}`}
       >
-        <div className={`${styles.evShell} ${styles.coverageGrid}`}>
-          <article>
-            <h3>What the independent analysis examined</h3>
-            <ul>
-              {[
-                "Wall thermal storage and delivery",
-                "One-sided versus two-sided insulation placement",
-                "Response under the defined 0°F / 72°F scenario",
-                "Six-hour modeled solar loading",
-                "Relevant heat-flux agreement of approximately 2%",
-              ].map((x) => (
-                <li key={x}>
-                  <Check />
-                  {x}
-                </li>
-              ))}
-            </ul>
-          </article>
-          <article>
-            <h3>What founder-developed modeling addresses</h3>
-            <ul>
-              {[
-                "Modeled 65–75°F operating range",
-                "Wall and floor system scenarios",
-                "Controls, equipment, and climate configurations",
-                "Potential system integration pathways",
-              ].map((x) => (
-                <li key={x}>
-                  <Check />
-                  {x}
-                </li>
-              ))}
-            </ul>
-          </article>
-          <article>
-            <h3>What remains to be measured</h3>
-            <ul>
-              {[
-                "Whole-building seasonal performance",
-                "Real-world installation variables",
-                "Collector, heat pump, and HVAC performance claims",
-                "Long-term material behavior",
-                "Economics, insurance, or medical cost impacts",
-              ].map((x) => (
-                <li key={x}>
-                  <XCircle />
-                  {x}
-                </li>
-              ))}
-            </ul>
-          </article>
+        <div className={styles.evShell}>
+          <div className={styles.coverageIntro}>
+            <div>
+              <Label>SCOPE &amp; NEXT STEPS</Label>
+              <h2>Clear evidence. Clear boundaries.</h2>
+            </div>
+            <p>
+              The current analysis validates the core wall principle while
+              keeping broader system claims separate until they can be measured
+              through a full demonstration program.
+            </p>
+          </div>
+          <div className={styles.coverageGrid}>
+            <article>
+              <div className={styles.scopeHead}>
+                <span>01</span>
+                <small>INDEPENDENTLY EXAMINED</small>
+              </div>
+              <h3>What the independent analysis examined</h3>
+              <ul>
+                {[
+                  "Wall thermal storage and delivery",
+                  "One-sided versus two-sided insulation placement",
+                  "Response under the defined 0°F / 72°F scenario",
+                  "Six-hour modeled solar loading",
+                  "Relevant heat-flux agreement of approximately 2%",
+                ].map((x) => (
+                  <li key={x}>
+                    <Check />
+                    {x}
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article>
+              <div className={styles.scopeHead}>
+                <span>02</span>
+                <small>FOUNDER MODELING</small>
+              </div>
+              <h3>What system modeling addresses</h3>
+              <ul>
+                {[
+                  "Modeled 65–75°F operating range",
+                  "Wall and floor system scenarios",
+                  "Controls, equipment, and climate configurations",
+                  "Potential system integration pathways",
+                ].map((x) => (
+                  <li key={x}>
+                    <Check />
+                    {x}
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article>
+              <div className={styles.scopeHead}>
+                <span>03</span>
+                <small>VALIDATION ROADMAP</small>
+              </div>
+              <h3>What remains to be measured</h3>
+              <ul>
+                {[
+                  "Whole-building seasonal performance",
+                  "Real-world installation variables",
+                  "Collector, heat pump, and HVAC performance claims",
+                  "Long-term material behavior",
+                  "Economics, insurance, or medical cost impacts",
+                ].map((x) => (
+                  <li key={x}>
+                    <XCircle />
+                    {x}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
         </div>
         <p className={styles.roadmapLine}>
-          The demonstration program is designed to close these gaps.{" "}
+          <span>
+            <b>Next milestone</b>
+            The demonstration program is designed to close these gaps.
+          </span>
           <a href="#roadmap">
             See the roadmap <ArrowRight size={14} />
           </a>
