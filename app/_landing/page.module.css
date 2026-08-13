@@ -48,6 +48,15 @@
   @apply max-[900px]:pt-10 max-[900px]:pb-14 max-sm:pt-7;
 }
 
+.heroBackground {
+  @apply object-cover object-center;
+}
+
+.heroOverlay {
+  @apply pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(244,248,252,0.97)_0%,rgba(244,248,252,0.9)_45%,rgba(244,248,252,0.68)_100%)];
+  @apply max-[900px]:bg-[linear-gradient(180deg,rgba(244,248,252,0.9)_0%,rgba(244,248,252,0.82)_100%)];
+}
+
 .heroGrid {
   @apply relative grid min-h-[650px] grid-cols-[0.92fr_1.08fr] items-center gap-16;
   @apply max-[1100px]:gap-10 max-[900px]:min-h-0 max-[900px]:grid-cols-1 max-[900px]:gap-8;

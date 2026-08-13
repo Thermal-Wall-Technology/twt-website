@@ -89,6 +89,15 @@ export default function Home() {
       {/* Hero Section */}
 
       <section className={styles.hero}>
+        <Image
+          className={styles.heroBackground}
+          src="/home/hero.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={drawings.heroLines} aria-hidden="true" />
 
         <div className={`${styles.shell} ${styles.heroGrid}`}>
