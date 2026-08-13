@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Brand } from "./brand";
@@ -9,8 +9,7 @@ const links = [
   ["Home", "/"],
   ["How It Works", "/how-it-works"],
   ["Evidence", "/evidence"],
-  ["Research", "/research-partnership"],
-  ["Future Applications", "/future-applications"],
+  ["Potential Benefits", "/potential-benefits"],
   ["Resources", "/resources"],
   ["About", "/about"],
 ] as const;
@@ -34,9 +33,6 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link className="header-cta" href="/research-partnership">
-          Start a conversation <ArrowRight size={17} />
-        </Link>
         <details>
           <summary>
             <Menu size={20} /> Menu
@@ -51,7 +47,6 @@ export function SiteHeader() {
                 {name}
               </Link>
             ))}
-            <Link href="/research-partnership">Start a conversation</Link>
           </nav>
         </details>
       </div>

@@ -16,8 +16,6 @@ import {
   Waves,
   Landmark,
   Layers3,
-  Settings2,
-  Sun,
   Zap,
   Leaf,
 } from "lucide-react";
@@ -127,7 +125,7 @@ export default function Home() {
 
       {/* Problem and Solution */}
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.challengeSection}`}>
         <div className={styles.shell}>
           <div className={styles.centeredTitle}>
             <p className={styles.eyebrow}>THE CHALLENGE AND THE RESPONSE</p>
@@ -198,144 +196,73 @@ export default function Home() {
       {/* How it Works Section */}
 
       <section className={`${styles.section} ${styles.howSection}`}>
-        <div className={styles.shell}>
-          <div className={styles.howGrid}>
-            <div className={styles.howCopy}>
-              <p className={styles.eyebrow}>HOW IT WORKS</p>
-              <h2 className={styles.sectionTitle}>
-                Heat moves through water.
-                <br />
-                The building stores it.
-                <br />
-                The room receives it.
-              </h2>
-              <p className={styles.bodyCopy}>
-                Thermal Wall Technology turns the concrete walls and floor into
-                an active heating, cooling, and thermal-storage system.
-              </p>
-              <p className={styles.bodyCopy}>
-                A heat pump, solar thermal system, or another hydronic source
-                heats or cools circulating fluid. A controller directs that
-                fluid through tubing embedded in the concrete, charging the
-                building&apos;s thermal mass.
-              </p>
-              <p className={styles.bodyCopy}>
-                The walls stabilize indoor conditions, while the floor provides
-                faster, finer temperature adjustment.
-              </p>
-              <div className={styles.howAction}>
-                <Button href="/how-it-works">
-                  Explore the complete system
-                </Button>
-              </div>
-            </div>
-            <div className={styles.processPanel}>
-              <p className={styles.processHeading}>THE OPERATING PROCESS</p>
-              <div className={styles.process}>
-                {[
-                  [
-                    Sun,
-                    "Generate or collect energy",
-                    "A heat pump, solar thermal system, ground-source loop, or another hydronic source heats or cools the fluid.",
-                  ],
-                  [
-                    Settings2,
-                    "Direct it where it is needed",
-                    "The control system routes the fluid through individually controlled wall and floor zones.",
-                  ],
-                  [
-                    Layers3,
-                    "Charge the concrete mass",
-                    "Embedded hydronic tubing transfers energy into the concrete structure, turning the walls and floor into active thermal storage.",
-                  ],
-                  [
-                    Shield,
-                    "Retain the energy",
-                    "Exterior-only insulation limits energy loss to the outdoors while keeping the concrete thermally connected to the interior.",
-                  ],
-                  [
-                    Waves,
-                    "Release steady comfort",
-                    "The large wall and floor surfaces gradually exchange energy with the occupied space at lower operating temperatures.",
-                  ],
-                ].map(([Icon, title, copy], index) => {
-                  const ProcessIcon = Icon as typeof Sun;
-                  return (
-                    <article
-                      className={styles.processStep}
-                      key={title as string}
-                    >
-                      <span className={styles.processNumber}>0{index + 1}</span>
-                      <ProcessIcon />
-                      <h3>{title as string}</h3>
-                      <p>{copy as string}</p>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-          <div className={styles.assemblyPanel}>
-            <div className={styles.assemblyIntro}>
-              <p className={styles.assemblyTitle}>THE TWT ASSEMBLY</p>
-              <span />
-              <p>Four layers work together as a single system.</p>
-            </div>
-            <div className={styles.assemblyImageWrap}>
-              <Image
-                className={styles.assemblyImage}
-                src="/home/wall_descriptions.png"
-                alt="Thermal Wall Technology wall and floor assembly with embedded hydronic tubing"
-                width={850}
-                height={540}
-                sizes="(max-width: 900px) 100vw, 50vw"
-              />
-            </div>
-            <div className={styles.assemblyList}>
+        <div className={`${styles.shell} ${styles.howGrid}`}>
+          <div className={styles.howCopy}>
+            <p className={styles.howEyebrow}>HOW IT WORKS</p>
+            <h2>
+              Heat moves through water.
+              <br />
+              The building stores it.
+              <br />
+              The room receives it.
+            </h2>
+            <p className={styles.howDescription}>
+              Thermal Wall Technology uses hydronic tubing embedded within the
+              concrete walls and floor to move thermal energy through the
+              structure. The concrete absorbs and stores that energy, while its
+              large interior surfaces gradually exchange it with the occupied
+              space.
+            </p>
+
+            <div className={styles.howSteps}>
               {[
                 [
-                  HomeIcon,
-                  "Exterior insulation",
-                  "Placed only on the outside face to retain stored energy while leaving the concrete open to the interior.",
+                  Droplets,
+                  "01",
+                  "MOVE",
+                  "Water carries thermal energy through embedded tubing.",
                 ],
                 [
                   Layers3,
-                  "Structural concrete thermal mass",
-                  "A continuous concrete wall and floor that provide structure while absorbing, storing, and releasing energy.",
-                ],
-                [
-                  Droplets,
-                  "Embedded hydronic tubing",
-                  "Polymer tubing cast into the concrete carries heated or cooled fluid through the thermal mass.",
+                  "02",
+                  "STORE",
+                  "The concrete structure absorbs and holds that energy.",
                 ],
                 [
                   Waves,
-                  "Thermally conductive interior finish",
-                  "Allows the concrete surface to exchange energy directly with the room without an insulating interior layer.",
+                  "03",
+                  "RELEASE",
+                  "Large interior surfaces gradually exchange energy with the room.",
                 ],
-              ].map(([Icon, title, copy]) => {
-                const AssemblyIcon = Icon as typeof HomeIcon;
+              ].map(([Icon, number, title, copy]) => {
+                const StepIcon = Icon as typeof Droplets;
                 return (
                   <article key={title as string}>
-                    <span>
-                      <AssemblyIcon />
+                    <span className={styles.howStepIcon}>
+                      <StepIcon />
                     </span>
-                    <div>
-                      <h3>{title as string}</h3>
-                      <p>{copy as string}</p>
-                    </div>
+                    <b>{number as string}</b>
+                    <h3>{title as string}</h3>
+                    <p>{copy as string}</p>
                   </article>
                 );
               })}
             </div>
+
+            <Link className={styles.howLink} href="/how-it-works">
+              Explore how the complete system works <ArrowRight />
+            </Link>
           </div>
-          <p className={styles.howConclusion}>
-            The structure is no longer thermally passive.{" "}
-            <strong>
-              It becomes part of the building&apos;s heating, cooling, and
-              energy-storage system.
-            </strong>
-          </p>
+
+          <div className={styles.howVisual}>
+            <Image
+              src="/home/howitworks_side.png"
+              alt="Cutaway home showing hydronic tubing embedded in a Thermal Wall and concrete floor"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 900px) 100vw, 58vw"
+            />
+          </div>
         </div>
       </section>
 
@@ -393,7 +320,7 @@ export default function Home() {
               <br />
               Better for the Future.
             </h2>
-            <Link className={styles.benefitsLink} href="/future-applications">
+            <Link className={styles.benefitsLink} href="/potential-benefits">
               Explore all benefits <ArrowRight size={22} />
             </Link>
           </div>

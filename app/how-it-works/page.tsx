@@ -4,11 +4,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   Check,
-  ChevronDown,
   CloudSun,
   Droplets,
   Flame,
-  Home,
   Layers3,
   Shield,
   Snowflake,
@@ -26,30 +24,38 @@ export const metadata: Metadata = {
 };
 
 const assembly = [
-  [Layers3, "Exterior insulation", "Retains energy in the thermal mass."],
   [
-    Home,
+    "/howitworks/1a.png",
+    1254,
+    1254,
+    "Exterior insulation surrounding a hydronic thermal wall assembly",
+    "Exterior insulation",
+    "Insulation is placed on the outside to retain energy in the thermal mass.",
+  ],
+  [
+    "/howitworks/1b.png",
+    1536,
+    1024,
+    "Continuous concrete block thermal mass",
     "Continuous concrete thermal mass",
-    "Walls and floors store energy across a large surface.",
+    "Walls and floor store energy across a vast, accessible surface.",
   ],
   [
-    Droplets,
+    "/howitworks/1c.png",
+    1024,
+    1536,
+    "Hydronic tubing embedded within concrete thermal mass",
     "Embedded hydronic tubing",
-    "Water efficiently charges or cools the mass.",
+    "Tubing is embedded in the concrete to charge or cool the mass efficiently.",
   ],
   [
-    Waves,
-    "Conductive interior surface",
-    "Large surfaces exchange energy by radiant comfort.",
+    "/howitworks/1d.png",
+    1536,
+    1024,
+    "Thermally conductive interior surface radiating energy into a room",
+    "Thermally conductive interior surface",
+    "Interior surfaces naturally exchange energy with the room through radiant comfort.",
   ],
-] as const;
-
-const heroCallouts = [
-  [Sun, "Energy source", "Solar, heat pump, ground loop, or grid"],
-  [Thermometer, "Heat exchanger", "Transfers energy to the hydronic loop"],
-  [Shield, "Controls & distribution", "Manages zones, temperature, and timing"],
-  [Layers3, "Thermal mass", "Walls and floors store energy in the structure"],
-  [Waves, "Radiant exchange", "Interior surfaces deliver steady comfort"],
 ] as const;
 
 const energy = [
@@ -71,6 +77,8 @@ const modes = [
       "Comfort without drafts",
     ],
     "warm",
+    "/howitworks/4a.png",
+    "Heating mode using hydronic tubing in the concrete mass",
   ],
   [
     CloudSun,
@@ -82,6 +90,8 @@ const modes = [
       "Reduces conventional heating",
     ],
     "solar",
+    "/howitworks/4b.png",
+    "Passive solar mode storing collected heat in the concrete mass",
   ],
   [
     Snowflake,
@@ -93,15 +103,9 @@ const modes = [
       "Dew-point-safe operation",
     ],
     "cool",
+    "/howitworks/4c.png",
+    "Cooling mode removing heat through hydronic tubing in the concrete mass",
   ],
-] as const;
-
-const systemNodes = [
-  [Sun, "Energy source"],
-  [Thermometer, "Heat exchanger"],
-  [Droplets, "Controls & distribution"],
-  [Layers3, "Walls, floor & storage"],
-  [Waves, "Return loop"],
 ] as const;
 
 function Button({
@@ -147,23 +151,10 @@ export default function HowItWorks() {
               <Button href="/evidence" primary>
                 Explore the evidence
               </Button>
-              <Button href="/future-applications">
-                See potential benefits
-              </Button>
+              <Button href="/potential-benefits">See potential benefits</Button>
             </div>
           </div>
           <div className={styles.heroVisual}>
-            <div className={styles.heroLegend}>
-              {heroCallouts.map(([Icon, title, copy]) => (
-                <article key={title}>
-                  <Icon />
-                  <span>
-                    <b>{title}</b>
-                    <small>{copy}</small>
-                  </span>
-                </article>
-              ))}
-            </div>
             <Image
               src="/howitworks/1.png"
               alt="Thermal Wall cutaway showing hydronic tubing, concrete thermal mass, controls, and a conditioned room"
@@ -178,43 +169,27 @@ export default function HowItWorks() {
 
       <section id="assembly" className={styles.assemblySection}>
         <div className={`${styles.shell} ${styles.assemblyLayout}`}>
-          <div className={styles.compactIntro}>
+          <div className={styles.assemblyIntro}>
             <p className={styles.eyebrow}>01 · WHAT TWT PHYSICALLY IS</p>
             <h2>Four elements. One integrated assembly.</h2>
           </div>
           <div className={styles.assemblyCards}>
-            {assembly.map(([Icon, title, copy], index) => (
+            {assembly.map(([src, width, height, alt, title, copy]) => (
               <article key={title}>
-                <span className={styles.assemblyNumber}>0{index + 1}</span>
-                <Icon />
+                <div className={styles.assemblyVisual}>
+                  <Image
+                    src={src}
+                    alt={alt}
+                    width={width}
+                    height={height}
+                    sizes="(max-width: 640px) 46vw, (max-width: 1120px) 20vw, 10vw"
+                  />
+                </div>
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </article>
             ))}
           </div>
-          <details className={styles.constructionDetail}>
-            <summary>
-              <span>
-                <Shield />
-                <span>
-                  <b>Patented construction detail</b>
-                  <small>
-                    Dry-stack insulated concrete blocks, continuous flow
-                    channels, protective grommets, and finish attachment form a
-                    monolithic assembly.
-                  </small>
-                </span>
-              </span>
-              <em>
-                See construction details <ChevronDown />
-              </em>
-            </summary>
-            <p>
-              Construction details keep the tubing protected while preserving a
-              continuous concrete thermal mass and a durable interior finish
-              surface.
-            </p>
-          </details>
         </div>
       </section>
 
@@ -233,6 +208,7 @@ export default function HowItWorks() {
           <div id="surface-detail" className={styles.comparisonGrid}>
             <article className={styles.comparisonCard}>
               <p>Traditional systems</p>
+              <span>Small surface. Higher temperature.</span>
               <Image
                 src="/howitworks/2a.png"
                 alt="Traditional radiator"
@@ -248,6 +224,7 @@ export default function HowItWorks() {
               className={`${styles.comparisonCard} ${styles.twtComparison}`}
             >
               <p>TWT walls &amp; floor</p>
+              <span>Building-scale surface. Lower temperature.</span>
               <Image
                 src="/howitworks/2b.png"
                 alt="Thermal Wall radiant room"
@@ -317,30 +294,41 @@ export default function HowItWorks() {
             <h2>One system. Three operating modes.</h2>
           </div>
           <div className={styles.modeGrid}>
-            {modes.map(([Icon, title, copy, points, tone]) => (
-              <article className={styles[tone]} key={title}>
-                <div className={styles.modeTitle}>
-                  <Icon />
-                  <h3>{title}</h3>
-                </div>
-                <p>{copy}</p>
-                <div className={styles.modeSketch}>
-                  <Home />
-                  <Waves />
-                </div>
-                <ul>
-                  {points.map((point) => (
-                    <li key={point}>
-                      <Check />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <a href="#overview">
-                  Learn more <ArrowRight />
-                </a>
-              </article>
-            ))}
+            {modes.map(
+              ([Icon, title, copy, points, tone, imageSrc, imageAlt]) => (
+                <article className={styles[tone]} key={title}>
+                  <div className={styles.modeHeader}>
+                    <Icon />
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </div>
+                  </div>
+                  <div className={styles.modeBody}>
+                    <div className={styles.modeImage}>
+                      <Image
+                        src={imageSrc}
+                        alt={imageAlt}
+                        width={1024}
+                        height={1024}
+                        sizes="(max-width: 760px) 80vw, 18vw"
+                      />
+                    </div>
+                    <ul>
+                      {points.map((point) => (
+                        <li key={point}>
+                          <Check />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <a href="#overview">
+                    Learn more <ArrowRight />
+                  </a>
+                </article>
+              ),
+            )}
           </div>
           <p className={styles.dewPointNote}>
             <Shield /> Dew-point control is integrated into cooling operation to
@@ -350,55 +338,109 @@ export default function HowItWorks() {
       </section>
 
       <section id="system" className={styles.systemSection}>
-        <div className={`${styles.shell} ${styles.systemLayout}`}>
-          <div className={styles.systemIntro}>
-            <p className={styles.eyebrow}>05 · THE FULL SYSTEM</p>
-            <h2>A closed-loop system connects every part.</h2>
-          </div>
-          <div className={styles.systemNodes}>
-            {systemNodes.map(([Icon, label], index) => (
-              <div key={label}>
-                <span>
-                  <Icon />
-                </span>
-                <b>{label}</b>
-                {index < systemNodes.length - 1 && <ArrowRight />}
-              </div>
-            ))}
-          </div>
-          <aside className={styles.systemFacts}>
-            <p>
-              <b>Walls provide stability.</b> Walls store and deliver
-              longer-term energy.
-            </p>
-            <p>
-              <b>Floors provide response.</b> Floors respond to finer comfort
-              adjustments.
-            </p>
-          </aside>
-          <div className={styles.systemMap}>
-            <Image
-              src="/howitworks/5.png"
-              alt="Thermal Wall closed-loop system map"
-              width={1535}
-              height={1024}
-              sizes="(max-width: 900px) 100vw, 48vw"
-            />
-          </div>
-        </div>
-      </section>
+        <div className={styles.shell}>
+          <div className={styles.systemLayout}>
+            <div className={styles.systemIntro}>
+              <p className={styles.eyebrow}>05 / THE FULL SYSTEM</p>
+              <h2>
+                One closed loop.
+                <br />
+                Every part working
+                <br />
+                together.
+              </h2>
+              <p>
+                TWT connects the energy source, heat exchanger, controls,
+                thermal storage, and building zones into one coordinated
+                hydronic system.
+              </p>
+              <p>
+                Energy can be directed where it is most useful—immediately to
+                the building, into reserve storage, or through individually
+                controlled zones.
+              </p>
 
-      <section className={styles.ctaSection}>
-        <div className={`${styles.shell} ${styles.ctaLayout}`}>
-          <h2>Ready to go deeper?</h2>
-          <div>
-            <Button href="/evidence" primary>
-              Review the evidence
-            </Button>
-            <Button href="/research-partnership">
-              Explore the research program
-            </Button>
-            <Button href="/future-applications">See potential benefits</Button>
+              <div
+                className={styles.flowLegend}
+                aria-label="System flow legend"
+              >
+                <span>
+                  <i className={styles.supplyLine} /> Supply flow (energy
+                  delivered)
+                </span>
+                <span>
+                  <i className={styles.returnLine} /> Return flow (fluid
+                  returning)
+                </span>
+                <span>
+                  <i className={styles.controlLine} /> Control signal
+                  (information)
+                </span>
+              </div>
+            </div>
+
+            <div className={styles.systemMap}>
+              <Image
+                src="/howitworks/5.png"
+                alt="Thermal Wall closed-loop system map showing energy sources, controls, building zones, thermal storage, and return flow"
+                width={1535}
+                height={1024}
+                sizes="(max-width: 820px) 100vw, 70vw"
+              />
+            </div>
+          </div>
+
+          <div className={styles.systemSummary}>
+            <div className={styles.summaryStatement}>
+              <Shield />
+              <p>
+                <strong>TWT is not one device added to a building.</strong>
+                <span>
+                  It is a coordinated hydronic system that uses the concrete
+                  structure to receive, store, distribute, and release thermal
+                  energy.
+                </span>
+              </p>
+            </div>
+            <div className={styles.summaryPoint}>
+              <Waves />
+              <p>
+                <strong>Continuous circulation</strong>A closed loop supports
+                stable operation and efficient energy use.
+              </p>
+            </div>
+            <div className={styles.summaryPoint}>
+              <Layers3 />
+              <p>
+                <strong>Directed where it&apos;s useful</strong>Energy is sent
+                to building zones or storage according to need.
+              </p>
+            </div>
+            <div className={styles.summaryPoint}>
+              <Thermometer />
+              <p>
+                <strong>Built-in stability</strong>The concrete mass provides
+                steady comfort and reduces temperature swings.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.systemCta}>
+            <div className={styles.systemCtaIntro}>
+              <span>
+                <Layers3 />
+              </span>
+              <p>
+                <strong>See the data behind the system.</strong>
+                Explore the evidence, modeling, and research program.
+              </p>
+            </div>
+            <div className={styles.systemCtaActions}>
+              <Button href="/evidence" primary>
+                Review the evidence
+              </Button>
+              <Button href="/potential-benefits">See potential benefits</Button>
+            </div>
           </div>
         </div>
       </section>

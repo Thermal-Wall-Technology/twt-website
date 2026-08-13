@@ -1,0 +1,416 @@
+@reference "../globals.css";
+
+.page {
+  @apply bg-white text-twt-deep-navy;
+}
+.shell {
+  @apply mx-auto w-full max-w-[1900px] px-[clamp(14px,1.25vw,24px)];
+}
+.sectionNav {
+  @apply sticky top-[64px] z-30 border-b border-twt-light-gray bg-white/95 backdrop-blur-md;
+}
+.sectionNav > div {
+  @apply mx-auto flex max-w-[1900px] items-center justify-center gap-[clamp(26px,5vw,76px)] overflow-x-auto px-[clamp(14px,1.25vw,24px)];
+  scrollbar-width: none;
+}
+.sectionNav a {
+  @apply relative shrink-0 py-4 text-sm font-bold text-twt-medium-navy outline-offset-[-3px] transition-colors hover:text-twt-primary-orange focus-visible:outline-2 focus-visible:outline-twt-focus;
+}
+.sectionNav a:first-child::after {
+  content: "";
+  @apply absolute inset-x-0 bottom-0 h-0.5 bg-twt-primary-orange;
+}
+.hero {
+  @apply relative overflow-hidden bg-[#031f47] text-white;
+  background-image:
+    linear-gradient(rgba(148, 204, 250, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 204, 250, 0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+.hero::before {
+  content: "";
+  @apply absolute inset-y-0 left-0 w-1 bg-twt-primary-orange;
+}
+.heroInner {
+  @apply relative mx-auto grid max-w-[1900px] gap-[clamp(24px,2vw,38px)] px-[clamp(14px,1.25vw,24px)] py-[clamp(40px,4.5vw,64px)] lg:grid-cols-[minmax(360px,.72fr)_minmax(0,1.28fr)] lg:items-center;
+}
+.eyebrow {
+  @apply text-xs font-extrabold tracking-[.19em] text-twt-primary-orange uppercase;
+}
+.heroCopy h1 {
+  @apply mt-4 max-w-[600px] text-[clamp(40px,3.5vw,52px)] leading-[.98] font-extrabold tracking-[-.055em];
+}
+.heroCopy h1 span {
+  @apply text-twt-primary-orange;
+}
+.heroLead {
+  @apply mt-6 max-w-[610px] text-[clamp(15px,1.05vw,17px)] leading-[1.65] font-medium text-twt-blue-white;
+}
+.outlineButton,
+.primaryButton,
+.secondaryButton {
+  @apply inline-flex min-h-13 items-center justify-center gap-3 px-5 py-3.5 text-sm font-bold outline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-twt-focus;
+}
+.outlineButton {
+  @apply mt-8 border-2 border-twt-primary-orange text-white hover:bg-twt-primary-orange;
+}
+.outlineButton svg,
+.primaryButton svg,
+.secondaryButton svg,
+.explore svg {
+  @apply size-4 shrink-0;
+}
+.heroWall {
+  @apply relative w-full lg:self-center;
+}
+.heroWall img {
+  @apply h-auto w-full object-contain object-right;
+}
+.overview {
+  @apply relative scroll-mt-28 bg-[#f7fafc] py-[clamp(68px,7vw,100px)];
+  background-image: linear-gradient(90deg, rgba(6, 42, 94, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.centeredHeading {
+  @apply mx-auto max-w-[780px] text-center;
+}
+.centeredHeading h2 {
+  @apply mt-3 text-[clamp(34px,3.3vw,50px)] leading-[1.05] font-extrabold tracking-[-.045em];
+}
+.centeredHeading > p:last-child {
+  @apply mx-auto mt-4 max-w-[660px] leading-7 font-medium text-twt-slate-gray;
+}
+.pillarGrid {
+  @apply mt-11 grid gap-4 sm:grid-cols-2 xl:grid-cols-4;
+}
+.pillar {
+  @apply flex min-h-[250px] flex-col rounded-lg border bg-white p-5 text-center shadow-none outline-offset-4 transition duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-twt-focus;
+  border-color: color-mix(in srgb, var(--tone) 38%, #dce4ec);
+}
+.pillarIcon {
+  @apply mx-auto grid size-14 place-items-center rounded-full border-2;
+  color: var(--tone);
+  border-color: color-mix(in srgb, var(--tone) 55%, white);
+  background: color-mix(in srgb, var(--tone) 7%, white);
+}
+.pillarIcon svg {
+  @apply size-7;
+}
+.pillarCount {
+  @apply mt-4 text-[11px] font-extrabold tracking-[.15em] uppercase;
+  color: var(--tone);
+}
+.pillar h3 {
+  @apply mt-2 text-xl leading-tight font-extrabold;
+}
+.pillar p {
+  @apply mt-3 text-sm leading-6 text-twt-slate-gray;
+}
+.explore {
+  @apply mt-auto inline-flex items-center justify-center gap-2 pt-5 text-sm font-bold;
+  color: var(--tone);
+}
+.pillar[data-tone="orange"],
+.accordionGroup[data-tone="orange"] {
+  --tone: #ff4d00;
+}
+.pillar[data-tone="blue"],
+.accordionGroup[data-tone="blue"] {
+  --tone: #2574d8;
+}
+.pillar[data-tone="green"],
+.accordionGroup[data-tone="green"] {
+  --tone: #31965a;
+}
+.pillar[data-tone="purple"],
+.accordionGroup[data-tone="purple"] {
+  --tone: #8750cf;
+}
+.benefitsSection {
+  @apply scroll-mt-28 bg-white py-[clamp(58px,7vw,100px)];
+}
+.supportCard {
+  @apply scroll-mt-32 rounded-lg border p-[clamp(20px,2.4vw,30px)];
+}
+.orangeCard {
+  @apply border-orange-200 bg-[#fff8f3];
+}
+.blueCard {
+  @apply border-blue-200 bg-[#f5f9ff];
+}
+.greenCard {
+  @apply border-green-200 bg-[#f4faf6];
+}
+.purpleCard {
+  @apply border-purple-200 bg-[#faf7ff];
+}
+.benefitsHeading {
+  @apply mb-8 text-left;
+}
+.benefitsHeading h2 {
+  @apply mt-3 text-[clamp(34px,3.3vw,50px)] leading-[1.05] font-extrabold tracking-[-.045em];
+}
+.benefitsGrid {
+  @apply grid gap-5 md:grid-cols-2 xl:grid-cols-4;
+}
+.benefitHeader {
+  @apply flex items-start gap-4;
+}
+.categoryIcon {
+  @apply grid size-12 shrink-0 place-items-center rounded-full border bg-white;
+  color: var(--card-accent);
+  border-color: color-mix(in srgb, var(--card-accent) 40%, white);
+}
+.categoryIcon svg {
+  @apply size-6;
+}
+.orangeCard {
+  --card-accent: #ff4d00;
+}
+.blueCard {
+  --card-accent: #2574d8;
+}
+.greenCard {
+  --card-accent: #31965a;
+}
+.purpleCard {
+  --card-accent: #8750cf;
+}
+.categoryLabel {
+  @apply text-[11px] font-extrabold tracking-[.16em] uppercase;
+  color: var(--card-accent);
+}
+.benefitHeader h2 {
+  @apply mt-1 text-[clamp(25px,2.2vw,34px)] leading-[1.08] font-extrabold tracking-[-.035em];
+}
+.categoryIntro {
+  @apply mt-5 leading-7 font-medium text-twt-slate-gray;
+}
+.supportCard {
+  @apply flex flex-col p-4;
+}
+.benefitsGrid .benefitHeader {
+  @apply items-center gap-3;
+}
+.benefitsGrid .categoryIcon {
+  @apply size-9;
+}
+.benefitsGrid .categoryIcon svg {
+  @apply size-5;
+}
+.benefitsGrid .categoryLabel {
+  @apply hidden;
+}
+.benefitsGrid .benefitHeader h2 {
+  @apply mt-0 text-[15px] leading-[1.25] tracking-[-.02em];
+}
+.benefitsGrid .categoryIntro {
+  @apply hidden;
+}
+.accordionGroup {
+  @apply mt-4;
+}
+.accordionControls {
+  @apply mb-2 flex items-center justify-between gap-3 text-[9px] font-extrabold tracking-[.06em] uppercase;
+  color: var(--tone);
+}
+.accordionControls > div {
+  @apply flex items-center gap-2;
+}
+.accordionControls button {
+  @apply cursor-pointer rounded-sm outline-offset-2 hover:underline focus-visible:outline-2 focus-visible:outline-twt-focus;
+}
+.accordionList {
+  @apply grid gap-1.5;
+}
+.accordionItem {
+  @apply overflow-hidden rounded-md border border-[#dce4ec] bg-white shadow-none;
+}
+.accordionTrigger {
+  @apply flex w-full cursor-pointer items-center gap-2 p-2.5 text-left outline-offset-[-3px] transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-twt-focus;
+}
+.benefitNumber {
+  @apply grid size-7 shrink-0 place-items-center rounded-full text-[9px] font-extrabold;
+  color: var(--tone);
+  background: color-mix(in srgb, var(--tone) 8%, white);
+}
+.triggerCopy {
+  @apply min-w-0 flex-1;
+}
+.triggerTitle {
+  @apply block text-[11px] leading-[1.25] font-extrabold text-twt-deep-navy;
+}
+.statusBadge {
+  @apply mt-1 inline-flex rounded-full border px-1.5 py-0 text-[7px] leading-3.5 font-extrabold tracking-[.03em] uppercase;
+}
+.established {
+  @apply border-blue-200 bg-blue-50 text-blue-700;
+}
+.modeled {
+  @apply border-orange-200 bg-orange-50 text-orange-700;
+}
+.design {
+  @apply border-green-200 bg-green-50 text-green-700;
+}
+.validation {
+  @apply border-purple-200 bg-purple-50 text-purple-700;
+}
+.chevron {
+  @apply size-3.5 shrink-0 text-twt-medium-navy transition-transform duration-200;
+}
+.chevronOpen {
+  @apply rotate-180;
+}
+.accordionPanel {
+  @apply border-t border-twt-light-gray px-3 pt-3 pb-4 text-xs leading-5 text-twt-slate-gray;
+}
+.accordionPanel[hidden] {
+  display: none;
+}
+.benefitSummary {
+  @apply mb-2 font-bold text-twt-medium-navy;
+}
+.qualifier {
+  @apply mt-3 border-l-2 border-current pl-3 text-xs leading-5 font-semibold;
+  color: var(--tone);
+}
+.statusBand {
+  @apply mt-6 scroll-mt-32 rounded-lg bg-[#031f47] p-[clamp(25px,3vw,42px)] text-white xl:grid xl:grid-cols-[.7fr_1.3fr] xl:gap-10;
+}
+.statusIntro h2 {
+  @apply mt-3 text-[clamp(26px,2.3vw,36px)] leading-tight font-extrabold tracking-[-.035em];
+}
+.statusIntro > p:last-child {
+  @apply mt-3 leading-6 text-twt-blue-white;
+}
+.statusGrid {
+  @apply mt-8 grid gap-5 sm:grid-cols-2 xl:mt-0 xl:grid-cols-4;
+}
+.statusItem {
+  @apply flex items-start gap-3 border-l border-white/15 pl-4;
+}
+.statusItem > svg {
+  @apply mt-0.5 size-7 shrink-0;
+  color: var(--status-color);
+}
+.statusItem h3 {
+  @apply text-sm font-extrabold;
+}
+.statusItem p {
+  @apply mt-1 text-xs leading-5 text-twt-blue-white;
+}
+.statusItem[data-status="established"] {
+  --status-color: #4aa3ff;
+}
+.statusItem[data-status="modeled"] {
+  --status-color: #ff6a1a;
+}
+.statusItem[data-status="design"] {
+  --status-color: #53c879;
+}
+.statusItem[data-status="validation"] {
+  --status-color: #b277ff;
+}
+.cta {
+  @apply relative mt-6 scroll-mt-32 overflow-hidden rounded-lg border border-orange-200 bg-[#fbf7f1] p-[clamp(26px,4vw,54px)] lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10;
+  background-image: linear-gradient(135deg, rgba(255, 90, 0, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.cta h2 {
+  @apply mt-3 max-w-[680px] text-[clamp(30px,3vw,46px)] leading-[1.07] font-extrabold tracking-[-.04em];
+}
+.cta > div:first-child > p:last-child {
+  @apply mt-3 text-twt-slate-gray;
+}
+.ctaActions {
+  @apply relative z-10 mt-7 flex flex-wrap gap-3 lg:mt-0 lg:flex-col;
+}
+.primaryButton {
+  @apply bg-twt-deep-navy text-white hover:bg-twt-medium-navy;
+}
+.secondaryButton {
+  @apply border-2 border-twt-medium-navy text-twt-medium-navy hover:border-twt-primary-orange hover:text-twt-primary-orange;
+}
+.ctaMark {
+  @apply pointer-events-none absolute -right-7 -bottom-9 size-40 text-orange-100;
+}
+.legalStrip {
+  @apply border-y border-[#dce4ec] bg-[#eef4f8] py-4;
+}
+.legalStrip > .shell {
+  @apply flex items-center gap-4;
+}
+.legalStrip svg {
+  @apply size-7 shrink-0 text-twt-medium-navy;
+}
+.legalStrip p {
+  @apply m-0 flex-1 text-xs leading-[1.55] font-medium text-twt-primary-navy;
+}
+.legalStrip a {
+  @apply inline-flex items-center gap-2 text-xs font-black whitespace-nowrap text-twt-medium-navy no-underline;
+}
+.legalStrip a svg {
+  @apply size-4;
+}
+
+@media (max-width: 1023px) {
+  .sectionNav {
+    top: 60px;
+  }
+  .heroInner {
+    @apply grid-cols-1;
+  }
+}
+@media (max-width: 767px) {
+  .sectionNav > div {
+    @apply justify-start;
+  }
+  .heroInner {
+    @apply py-14;
+  }
+  .pillar {
+    @apply min-h-0;
+  }
+  .statusItem {
+    @apply border-l-0 pl-0;
+  }
+  .ctaActions {
+    @apply flex-col;
+  }
+  .primaryButton,
+  .secondaryButton {
+    @apply w-full;
+  }
+  .legalStrip > .shell {
+    @apply items-start;
+  }
+  .legalStrip a {
+    @apply hidden;
+  }
+}
+@media (max-width: 479px) {
+  .heroCopy h1 {
+    font-size: 40px;
+  }
+  .accordionControls {
+    @apply items-start;
+  }
+  .accordionControls > div {
+    @apply flex-col items-end gap-0;
+  }
+  .accordionControls > div > span {
+    @apply hidden;
+  }
+}
+@media (max-width: 1023px) {
+  .heroWall {
+    @apply order-2 max-w-[650px];
+  }
+}
+@media (max-width: 640px) {
+  .hero,
+  .overview,
+  .cta {
+    background-image: none;
+  }
+}

@@ -204,16 +204,6 @@ export function ResearchAndCredibilityPreview() {
               </article>
             ))}
           </div>
-          <Link
-            href="/research-partnership"
-            className="group mt-9 inline-flex items-center gap-3 font-extrabold text-twt-medium-navy underline decoration-twt-light-gray underline-offset-4 hover:text-twt-primary-orange focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-twt-focus"
-          >
-            See the proposed research program
-            <ArrowRight
-              className="size-5 transition-transform group-hover:translate-x-1"
-              aria-hidden="true"
-            />
-          </Link>
         </div>
       </section>
 
@@ -285,7 +275,7 @@ export function FutureApplicationsPreview() {
             contexts&mdash;not current performance promises.
           </p>
           <Link
-            href="/future-applications"
+            href="/potential-benefits"
             className="group mt-7 inline-flex items-center gap-3 font-extrabold text-white underline decoration-twt-primary-orange underline-offset-4 hover:text-twt-light-orange focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-twt-sky-blue"
           >
             Explore future applications

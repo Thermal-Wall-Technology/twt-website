@@ -1,7 +1,7 @@
 @reference "../globals.css";
 
 .shell {
-  @apply mx-auto w-[min(1240px,calc(100%-48px))] max-sm:w-[min(1240px,calc(100%-32px))];
+  @apply mx-auto w-[min(1280px,calc(100%-48px))] max-sm:w-[min(1280px,calc(100%-28px))];
 }
 
 .eyebrow {
@@ -22,24 +22,24 @@
 }
 
 .hero {
-  @apply relative overflow-hidden border-b border-twt-light-gray bg-[#f8fbfe] pt-20 pb-10 max-sm:pt-12;
+  @apply relative overflow-hidden border-b border-white/10 bg-[#062a5e] py-10 text-white max-sm:py-9;
 }
 
 .heroBackdrop {
-  @apply pointer-events-none object-cover opacity-65 max-sm:opacity-10;
+  @apply pointer-events-none object-cover opacity-20 max-sm:opacity-10;
 }
 
 .hero::after {
   content: "";
-  @apply pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(248,251,254,0.3),rgba(248,251,254,0.88)_45%,rgba(248,251,254,0.2))];
+  @apply pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(3,31,71,.45),rgba(6,42,94,.72)_45%,rgba(3,31,71,.35))];
 }
 
 .heroGrid {
-  @apply relative z-1 grid min-h-[570px] grid-cols-[1.15fr_0.85fr] items-center gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-10;
+  @apply relative z-1 grid min-h-[560px] grid-cols-[1.08fr_.92fr] items-center gap-[clamp(32px,5vw,72px)] max-[900px]:grid-cols-1 max-[900px]:gap-10;
 }
 
 .heroCopy h1 {
-  @apply m-0 text-[clamp(3.2rem,4.7vw,4.7rem)] leading-[0.98] font-extrabold tracking-[-0.065em] text-twt-deep-navy;
+  @apply m-0 text-[clamp(3rem,4vw,4rem)] leading-[0.98] font-extrabold tracking-[-0.06em] text-white;
   @apply max-sm:text-[clamp(2.7rem,13vw,4rem)];
 }
 
@@ -52,7 +52,7 @@
 }
 
 .heroBody {
-  @apply mt-6 mb-0 max-w-[650px] text-[17px] leading-[1.7] font-medium text-twt-slate-gray max-sm:text-base;
+  @apply mt-6 mb-0 max-w-[690px] text-[16px] leading-[1.7] font-medium text-white/85 max-sm:text-base;
 }
 
 .heroActions {
@@ -60,15 +60,15 @@
 }
 
 .founderCard {
-  @apply overflow-hidden rounded-[28px] border border-white bg-white p-3 shadow-[0_30px_80px_rgba(3,26,61,0.16)] max-[900px]:mx-auto max-[900px]:w-full max-[900px]:max-w-[560px];
+  @apply overflow-hidden rounded-2xl border-4 border-white bg-white p-1.5 shadow-none max-[900px]:mx-auto max-[900px]:w-full max-[900px]:max-w-[560px];
 }
 
 .founderImageWrap {
-  @apply relative min-h-[460px] overflow-hidden rounded-2xl bg-twt-pale-blue max-sm:min-h-[390px];
+  @apply relative min-h-[460px] overflow-hidden rounded-xl bg-twt-pale-blue max-sm:min-h-[430px];
 }
 
 .founderImage {
-  @apply object-cover object-[center_22%];
+  @apply object-contain object-center;
 }
 
 .founderCaption {
@@ -88,7 +88,7 @@
 }
 
 .proofGrid {
-  @apply relative z-1 mt-10 grid grid-cols-3 divide-x divide-twt-light-gray rounded-2xl border border-twt-light-gray bg-white p-3 shadow-[0_18px_55px_rgba(3,26,61,0.07)];
+  @apply relative z-1 mt-5 grid grid-cols-3 divide-x divide-twt-light-gray rounded-t-2xl border border-b-0 border-twt-light-gray bg-white p-2 shadow-none;
   @apply max-[800px]:grid-cols-1 max-[800px]:divide-x-0;
 }
 
@@ -117,20 +117,27 @@
 .inventorSection,
 .patentSection,
 .analysisSection {
-  @apply py-24 max-sm:py-16;
+  @apply py-[clamp(54px,5vw,78px)] max-sm:py-14;
 }
 
 .storyGrid {
-  @apply grid grid-cols-[0.82fr_1.18fr] items-start gap-20 max-[1000px]:grid-cols-1 max-[1000px]:gap-12;
+  @apply grid grid-cols-[1.06fr_.94fr] items-start gap-[clamp(32px,3.5vw,56px)] max-[1000px]:grid-cols-1 max-[1000px]:gap-10;
+}
+
+.storyShell {
+  @apply w-[min(1540px,calc(100%-30px))] max-sm:w-[min(1540px,calc(100%-24px))];
+}
+
+.storyMedia {
+  @apply sticky top-24 grid gap-5 max-[1000px]:relative max-[1000px]:top-auto;
 }
 
 .storyVisual {
-  @apply sticky top-28 h-[650px] overflow-hidden rounded-[28px] border border-twt-light-gray bg-white shadow-[0_25px_65px_rgba(3,26,61,0.12)];
-  @apply max-[1000px]:relative max-[1000px]:top-auto max-[1000px]:h-[480px] max-sm:h-[360px];
+  @apply aspect-[4/3] w-full overflow-hidden rounded-2xl border border-twt-light-gray bg-white shadow-none;
 }
 
 .storyImage {
-  @apply h-full w-full object-cover object-left-bottom;
+  @apply h-full w-full object-contain;
 }
 
 .storyVisualLabel {
@@ -149,7 +156,7 @@
 .sectionIntro h2,
 .inventorCopy h2,
 .patentGrid h2 {
-  @apply m-0 text-[clamp(2.4rem,4vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.05em] text-twt-deep-navy;
+  @apply m-0 text-[clamp(2.2rem,3vw,3.5rem)] leading-[1.04] font-extrabold tracking-[-0.05em] text-twt-deep-navy;
 }
 
 .storyBody {
@@ -160,23 +167,23 @@
   @apply mt-0 mb-5;
 }
 
-.storyCopy blockquote {
-  @apply relative mt-9 mb-0 rounded-2xl border border-[#ffd7c1] bg-[#fff8f3] px-7 py-7 pl-20;
+.storyQuote {
+  @apply relative m-0 rounded-xl border border-[#ffd7c1] bg-[#fff8f3] px-7 py-6 pl-20;
 }
 
-.storyCopy blockquote > svg {
+.storyQuote > svg {
   @apply absolute top-7 left-6 size-9 fill-twt-primary-orange text-twt-primary-orange;
 }
 
-.storyCopy blockquote > p {
-  @apply m-0 text-xl leading-[1.5] font-bold italic text-twt-medium-navy;
+.storyQuote > p {
+  @apply m-0 text-lg leading-[1.45] font-bold italic text-twt-medium-navy;
 }
 
-.storyCopy blockquote footer {
+.storyQuote footer {
   @apply mt-5 flex flex-col text-xs text-twt-deep-navy;
 }
 
-.storyCopy blockquote footer span {
+.storyQuote footer span {
   @apply mt-1 text-twt-slate-gray;
 }
 
@@ -185,23 +192,32 @@
 }
 
 .sectionIntro {
-  @apply flex items-end justify-between gap-12 max-[900px]:grid;
+  @apply mx-auto flex max-w-[1000px] items-end justify-between gap-12 text-center max-[900px]:grid;
 }
 
 .sectionIntro > div {
-  @apply max-w-[700px];
+  @apply max-w-[760px] flex-1;
 }
 
 .sectionIntro > p {
-  @apply mb-1 max-w-[440px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
+  @apply mb-1 max-w-[480px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
+}
+
+.timelineSection .sectionIntro {
+  @apply block;
+}
+
+.timelineSection .sectionIntro > div,
+.timelineSection .sectionIntro > p {
+  @apply mx-auto;
 }
 
 .timelineGrid {
-  @apply mt-12 grid grid-cols-3 gap-4 max-[900px]:grid-cols-2 max-sm:grid-cols-1;
+  @apply mt-10 grid grid-cols-6 gap-3 max-[1100px]:grid-cols-3 max-[700px]:grid-cols-2 max-sm:grid-cols-1;
 }
 
 .timelineGrid article {
-  @apply rounded-2xl border border-twt-light-gray bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1;
+  @apply rounded-lg border border-twt-light-gray bg-white p-5 shadow-none transition-transform duration-200 hover:-translate-y-1;
 }
 
 .timelineTopline {
@@ -265,15 +281,15 @@
 }
 
 .inventorSection {
-  @apply border-y border-twt-light-gray bg-[#f8fbfe];
+  @apply border-y border-twt-light-gray bg-[#fbf7f2];
 }
 
 .inventorGrid {
-  @apply grid grid-cols-[0.85fr_1.15fr] items-center gap-20 max-[900px]:grid-cols-1 max-[900px]:gap-10;
+  @apply grid grid-cols-[.96fr_1.04fr] items-center gap-[clamp(36px,5vw,72px)] max-[900px]:grid-cols-1 max-[900px]:gap-10;
 }
 
 .inventorImageWrap {
-  @apply relative min-h-[520px] overflow-hidden rounded-[28px] border border-twt-light-gray bg-white shadow-[0_25px_65px_rgba(3,26,61,0.1)] max-sm:min-h-[360px];
+  @apply relative min-h-[520px] overflow-hidden rounded-2xl border border-[#eadfd4] bg-white shadow-none max-sm:min-h-[360px];
 }
 
 .inventorImage {
@@ -289,7 +305,7 @@
 }
 
 .inventorCards article {
-  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-4;
+  @apply flex gap-4 rounded-lg border border-[#e7ded5] bg-white/70 p-4;
 }
 
 .inventorCards article > svg {
@@ -341,7 +357,19 @@
 }
 
 .analysisSection {
-  @apply border-t border-twt-light-gray bg-twt-pale-blue;
+  @apply border-t border-twt-light-gray bg-[#031f47] text-white;
+}
+
+.analysisSection .sectionIntro {
+  @apply max-w-none text-left;
+}
+
+.analysisSection .sectionIntro h2 {
+  @apply text-white;
+}
+
+.analysisSection .sectionIntro > p {
+  @apply text-twt-blue-white;
 }
 
 .analysisFlow {

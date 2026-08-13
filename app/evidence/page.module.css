@@ -21,6 +21,10 @@
   @apply text-[clamp(2.35rem,3.8vw,3.8rem)];
 }
 
+.evSection h2 {
+  @apply text-[clamp(2.25rem,3.1vw,3.15rem)];
+}
+
 .evBtn {
   @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-twt-light-gray bg-white px-5 py-3 text-sm font-extrabold text-twt-primary-navy no-underline shadow-sm transition-all duration-200;
   @apply hover:-translate-y-0.5 hover:border-twt-primary-navy focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-twt-focus max-sm:w-full;
@@ -56,7 +60,11 @@
 /* Hero ------------------------------------------------------------------ */
 
 .evidenceHero {
-  @apply relative overflow-hidden bg-twt-deep-navy py-20 text-white max-sm:py-14;
+  @apply relative overflow-hidden bg-[#031f47] py-20 text-white max-sm:py-14;
+  background-image:
+    linear-gradient(rgba(148, 204, 250, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 204, 250, 0.04) 1px, transparent 1px);
+  background-size: 54px 54px;
 }
 
 .evidenceHero::after {
@@ -78,7 +86,7 @@
 }
 
 .heroGrid {
-  @apply relative z-1 grid grid-cols-[1.08fr_0.92fr] items-start gap-16 max-[1000px]:grid-cols-1 max-[1000px]:gap-10;
+  @apply relative z-1 grid grid-cols-[1.15fr_0.85fr] items-start gap-20 max-[1000px]:grid-cols-1 max-[1000px]:gap-10;
 }
 
 .evidenceHero h1 {
@@ -114,7 +122,7 @@
 }
 
 .corePanel {
-  @apply overflow-hidden rounded-[24px] border border-white/20 bg-white p-3 text-twt-deep-navy shadow-[0_28px_75px_rgba(0,0,0,0.2)];
+  @apply overflow-hidden rounded-xl border border-white/30 bg-white p-3 text-twt-deep-navy shadow-[0_10px_28px_rgba(0,0,0,0.12)];
 }
 
 .coreVisual {
@@ -143,8 +151,20 @@
   @apply border-t border-twt-light-gray py-20 max-sm:py-16;
 }
 
+.metricsSection {
+  @apply bg-[#f8fafc];
+}
+
 .metricsLayout {
-  @apply grid grid-cols-[285px_1fr] items-start gap-12 max-[1000px]:grid-cols-1;
+  @apply grid grid-cols-[270px_1fr] items-stretch gap-8 max-[1000px]:grid-cols-1;
+}
+
+.metricsIntro {
+  @apply flex min-w-0 flex-col py-1;
+}
+
+.metricsIntro h2 {
+  @apply text-[clamp(1.8rem,1.9vw,2rem)];
 }
 
 .metricsLayout > div:first-child > p:not(.evLabel),
@@ -154,23 +174,23 @@
 }
 
 .metricsLayout .evBtn {
-  @apply mt-7;
+  @apply mt-auto self-start max-[1000px]:mt-7;
 }
 
 .metricCards {
-  @apply grid grid-cols-4 gap-4 max-[1100px]:grid-cols-2 max-sm:grid-cols-1;
+  @apply grid h-full grid-cols-4 items-stretch gap-3 max-[1100px]:grid-cols-2 max-sm:grid-cols-1;
 }
 
 .metricCards article {
-  @apply min-w-0 rounded-2xl border border-twt-light-gray bg-white p-5 shadow-[0_10px_32px_rgba(3,26,61,0.06)];
+  @apply flex min-h-[216px] min-w-0 flex-col rounded-xl border border-[#dce4ec] bg-white p-4 shadow-none;
 }
 
 .metricCards svg {
-  @apply size-11 rounded-xl bg-[#eef6ff] p-2.5 text-[#176cc8];
+  @apply size-10 rounded-lg bg-[#eef6ff] p-2.5 text-[#176cc8];
 }
 
 .metricCards small {
-  @apply mt-5 block text-[9px] leading-[1.35] font-black tracking-[0.08em] text-twt-primary-navy;
+  @apply mt-4 block text-[9px] leading-[1.35] font-black tracking-[0.08em] text-twt-primary-navy;
 }
 
 .metricCards strong {
@@ -203,11 +223,23 @@
 /* Model and chart ------------------------------------------------------- */
 
 .modelSection {
-  @apply bg-twt-soft-white;
+  @apply bg-[#eef4f8];
 }
 
 .modelGrid {
-  @apply grid grid-cols-[0.72fr_1.28fr] items-start gap-12 max-[1050px]:grid-cols-1;
+  @apply grid grid-cols-[0.5fr_1fr] items-stretch gap-12 max-[1050px]:grid-cols-1;
+}
+
+.modelCopy {
+  @apply flex min-w-0 flex-col;
+}
+
+.modelCopy h2 {
+  @apply text-[clamp(2.25rem,3vw,3.05rem)];
+}
+
+.modelCopy .evBtn {
+  @apply mt-auto self-start max-[1050px]:mt-0;
 }
 
 .resultList {
@@ -215,7 +247,7 @@
 }
 
 .resultList article {
-  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-4;
+  @apply flex gap-4 rounded-lg border border-[#dce4ec] bg-white p-4 shadow-none;
 }
 
 .resultList svg {
@@ -236,7 +268,7 @@
 }
 
 .chartCard {
-  @apply m-0 min-w-0 overflow-hidden rounded-[22px] border border-[#dbe6f2] bg-white shadow-[0_24px_70px_rgba(3,26,61,0.12)];
+  @apply m-0 flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-[#d7e3ee] bg-white shadow-[0_8px_24px_rgba(3,26,61,0.07)];
 }
 
 .chartIntro {
@@ -274,13 +306,13 @@
 }
 
 .chartImageFrame {
-  @apply overflow-x-auto overflow-y-hidden bg-[#f8fbff];
+  @apply grid min-h-[330px] flex-1 place-items-center overflow-x-auto overflow-y-hidden bg-white;
   scrollbar-width: thin;
   scrollbar-color: #9eb4ca transparent;
 }
 
 .chartImageFrame img {
-  @apply block h-auto w-full;
+  @apply block h-auto max-h-full w-full object-contain;
 }
 
 .chartInsight {
@@ -310,24 +342,30 @@
 /* Thermal cycle -------------------------------------------------------- */
 
 .thermalCycle {
-  @apply bg-white;
+  @apply bg-[#fbf7f1];
 }
 
 .cycleIntro {
-  @apply mb-10 grid grid-cols-[1fr_0.85fr] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-5;
+  @apply mb-10 grid grid-cols-[1fr_0.85fr] items-end gap-12 border-b border-twt-light-gray pb-8 max-[900px]:grid-cols-1 max-[900px]:gap-5;
 }
 
-.cycleIntro p {
-  @apply m-0 text-sm leading-[1.7] font-medium text-twt-slate-gray;
+.cycleIntro h2,
+.coverageIntro h2 {
+  @apply text-[clamp(2.25rem,3vw,3.05rem)];
+}
+
+.cycleIntro > p,
+.coverageIntro > p {
+  @apply m-0 text-sm leading-[1.65] font-medium text-twt-slate-gray;
 }
 
 .cycleGrid {
-  @apply grid grid-cols-[repeat(3,minmax(0,1fr))_0.85fr] gap-4 max-[1180px]:grid-cols-2 max-[680px]:grid-cols-1;
+  @apply grid grid-cols-[repeat(3,minmax(0,1fr))_0.85fr] items-stretch gap-4 max-[1180px]:grid-cols-2 max-[680px]:grid-cols-1;
 }
 
 .phaseCard,
 .comfortPanel {
-  @apply relative min-w-0 overflow-visible rounded-2xl border border-twt-light-gray bg-white p-5 shadow-[0_14px_42px_rgba(3,26,61,0.06)];
+  @apply relative min-w-0 overflow-visible rounded-xl border border-[#dce4ec] bg-white p-5 shadow-[0_4px_14px_rgba(3,26,61,0.025)];
 }
 
 .phaseCard {
@@ -335,15 +373,15 @@
 }
 
 .phaseCard:nth-child(1) {
-  @apply border-[#f6dfc5] bg-[#fffdf9];
+  @apply border-[#f6dfc5] bg-[#fff7f1];
 }
 
 .phaseCard:nth-child(2) {
-  @apply border-[#f4dfc9] bg-[#fffaf5];
+  @apply border-[#edd7bf] bg-[#fff2e5];
 }
 
 .phaseCard:nth-child(3) {
-  @apply border-[#d7e6fa] bg-[#f8fbff];
+  @apply border-[#d7e6fa] bg-[#f2f8fc];
 }
 
 .phaseHead {
@@ -401,7 +439,7 @@
 }
 
 .comfortPanel {
-  @apply border-[#d9e6f9] bg-[#fbfdff] p-6;
+  @apply border-[#dce4ec] bg-white p-6;
 }
 
 .comfortIcon {
@@ -435,15 +473,11 @@
 /* Scope and boundaries -------------------------------------------------- */
 
 .coverage {
-  @apply bg-white;
+  @apply bg-[#f5f7fa];
 }
 
 .coverageIntro {
-  @apply mb-10 grid grid-cols-[1fr_0.85fr] items-end gap-16 max-[850px]:grid-cols-1 max-[850px]:gap-5;
-}
-
-.coverageIntro p {
-  @apply m-0 text-sm leading-[1.7] font-medium text-twt-slate-gray;
+  @apply mb-10 grid grid-cols-[1fr_0.85fr] items-end gap-12 border-b border-twt-light-gray pb-8 max-[850px]:grid-cols-1 max-[850px]:gap-5;
 }
 
 .coverageGrid {
@@ -452,7 +486,7 @@
 }
 
 .coverageGrid article {
-  @apply relative overflow-hidden rounded-2xl border border-twt-light-gray bg-white p-7 shadow-[0_14px_42px_rgba(3,26,61,0.06)];
+  @apply relative flex h-full flex-col overflow-hidden rounded-xl border border-[#dce4ec] bg-white p-7 shadow-[0_4px_14px_rgba(3,26,61,0.02)];
 }
 
 .coverageGrid article::before {
@@ -524,11 +558,15 @@
 /* Detail navigation ----------------------------------------------------- */
 
 .detailNav {
-  @apply bg-twt-deep-navy text-white;
+  @apply relative overflow-hidden bg-[#031f47] text-white;
+  background-image:
+    linear-gradient(rgba(148, 204, 250, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 204, 250, 0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
 }
 
 .detailNav > .evShell {
-  @apply grid grid-cols-[290px_1fr] items-start gap-12 max-[1000px]:grid-cols-1;
+  @apply relative z-1 grid grid-cols-[290px_1fr] items-start gap-12 max-[1000px]:grid-cols-1;
 }
 
 .detailIntro h2 {
@@ -544,7 +582,7 @@
 }
 
 .detailCards article {
-  @apply rounded-2xl border border-white/12 bg-white/6 p-6;
+  @apply rounded-lg border border-white/14 bg-[#062a5e]/55 p-6 shadow-none;
 }
 
 .detailCards > article > svg {
@@ -564,7 +602,7 @@
 }
 
 .evidenceFooterNote {
-  @apply border-y border-[#dbeafa] bg-[#f6faff] py-5;
+  @apply border-y border-[#dce4ec] bg-[#eef4f8] py-5;
 }
 
 .evidenceFooterNote > .evShell {
@@ -580,6 +618,10 @@
 }
 
 @media (max-width: 640px) {
+  .evidenceHero,
+  .detailNav {
+    background-image: none;
+  }
   .corePanel {
     @apply rounded-2xl;
   }
@@ -599,6 +641,10 @@
 
   .chartImageFrame img {
     @apply min-w-[720px];
+  }
+
+  .chartImageFrame {
+    @apply min-h-0 place-items-start;
   }
 }
 

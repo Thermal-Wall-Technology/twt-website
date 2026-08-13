@@ -1,12 +1,10 @@
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Brand } from "./brand";
 
 const footerLinks = [
   ["How It Works", "/how-it-works"],
   ["Evidence", "/evidence"],
-  ["Research", "/research-partnership"],
-  ["Future Applications", "/future-applications"],
+  ["Potential Benefits", "/potential-benefits"],
   ["Resources", "/resources"],
   ["About", "/about"],
 ] as const;
@@ -27,9 +25,6 @@ export function SiteFooter() {
             </Link>
           ))}
         </nav>
-        <Link href="/research-partnership">
-          Start a conversation <ArrowRight size={16} />
-        </Link>
         <small>© {new Date().getFullYear()} Thermal Wall Technology, LLC</small>
       </div>
     </footer>

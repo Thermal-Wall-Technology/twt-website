@@ -7,7 +7,6 @@ import {
   Building2,
   CircleAlert,
   FileSearch,
-  FlaskConical,
   Layers3,
 } from "lucide-react";
 
@@ -241,12 +240,6 @@ export default function ResourcesPage() {
                 "Origin, founder, intellectual-property context, and the research purpose behind the work.",
                 "/about",
               ],
-              [
-                FlaskConical,
-                "Research & Partnership",
-                "The validation agenda, prototype path, and ways to contribute.",
-                "/research-partnership",
-              ],
             ].map(([Icon, title, text, href]) => {
               const ItemIcon = Icon as typeof Layers3;
               return (
@@ -385,28 +378,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section className={`${styles.contentSection} ${styles.orangeSection}`}>
-        <div className="mx-auto flex max-w-[1480px] flex-col justify-between gap-8 lg:flex-row lg:items-center">
-          <div className="max-w-[850px]">
-            <p className="text-sm font-extrabold tracking-[0.18em] text-twt-primary-orange uppercase">
-              Need a deeper technical discussion?
-            </p>
-            <h2 className="mt-4 text-[clamp(34px,3.8vw,56px)] leading-[1.05] font-extrabold tracking-[-0.045em] text-twt-deep-navy">
-              The next useful step is a focused research question.
-            </h2>
-          </div>
-          <Link
-            href="/research-partnership#participate"
-            className="group inline-flex min-h-14 items-center justify-center gap-3 bg-twt-deep-navy px-6 py-4 font-bold text-white outline-offset-4 transition-colors hover:bg-twt-medium-navy focus-visible:outline-2 focus-visible:outline-twt-focus"
-          >
-            Explore research participation
-            <ArrowRight
-              className="size-5 transition-transform group-hover:translate-x-1"
-              aria-hidden="true"
-            />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

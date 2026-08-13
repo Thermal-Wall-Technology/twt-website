@@ -44,7 +44,7 @@
 /* Hero ------------------------------------------------------------------- */
 
 .hero {
-  @apply relative overflow-hidden border-b border-twt-light-gray bg-white py-16;
+  @apply relative overflow-hidden border-b border-[#dce4ec] bg-[#f4f8fc] py-16;
   @apply max-[900px]:pt-10 max-[900px]:pb-14 max-sm:pt-7;
 }
 
@@ -76,12 +76,12 @@
 }
 
 .heroLogo {
-  @apply h-auto w-full max-w-[570px] object-contain drop-shadow-[0_22px_34px_rgba(3,26,61,0.14)];
+  @apply h-auto w-full max-w-[570px] object-contain drop-shadow-[0_16px_25px_rgba(3,26,61,0.1)];
   @apply max-[900px]:max-w-[520px] max-sm:max-w-[410px];
 }
 
 .benefitStrip {
-  @apply relative mt-9 grid overflow-hidden rounded-2xl border border-twt-light-gray bg-white shadow-[0_18px_50px_rgba(3,26,61,0.08)];
+  @apply relative mt-9 grid overflow-hidden rounded-2xl border border-[#dce4ec] bg-white shadow-[0_10px_26px_rgba(3,26,61,0.055)];
   @apply max-sm:mt-7 max-sm:rounded-xl;
 }
 
@@ -105,21 +105,25 @@
 
 /* Challenge comparison -------------------------------------------------- */
 
+.challengeSection {
+  @apply bg-[#fbfcfd];
+}
+
 .challengeGrid {
   @apply mt-12 grid grid-cols-[1fr_250px_1fr] items-stretch gap-5;
   @apply max-[1000px]:grid-cols-1;
 }
 
 .challengePanel {
-  @apply flex flex-col rounded-2xl border px-8 py-8 shadow-[0_14px_42px_rgba(3,26,61,0.06)] max-sm:px-5;
+  @apply flex flex-col rounded-2xl border px-8 py-8 shadow-[0_8px_22px_rgba(3,26,61,0.04)] max-sm:px-5;
 }
 
 .problemPanel {
-  @apply border-[#ffdcca] bg-[#fffaf7];
+  @apply border-[#ffdcca] bg-[#fff4ec];
 }
 
 .solutionPanel {
-  @apply border-[#d9e8f6] bg-[#f8fbff];
+  @apply border-[#d6e6f2] bg-[#eef6fc];
 }
 
 .panelLabel {
@@ -161,7 +165,8 @@
 }
 
 .comparison {
-  @apply relative grid min-h-full grid-rows-[1fr_auto_1fr] overflow-hidden rounded-2xl border border-twt-light-gray bg-white text-center shadow-[0_14px_42px_rgba(3,26,61,0.08)];
+  @apply relative grid min-h-full grid-rows-[1fr_auto_1fr] overflow-hidden rounded-2xl border border-[#dce4ec] text-center shadow-[0_8px_22px_rgba(3,26,61,0.045)];
+  background: linear-gradient(180deg, #fff4ec 0%, #fff8f3 48%, #eef6fc 52%, #eef6fc 100%);
   @apply max-[1000px]:min-h-[420px];
 }
 
@@ -171,11 +176,11 @@
 }
 
 .hotComparison {
-  @apply bg-[#fff6ef] text-twt-primary-orange;
+  @apply bg-transparent text-twt-primary-orange;
 }
 
 .coolComparison {
-  @apply bg-[#eff7ff] text-twt-medium-navy;
+  @apply bg-transparent text-twt-medium-navy;
 }
 
 .comparison strong {
@@ -226,119 +231,175 @@
 /* How it works ----------------------------------------------------------- */
 
 .howSection {
-  @apply border-y border-twt-light-gray bg-[#f8fbfe];
+  @apply relative overflow-hidden border-y border-twt-light-gray bg-twt-soft-white py-[72px] max-sm:py-14;
+  background-image:
+    linear-gradient(rgba(6, 42, 94, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 42, 94, 0.026) 1px, transparent 1px),
+    radial-gradient(circle at 78% 48%, rgba(221, 242, 255, 0.72), transparent 42%),
+    linear-gradient(90deg, #f7f9fb 0%, #f7f9fb 47%, var(--twt-pale-blue) 100%);
+  background-size: 44px 44px, 44px 44px, auto, auto;
 }
 
 .howGrid {
-  @apply grid grid-cols-[0.72fr_1.28fr] items-start gap-14 max-[1000px]:grid-cols-1;
+  @apply w-[min(1460px,calc(100%-60px))] grid min-h-[650px] grid-cols-[0.92fr_1.08fr] items-center gap-3 max-[1100px]:grid-cols-[0.98fr_1.02fr] max-[900px]:w-[min(1460px,calc(100%-32px))] max-[900px]:min-h-0 max-[900px]:grid-cols-1 max-[900px]:gap-8;
 }
 
 .howCopy {
-  @apply sticky top-28 pb-4 max-[1000px]:static;
+  @apply relative z-1 py-8;
 }
 
-.bodyCopy {
-  @apply mb-4 max-w-[560px] text-[15px] leading-[1.7] font-medium text-twt-slate-gray;
+.howCopy::before {
+  content: "";
+  @apply pointer-events-none absolute -inset-y-20 -right-1 -left-[100vw] -z-1 border-r border-[#dce4ec] bg-[#f7f9fb]/35;
 }
 
-.howAction {
-  @apply mt-8;
+.howEyebrow {
+  @apply mt-0 mb-6 flex items-center gap-4 text-[12px] font-black tracking-[0.08em] text-twt-primary-orange;
 }
 
-.processPanel {
-  @apply rounded-2xl border border-[#dce8f4] bg-white p-6 shadow-[0_16px_45px_rgba(3,26,61,0.06)];
+.howEyebrow::after {
+  content: "";
+  @apply h-px w-11 bg-twt-primary-orange;
 }
 
-.processHeading {
-  @apply mt-0 mb-6 text-[11px] font-black tracking-[0.14em] text-twt-primary-navy;
+.howCopy h2 {
+  @apply m-0 max-w-[610px] text-[clamp(2.45rem,3.3vw,3.45rem)] leading-[1.08] font-extrabold tracking-[-0.045em] text-twt-deep-navy text-balance;
 }
 
-.process {
-  @apply grid gap-3;
+.howDescription {
+  @apply mt-6 mb-0 max-w-[600px] text-[clamp(.95rem,1.05vw,1.08rem)] leading-[1.75] font-medium text-twt-slate-gray;
 }
 
-.processStep {
-  @apply relative grid grid-cols-[36px_48px_1fr] items-center gap-4 rounded-xl border border-twt-light-gray bg-twt-soft-white p-4 text-left;
-  @apply max-sm:grid-cols-[32px_40px_1fr] max-sm:gap-3;
+.howSteps {
+  @apply mt-8 grid max-w-[660px] grid-cols-3;
 }
 
-.processNumber {
-  @apply flex size-8 items-center justify-center rounded-full bg-twt-primary-orange text-[10px] font-black text-white;
+.howSteps article {
+  @apply min-w-0 border-r border-twt-light-gray px-7 first:pl-0 last:border-r-0 last:pr-0;
 }
 
-.processStep > svg {
-  @apply size-8 text-twt-primary-navy;
+.howStepIcon {
+  @apply grid size-14 place-items-center rounded-full bg-twt-pale-orange text-twt-primary-orange;
 }
 
-.processStep h3 {
-  @apply m-0 text-[14px] leading-[1.25] font-extrabold text-twt-deep-navy;
+.howStepIcon svg {
+  @apply size-7 stroke-[1.7];
 }
 
-.processStep p {
-  @apply col-start-3 mt-1 mb-0 text-[12px] leading-[1.55] text-twt-slate-gray;
+.howSteps b {
+  @apply mt-5 block text-[13px] font-extrabold text-twt-primary-orange;
 }
 
-.assemblyPanel {
-  @apply mt-10 grid grid-cols-[210px_minmax(0,1.25fr)_minmax(260px,0.75fr)] items-center gap-8 rounded-2xl border border-[#dce8f4] bg-white p-8 shadow-[0_16px_45px_rgba(3,26,61,0.06)];
-  @apply max-[1100px]:grid-cols-1 max-sm:p-5;
+.howSteps h3 {
+  @apply mt-2 mb-2 text-[15px] font-extrabold tracking-[0.02em] text-twt-deep-navy;
 }
 
-.assemblyTitle {
-  @apply m-0 text-xl font-black tracking-[-0.02em] text-twt-primary-navy;
+.howSteps p {
+  @apply m-0 text-[13px] leading-[1.65] font-medium text-twt-slate-gray;
 }
 
-.assemblyIntro > span {
-  @apply my-4 block h-0.5 w-24 bg-twt-light-orange;
+.howLink {
+  @apply mt-9 inline-flex items-center gap-3 border-b border-twt-primary-orange pb-1 text-[15px] font-extrabold text-twt-primary-orange no-underline transition-colors hover:text-twt-warm-orange;
 }
 
-.assemblyIntro > p:last-child {
-  @apply m-0 text-sm leading-[1.6] font-medium text-twt-slate-gray;
+.howLink svg {
+  @apply size-5 transition-transform group-hover:translate-x-1;
 }
 
-.assemblyImageWrap {
-  @apply relative;
+.howVisual {
+  @apply relative -my-[72px] min-w-0 self-stretch overflow-visible max-[900px]:order-first max-[900px]:mx-[calc((min(1240px,calc(100vw-48px))-100vw)/2)] max-[900px]:my-[-72px] max-[900px]:mb-2 max-[900px]:aspect-[3/2] max-sm:mx-[calc((min(1240px,calc(100vw-32px))-100vw)/2)] max-sm:mt-[-56px] max-sm:aspect-[4/3];
 }
 
-.assemblyImage {
-  @apply h-auto w-full object-contain;
+.howVisual::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0;
+  background:
+    linear-gradient(90deg, var(--twt-soft-white) 0%, transparent 17%),
+    linear-gradient(180deg, var(--twt-soft-white) 0%, transparent 12%, transparent 86%, var(--twt-soft-white) 100%);
 }
 
-.assemblyList {
-  @apply grid gap-4;
+.howVisual img {
+  @apply absolute inset-y-0 left-[-4%] h-full w-[calc(104%+((100vw-min(1240px,calc(100vw-48px)))/2))] max-w-none object-cover object-center opacity-95 mix-blend-multiply max-[1100px]:left-0 max-[1100px]:w-[calc(100%+((100vw-min(1240px,calc(100vw-48px)))/2))] max-[900px]:inset-0 max-[900px]:h-full max-[900px]:w-full max-[900px]:object-cover;
 }
 
-.assemblyList article {
-  @apply flex items-start gap-3;
+@media (max-width: 900px) {
+  .howCopy::before {
+    @apply -inset-x-6 -inset-y-8 border-r-0;
+    background-image: none;
+  }
+  .howVisual::after {
+    background: linear-gradient(
+      180deg,
+      var(--twt-soft-white) 0%,
+      transparent 12%,
+      transparent 78%,
+      var(--twt-soft-white) 100%
+    );
+  }
+
+  .howVisual img {
+    @apply object-[center_52%];
+  }
 }
 
-.assemblyList article > span {
-  @apply grid size-10 shrink-0 place-items-center rounded-xl bg-twt-deep-navy text-twt-light-orange;
-}
+@media (max-width: 640px) {
+  .howEyebrow {
+    @apply mb-5;
+  }
 
-.assemblyList svg {
-  @apply size-5;
-}
+  .howCopy h2 {
+    @apply text-[clamp(2rem,9vw,2.55rem)];
+  }
 
-.assemblyList h3 {
-  @apply m-0 text-[13px] font-extrabold text-twt-deep-navy;
-}
+  .howDescription {
+    @apply mt-5 text-[15px] leading-[1.7];
+  }
 
-.assemblyList p {
-  @apply mt-1 mb-0 text-[11px] leading-[1.5] text-twt-slate-gray;
-}
+  .howSteps {
+    @apply mt-8 grid-cols-1 gap-0;
+  }
 
-.howConclusion {
-  @apply mx-auto mt-8 max-w-[850px] border-l-2 border-twt-primary-orange pl-5 text-[15px] leading-[1.6] font-medium text-twt-deep-navy;
-}
+  .howSteps article {
+    @apply grid grid-cols-[50px_1fr] gap-x-4 border-r-0 border-b border-twt-light-gray px-0 py-5 first:pt-0 last:border-b-0;
+  }
 
-.howConclusion strong {
-  @apply text-twt-primary-orange;
+  .howStepIcon {
+    @apply row-span-3 size-12;
+  }
+
+  .howStepIcon svg {
+    @apply size-6;
+  }
+
+  .howSteps b {
+    @apply mt-0;
+  }
+
+  .howSteps h3 {
+    @apply mt-1;
+  }
+
+  .howSteps p {
+    @apply text-[12px];
+  }
+
+  .howLink {
+    @apply mt-8 text-[13px];
+  }
 }
 
 /* Story ------------------------------------------------------------------ */
 
 .storySection {
-  @apply bg-white py-24 max-sm:py-16;
+  @apply relative overflow-hidden bg-[#fbf7f2] py-24 max-sm:py-16;
+  background-image:
+    radial-gradient(ellipse at 12% 60%, transparent 0 28%, rgba(174, 124, 73, 0.045) 28.3% 28.6%, transparent 29% 38%, rgba(174, 124, 73, 0.035) 38.3% 38.6%, transparent 39%),
+    linear-gradient(135deg, rgba(3, 26, 61, 0.022) 1px, transparent 1px);
+  background-size: auto, 46px 46px;
+}
+
+.storyLayout {
+  @apply relative z-1;
 }
 
 .storyLayout {
@@ -389,7 +450,7 @@
 /* Potential benefits ----------------------------------------------------- */
 
 .benefitsSection {
-  @apply border-y border-twt-light-gray bg-twt-soft-white py-20 max-sm:py-16;
+  @apply border-y border-[#dce4ec] bg-[#eef3f7] py-20 max-sm:py-16;
 }
 
 .benefitsLayout {
@@ -397,7 +458,7 @@
 }
 
 .benefitsIntro {
-  @apply border-r border-twt-light-gray pr-10 max-[1100px]:border-r-0 max-[1100px]:border-b max-[1100px]:pb-8;
+  @apply border-r border-[#dce4ec] pr-10 max-[1100px]:border-r-0 max-[1100px]:border-b max-[1100px]:pb-8;
 }
 
 .benefitsIntro h2 {
@@ -413,7 +474,7 @@
 }
 
 .benefitGroup {
-  @apply flex gap-4 rounded-xl border border-twt-light-gray bg-white p-5 shadow-sm;
+  @apply flex gap-4 rounded-[10px] border border-[#dce4ec] bg-white p-5 shadow-[0_4px_12px_rgba(3,26,61,0.025)];
 }
 
 .benefitGroupIcon {
@@ -468,7 +529,15 @@
 /* Credibility ------------------------------------------------------------ */
 
 .credibility {
-  @apply bg-twt-deep-navy py-12 text-white;
+  @apply relative overflow-hidden bg-[#062a5e] py-12 text-white;
+  background-image:
+    linear-gradient(rgba(151, 207, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(151, 207, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.credibility > .shell {
+  @apply relative z-1;
 }
 
 .credibilityTitle {

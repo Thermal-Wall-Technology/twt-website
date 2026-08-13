@@ -20,13 +20,20 @@
 }
 
 .hero {
-  @apply border-b border-[#dfe9f3] bg-[radial-gradient(circle_at_78%_25%,#eef7ff_0,transparent_30%),linear-gradient(110deg,#fff_50%,#f8fbff)] py-12 max-sm:py-10;
+  @apply relative overflow-hidden border-b border-[#dce4ec] bg-[#f4f8fc] py-[72px] max-sm:py-0;
+  background-image:
+    linear-gradient(rgba(6, 42, 94, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 42, 94, 0.028) 1px, transparent 1px);
+  background-size: 46px 46px;
 }
 .heroGrid {
-  @apply grid grid-cols-[.92fr_1.08fr] items-center gap-7 max-[1000px]:grid-cols-1;
+  @apply grid min-h-[650px] grid-cols-[1.65fr_.9fr] items-center gap-8 max-[1220px]:grid-cols-[1.35fr_1fr] max-[1000px]:min-h-0 max-[1000px]:grid-cols-1 max-[1000px]:gap-0;
+}
+.heroCopy {
+  @apply order-2 min-w-0 max-[1000px]:px-0 max-[1000px]:py-14 max-sm:py-11;
 }
 .heroCopy h1 {
-  @apply m-0 max-w-[600px] text-[clamp(2.65rem,4vw,4.6rem)] leading-[1.01] font-extrabold tracking-[-.06em] text-twt-deep-navy max-sm:text-[clamp(2.5rem,11vw,3.35rem)];
+  @apply m-0 max-w-[550px] text-[clamp(2.55rem,3.25vw,3.55rem)] leading-[1.02] font-extrabold tracking-[-.055em] text-twt-deep-navy max-sm:text-[clamp(2.45rem,10.5vw,3.25rem)];
 }
 .heroCopy > p:not(.eyebrow) {
   @apply mt-5 mb-0 max-w-[580px] text-[15px] leading-[1.65] font-medium text-twt-primary-navy max-sm:text-sm;
@@ -35,31 +42,26 @@
   @apply mt-6 flex flex-wrap gap-3 max-sm:grid;
 }
 .heroVisual {
-  @apply relative min-w-0;
+  @apply relative order-1 -my-[72px] ml-[calc((min(1320px,calc(100vw-48px))-100vw)/2)] min-w-0 self-stretch overflow-visible max-[1000px]:mx-[calc((min(1320px,calc(100vw-48px))-100vw)/2)] max-[1000px]:my-0 max-[1000px]:aspect-[5/4] max-sm:mx-[calc((min(1320px,calc(100vw-32px))-100vw)/2)] max-sm:aspect-[4/3];
+}
+.heroVisual::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0 z-1;
+  background:
+    linear-gradient(90deg, transparent 68%, #f4f8fc 100%),
+    linear-gradient(180deg, #f4f8fc 0%, transparent 11%, transparent 89%, #f4f8fc 100%);
 }
 .heroVisual > img {
-  @apply ml-auto block h-auto w-full max-w-[790px] object-contain;
+  @apply absolute inset-0 h-full w-full max-w-none object-contain object-center opacity-95 mix-blend-multiply;
 }
-.heroLegend {
-  @apply absolute left-0 top-1/2 z-1 grid w-[220px] -translate-y-1/2 gap-2 rounded-xl border border-[#d7e6f5] bg-white/95 p-3 shadow-[0_12px_30px_rgba(3,26,61,.08)] max-[1150px]:hidden;
+@media (max-width: 1000px) {
+  .heroVisual::after {
+    background: linear-gradient(180deg, #f4f8fc 0%, transparent 10%, transparent 82%, #f4f8fc 100%);
+  }
+  .heroVisual > img {
+    @apply inset-0 h-full w-full object-cover object-center;
+  }
 }
-.heroLegend article {
-  @apply flex gap-2;
-}
-.heroLegend svg {
-  @apply mt-0.5 size-6 shrink-0 rounded-lg bg-[#f0f7ff] p-1.5 text-twt-blueprint-blue;
-}
-.heroLegend b,
-.heroLegend small {
-  @apply block;
-}
-.heroLegend b {
-  @apply text-[9px] font-extrabold text-twt-deep-navy;
-}
-.heroLegend small {
-  @apply mt-0.5 text-[8px] leading-[1.35] font-medium text-twt-slate-gray;
-}
-
 .assemblySection,
 .whySection,
 .energySection,
@@ -69,27 +71,53 @@
 }
 .assemblySection,
 .energySection {
-  @apply bg-white;
+  @apply relative overflow-hidden bg-white;
 }
 .whySection,
 .modesSection {
-  @apply border-y border-[#e4edf6] bg-[#f8fbfe];
+  @apply border-y border-[#dce4ec];
+}
+.assemblySection {
+  @apply bg-[#fbf8f3];
+  background-image:
+    linear-gradient(90deg, rgba(174, 124, 73, 0.042) 1px, transparent 1px),
+    linear-gradient(rgba(3, 26, 61, 0.025) 1px, transparent 1px);
+  background-position: left top, right bottom;
+  background-size: 72px 72px, 96px 96px;
+}
+.whySection {
+  @apply bg-[#f2f7fb];
 }
 .assemblyLayout {
-  @apply grid grid-cols-[230px_1fr] gap-x-7 gap-y-4 max-[900px]:grid-cols-1;
+  @apply flex flex-col;
+}
+.assemblyIntro {
+  @apply mx-auto max-w-[720px] text-center;
+}
+.assemblyIntro h2 {
+  @apply m-0 text-[clamp(2rem,3vw,3rem)] leading-[1.08] font-extrabold tracking-[-.045em] text-twt-deep-navy text-balance;
 }
 .compactIntro h2,
 .sectionHead h2,
 .whyIntro h2,
 .systemIntro h2,
 .ctaLayout h2 {
-  @apply m-0 text-[clamp(1.75rem,2.8vw,2.8rem)] leading-[1.07] font-extrabold tracking-[-.045em] text-twt-deep-navy;
+  @apply m-0 min-w-0 text-[clamp(1.75rem,2.55vw,2.55rem)] leading-[1.08] font-extrabold tracking-[-.04em] text-twt-deep-navy text-balance;
+}
+.compactIntro h2,
+.whyIntro h2,
+.systemIntro h2 {
+  @apply text-[clamp(1.75rem,2.2vw,2.25rem)];
+}
+.systemIntro h2 {
+  @apply text-[clamp(1.75rem,2vw,2rem)];
 }
 .assemblyCards {
-  @apply grid grid-cols-4 gap-3 max-[1120px]:grid-cols-2 max-sm:grid-cols-1;
+  @apply mt-9 grid grid-cols-4 items-stretch gap-5 max-[1120px]:grid-cols-2 max-sm:mt-7 max-sm:grid-cols-1;
 }
 .assemblyCards article {
-  @apply relative rounded-xl border border-[#dfe9f3] bg-white p-4 shadow-[0_8px_22px_rgba(3,26,61,.04)];
+  @apply relative flex min-h-[390px] min-w-0 flex-col rounded-xl border border-[#dce4ec] bg-white p-7 shadow-[0_5px_15px_rgba(3,26,61,.025)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_22px_rgba(3,26,61,.045)];
+  @apply max-[1120px]:min-h-[350px] max-sm:min-h-[340px] max-sm:p-6;
 }
 .assemblyCards article:nth-child(1) {
   @apply border-[#f6dfc4] bg-[#fffaf5];
@@ -103,102 +131,103 @@
 .assemblyCards article:nth-child(4) {
   @apply border-[#e3dafa] bg-[#fbf9ff];
 }
-.assemblyNumber {
-  @apply absolute top-3 right-3 text-[9px] font-black text-twt-primary-orange;
+.assemblyVisual {
+  @apply mb-6 flex h-[150px] items-center justify-center;
 }
-.assemblyCards svg {
-  @apply size-9 text-twt-primary-orange;
+.assemblyVisual img {
+  @apply block max-h-[140px] w-auto max-w-[165px] object-contain;
+}
+.assemblyCards article:nth-child(1) .assemblyVisual img {
+  @apply scale-90;
+}
+.assemblyCards article:nth-child(2) .assemblyVisual img,
+.assemblyCards article:nth-child(4) .assemblyVisual img {
+  @apply scale-125;
+}
+.assemblyCards article:nth-child(3) .assemblyVisual img {
+  @apply scale-110;
 }
 .assemblyCards h3 {
-  @apply mt-4 mb-2 text-xs leading-[1.35] font-extrabold text-twt-deep-navy;
+  @apply mt-0 mb-3 text-[17px] leading-[1.25] font-extrabold tracking-[-.025em] text-twt-deep-navy;
 }
 .assemblyCards p {
-  @apply m-0 text-[10px] leading-[1.5] font-medium text-twt-slate-gray;
-}
-.constructionDetail {
-  @apply col-span-2 flex rounded-xl border border-[#d5e5f6] bg-[#f6faff] px-4 py-3 max-[900px]:col-span-1;
-}
-.constructionDetail summary {
-  @apply flex w-full cursor-pointer list-none items-center justify-between gap-4 max-sm:block;
-}
-.constructionDetail summary > span {
-  @apply flex items-start gap-3;
-}
-.constructionDetail summary svg {
-  @apply size-5 shrink-0 text-twt-blueprint-blue;
-}
-.constructionDetail b,
-.constructionDetail small {
-  @apply block;
-}
-.constructionDetail b {
-  @apply text-xs text-twt-deep-navy;
-}
-.constructionDetail small {
-  @apply mt-1 text-[10px] leading-[1.4] text-twt-slate-gray;
-}
-.constructionDetail em {
-  @apply flex shrink-0 items-center gap-1 text-[10px] font-extrabold not-italic text-twt-blueprint-blue max-sm:mt-3;
-}
-.constructionDetail > p {
-  @apply mb-0 text-xs text-twt-slate-gray;
+  @apply m-0 text-[14px] leading-[1.65] font-medium text-twt-slate-gray;
 }
 
 .whyLayout {
-  @apply grid grid-cols-[210px_minmax(0,1fr)_230px] items-center gap-6 max-[1050px]:grid-cols-[190px_1fr] max-[780px]:grid-cols-1;
+  @apply grid grid-cols-[260px_minmax(0,1fr)_250px] items-stretch gap-7 max-[1160px]:grid-cols-[240px_minmax(0,1fr)] max-[780px]:grid-cols-1;
+}
+.whyIntro {
+  @apply min-w-0 self-center;
 }
 .whyIntro > p:not(.eyebrow) {
   @apply mt-4 mb-5 text-xs leading-[1.6] font-medium text-twt-slate-gray;
 }
 .comparisonGrid {
-  @apply relative grid grid-cols-[1fr_34px_1fr] items-stretch gap-2;
+  @apply relative grid min-h-[390px] grid-cols-[1fr_52px_1fr] items-stretch gap-0 max-[600px]:grid-cols-1 max-[600px]:gap-5;
 }
 .comparisonCard {
-  @apply rounded-xl border border-[#dfe9f3] bg-white p-3 text-center;
+  @apply flex min-w-0 flex-col items-center rounded-xl border border-[#dce4ec] bg-white px-6 py-6 text-center shadow-[0_5px_15px_rgba(3,26,61,.025)];
+}
+.comparisonCard:first-child {
+  @apply bg-[#fff7f1] border-[#f6dbc8];
+}
+.twtComparison {
+  @apply bg-[#f2f8fc] border-[#d5e7f5];
 }
 .comparisonCard > p {
-  @apply mt-0 mb-2 text-[10px] font-extrabold text-twt-primary-navy;
+  @apply m-0 text-sm font-extrabold text-twt-primary-navy;
+}
+.comparisonCard > span {
+  @apply mt-2 block min-h-8 text-[11px] leading-[1.4] font-medium text-twt-slate-gray;
 }
 .comparisonCard img {
-  @apply h-[135px] w-full object-contain max-sm:h-[150px];
+  @apply my-auto h-[210px] w-full object-contain max-[900px]:h-[185px] max-sm:h-[190px];
 }
 .comparisonCard strong {
-  @apply mt-1 block text-xl leading-none font-extrabold text-twt-primary-orange;
+  @apply mt-2 block text-[clamp(1.65rem,2.15vw,2.15rem)] leading-none font-extrabold text-twt-primary-orange;
 }
 .comparisonCard small {
-  @apply mt-1 block text-[9px] font-medium text-twt-slate-gray;
+  @apply mt-2 block text-[10px] font-medium text-twt-slate-gray;
 }
 .twtComparison strong {
   @apply text-twt-blueprint-blue;
 }
 .vsBadge {
-  @apply z-1 grid size-9 place-self-center rounded-full border border-[#dfe9f3] bg-white text-[10px] font-black text-twt-primary-navy shadow-sm;
+  @apply z-2 grid size-14 place-items-center place-self-center rounded-full border border-[#d8e4f0] bg-white text-sm leading-none font-black text-twt-primary-navy shadow-[0_8px_22px_rgba(3,26,61,.12)] max-[600px]:absolute max-[600px]:top-1/2 max-[600px]:left-1/2 max-[600px]:-translate-x-1/2 max-[600px]:-translate-y-1/2;
 }
 .whyBenefits {
-  @apply grid gap-3 max-[1050px]:col-span-2 max-[780px]:col-span-1;
+  @apply grid h-full gap-4 max-[1160px]:col-span-2 max-[1160px]:mt-1 max-[1160px]:grid-cols-3 max-[780px]:col-span-1 max-[780px]:grid-cols-1;
 }
 .whyBenefits article {
-  @apply flex gap-2 rounded-xl border border-[#dfe9f3] bg-white p-3;
+  @apply flex min-h-0 items-start gap-3 rounded-xl border border-[#dce4ec] bg-white p-5 shadow-[0_3px_10px_rgba(3,26,61,.018)];
 }
 .whyBenefits svg {
-  @apply mt-0.5 size-4 shrink-0 text-[#27a152];
+  @apply mt-0.5 size-5 shrink-0 rounded-full border border-current p-0.5 text-[#27a152];
 }
 .whyBenefits b,
 .whyBenefits small {
   @apply block;
 }
 .whyBenefits b {
-  @apply text-[10px] font-extrabold text-twt-deep-navy;
+  @apply text-xs leading-[1.35] font-extrabold text-twt-deep-navy;
 }
 .whyBenefits small {
-  @apply mt-1 text-[9px] leading-[1.4] font-medium text-twt-slate-gray;
+  @apply mt-2 text-[10px] leading-[1.5] font-medium text-twt-slate-gray;
 }
 
 .energyLayout {
-  @apply grid grid-cols-[220px_1fr] items-center gap-6 max-[800px]:grid-cols-1;
+  @apply grid grid-cols-[250px_1fr] items-center gap-8 max-[900px]:grid-cols-1;
+}
+.energySection {
+  @apply bg-[#f8fafc];
+  background-image:
+    linear-gradient(rgba(6, 42, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 42, 94, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 .energyFlow {
-  @apply grid grid-cols-5 gap-2 max-[700px]:grid-cols-1;
+  @apply grid grid-cols-5 gap-4 max-[700px]:grid-cols-1;
 }
 .energyFlow article {
   @apply relative text-center;
@@ -210,125 +239,219 @@
   @apply size-7;
 }
 .energyFlow article > b {
-  @apply mt-3 block text-[10px] font-black text-twt-primary-orange;
+  @apply mt-3 block text-[11px] font-black text-twt-primary-orange;
 }
 .energyFlow h3 {
-  @apply mt-1 mb-1 text-[10px] font-extrabold text-twt-deep-navy;
+  @apply mt-1 mb-1 text-[11px] leading-[1.3] font-extrabold text-twt-deep-navy;
 }
 .energyFlow p {
-  @apply m-0 text-[9px] leading-[1.45] font-medium text-twt-slate-gray;
+  @apply m-0 text-[10px] leading-[1.45] font-medium text-twt-slate-gray;
 }
 .energyFlow article > svg {
-  @apply absolute top-7 -right-3 size-5 text-[#91a9c4] max-[700px]:hidden;
+  @apply absolute top-7 -right-3 size-5 text-[#78a7d1] max-[700px]:hidden;
 }
 
 .sectionHead {
   @apply mb-7;
 }
+.modesSection {
+  @apply bg-[#fbf9f5];
+}
+.modesSection .sectionHead {
+  @apply mb-6;
+}
+.modesSection .sectionHead h2 {
+  @apply text-[clamp(1.8rem,2.35vw,2.15rem)];
+}
 .modeGrid {
-  @apply grid grid-cols-3 gap-4 max-[760px]:grid-cols-1;
+  @apply grid grid-cols-3 gap-5 max-[800px]:grid-cols-1;
 }
 .modeGrid article {
-  @apply rounded-xl border border-[#dfe9f3] bg-white p-5;
+  @apply flex min-h-[300px] flex-col rounded-xl border p-5 shadow-[0_4px_14px_rgba(3,26,61,.02)];
 }
-.modeTitle {
-  @apply flex items-center gap-3;
+.modeGrid article.warm {
+  @apply border-[#f5d8c4] bg-[#fff7f1];
 }
-.modeTitle > svg {
-  @apply size-8 text-twt-primary-orange;
+.modeGrid article.solar {
+  @apply border-[#d4eadb] bg-[#f4faf5];
 }
-.modeTitle h3 {
+.modeGrid article.cool {
+  @apply border-[#d7e6f7] bg-[#f2f8fc];
+}
+.modeHeader {
+  @apply flex min-h-[70px] items-start gap-4;
+}
+.modeHeader > svg {
+  @apply size-11 shrink-0 text-twt-primary-orange;
+}
+.modeHeader h3 {
   @apply m-0 text-base font-extrabold text-twt-deep-navy;
 }
-.modeGrid article > p {
-  @apply mt-3 mb-3 min-h-[38px] text-[10px] leading-[1.5] font-medium text-twt-slate-gray;
+.modeHeader p {
+  @apply mt-2 mb-0 text-[10px] leading-[1.5] font-medium text-twt-slate-gray;
 }
-.modeSketch {
-  @apply relative grid h-25 place-items-center overflow-hidden rounded-lg border border-[#e3ecf5] bg-[#fbfdff];
-}
-.modeSketch > svg:first-child {
-  @apply size-15 text-twt-primary-navy;
-}
-.modeSketch > svg:last-child {
-  @apply absolute bottom-2 size-8 text-twt-primary-orange;
-}
-.solar .modeTitle > svg,
-.solar .modeSketch > svg:last-child {
+.solar .modeHeader > svg,
+.solar .modeHeader h3 {
   @apply text-[#2b9b55];
 }
-.cool .modeTitle > svg,
-.cool .modeSketch > svg:last-child {
+.cool .modeHeader > svg,
+.cool .modeHeader h3 {
   @apply text-twt-blueprint-blue;
 }
+.modeBody {
+  @apply mt-3 grid flex-1 grid-cols-[minmax(120px,.9fr)_1.1fr] items-center gap-4 max-[1080px]:grid-cols-1;
+}
+.modeImage {
+  @apply grid min-h-[155px] place-items-center overflow-hidden rounded-lg bg-white;
+}
+.modeImage img {
+  @apply block h-[165px] w-full object-contain max-[1080px]:h-[150px] max-[800px]:h-[220px];
+}
 .modeGrid ul {
-  @apply mt-4 mb-0 grid list-none gap-2 border-t border-[#e3ebf3] pt-3 p-0;
+  @apply m-0 grid list-none gap-3 p-0;
 }
 .modeGrid li {
-  @apply flex gap-2 text-[10px] font-medium text-twt-slate-gray;
+  @apply flex items-start gap-2 text-[10px] leading-[1.4] font-medium text-twt-slate-gray;
 }
 .modeGrid li svg {
-  @apply size-3.5 shrink-0 text-[#28a054];
+  @apply mt-px size-4 shrink-0 rounded-full border border-current p-0.5 text-twt-primary-orange;
+}
+.solar li svg {
+  @apply text-[#2b9b55];
+}
+.cool li svg {
+  @apply text-twt-blueprint-blue;
 }
 .modeGrid a {
-  @apply mt-4 inline-flex items-center gap-1 text-[10px] font-extrabold text-twt-primary-orange no-underline;
+  @apply mt-4 inline-flex w-fit items-center gap-1 text-[10px] font-extrabold text-twt-primary-orange no-underline;
+}
+.solar a {
+  @apply text-[#2b9b55];
+}
+.cool a {
+  @apply text-twt-blueprint-blue;
 }
 .dewPointNote {
-  @apply mt-4 flex gap-2 rounded-lg border border-[#d8e8f8] bg-white px-4 py-3 text-[10px] font-medium text-twt-slate-gray;
+  @apply mt-4 flex gap-2 rounded-lg border border-[#d8e8f8] bg-[#f8fbff] px-5 py-3 text-[10px] font-medium text-twt-slate-gray;
 }
 .dewPointNote svg {
   @apply size-4 shrink-0 text-twt-blueprint-blue;
 }
 
 .systemSection {
-  @apply bg-white;
+  @apply relative overflow-hidden bg-[#031f47] py-9 text-white max-sm:py-7;
+  background-image:
+    linear-gradient(rgba(148, 204, 250, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 204, 250, 0.045) 1px, transparent 1px);
+  background-size: 54px 54px;
 }
 .systemLayout {
-  @apply grid grid-cols-[220px_1fr_230px] gap-6 max-[950px]:grid-cols-1;
+  @apply relative z-1 grid grid-cols-[390px_minmax(0,1fr)] items-center gap-8 max-[1180px]:grid-cols-[330px_minmax(0,1fr)] max-[1050px]:grid-cols-[290px_minmax(0,1fr)] max-[820px]:grid-cols-1;
 }
-.systemNodes {
-  @apply flex items-start justify-between gap-2 max-[950px]:justify-start max-[620px]:grid max-[620px]:grid-cols-2;
+.systemIntro {
+  @apply min-w-0;
 }
-.systemNodes > div {
-  @apply relative grid min-w-[70px] justify-items-center gap-2 text-center;
+.systemIntro .eyebrow {
+  @apply text-twt-primary-orange;
 }
-.systemNodes span {
-  @apply grid size-12 place-items-center rounded-full border border-[#dbe7f2] bg-white text-twt-blueprint-blue;
+.systemIntro h2 {
+  @apply m-0 text-[clamp(2.15rem,3.05vw,3.1rem)] leading-[1.04] font-extrabold tracking-[-.05em] text-white;
 }
-.systemNodes span svg {
-  @apply size-5;
+.systemIntro > p:not(.eyebrow) {
+  @apply mt-5 mb-0 text-[13px] leading-[1.65] font-medium text-[#d7e6f6];
 }
-.systemNodes b {
-  @apply text-[8px] leading-[1.3] font-extrabold text-twt-primary-navy;
+.flowLegend {
+  @apply mt-6 grid gap-2.5 rounded-xl border border-[#557595] bg-[#021b38]/70 p-4 text-[10px] font-semibold text-[#e8f3ff];
 }
-.systemNodes > div > svg {
-  @apply absolute top-4 -right-3 size-4 text-[#8fa8c4] max-[620px]:hidden;
+.flowLegend span {
+  @apply flex items-center gap-3;
 }
-.systemFacts {
-  @apply rounded-xl border border-[#dbe7f2] bg-[#f8fbff] p-4;
+.flowLegend i {
+  @apply block h-0 w-8 shrink-0 border-t-2 not-italic;
 }
-.systemFacts p {
-  @apply m-0 text-[10px] leading-[1.45] text-twt-slate-gray;
+.supplyLine {
+  @apply border-t-twt-primary-orange;
 }
-.systemFacts p + p {
-  @apply mt-3 border-t border-[#dde8f3] pt-3;
+.returnLine {
+  @apply border-t-[#4da6ff];
 }
-.systemFacts b {
-  @apply text-twt-primary-navy;
+.controlLine {
+  @apply border-dashed border-t-[#4da6ff];
 }
 .systemMap {
-  @apply col-span-3 mx-auto mt-2 max-w-[660px] overflow-hidden rounded-xl border border-[#dfe9f3] bg-white p-2 max-[950px]:col-span-1;
+  @apply min-w-0 overflow-hidden rounded-2xl border border-white/25 bg-white p-2 shadow-[0_24px_60px_rgba(0,0,0,.28)];
 }
 .systemMap img {
-  @apply h-auto w-full rounded-lg;
+  @apply block h-auto w-full rounded-xl;
 }
-.ctaSection {
-  @apply border-t border-[#f2d9c7] bg-[#fff6f0] py-8;
+.systemSummary {
+  @apply relative z-1 mt-7 grid grid-cols-[1.45fr_repeat(3,1fr)] rounded-xl border border-[#3f668b] bg-[#06264b]/90 p-4 shadow-[0_8px_20px_rgba(0,0,0,.12)] max-[1050px]:grid-cols-2 max-[650px]:grid-cols-1;
 }
-.ctaLayout {
-  @apply flex items-center justify-between gap-6 max-[950px]:block;
+.summaryStatement,
+.summaryPoint {
+  @apply flex min-w-0 gap-3 px-4 py-2 max-[1050px]:border-b max-[1050px]:border-[#315777] max-[650px]:px-1;
 }
-.ctaLayout > div {
-  @apply flex flex-wrap justify-end gap-3 max-[950px]:mt-5 max-[950px]:justify-start max-sm:grid;
+.summaryStatement {
+  @apply border-r border-[#315777] pl-1 max-[1050px]:border-r-0;
+}
+.summaryStatement > svg {
+  @apply size-12 shrink-0 text-[#48aaff];
+}
+.summaryPoint {
+  @apply border-r border-[#315777] last:border-r-0 max-[1050px]:border-r-0;
+}
+.summaryPoint > svg {
+  @apply size-8 shrink-0 rounded-full border border-[#467198] bg-[#0a315a] p-1.5 text-[#74bdff];
+}
+.summaryStatement p,
+.summaryPoint p {
+  @apply m-0 text-[10px] leading-[1.5] text-[#cfdeed];
+}
+.summaryStatement strong,
+.summaryStatement span,
+.summaryPoint strong {
+  @apply block;
+}
+.summaryStatement strong {
+  @apply mb-1 text-xs text-white;
+}
+.summaryStatement span {
+  @apply text-[13px] leading-[1.45] font-bold text-[#3ca4ff];
+}
+.summaryPoint strong {
+  @apply mb-1 text-[10px] text-white;
+}
+.systemCta {
+  @apply relative z-1 mt-4 flex items-center justify-between gap-5 rounded-xl border border-[#bcd4e9] bg-[#edf7ff] p-4 text-twt-deep-navy max-[1050px]:block;
+}
+@media (max-width: 640px) {
+  .hero,
+  .assemblySection,
+  .energySection,
+  .systemSection {
+    background-image: none;
+  }
+}
+.systemCtaIntro {
+  @apply flex min-w-[270px] items-center gap-3;
+}
+.systemCtaIntro > span {
+  @apply grid size-11 shrink-0 place-items-center rounded-full bg-[#cbe8ff] text-twt-blueprint-blue;
+}
+.systemCtaIntro svg {
+  @apply size-5;
+}
+.systemCtaIntro p {
+  @apply m-0 text-[10px] leading-[1.45];
+}
+.systemCtaIntro strong {
+  @apply block text-xs;
+}
+.systemCtaActions {
+  @apply flex flex-1 justify-end gap-3 max-[1050px]:mt-4 max-[1050px]:justify-start max-[700px]:grid;
+}
+.systemCtaActions .button {
+  @apply min-h-10 flex-1 px-3 text-[10px] max-[1050px]:flex-none max-[700px]:w-full;
 }
 @media (prefers-reduced-motion: reduce) {
   .button {

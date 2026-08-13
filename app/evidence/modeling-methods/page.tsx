@@ -6,7 +6,6 @@ import {
   BatteryCharging,
   ChartNoAxesCombined,
   Check,
-  ChevronLeft,
   CircleDollarSign,
   Clock3,
   House,
@@ -27,17 +26,19 @@ export const metadata: Metadata = {
 
 const subnav = [
   ["Overview", "/evidence#overview"],
-  ["Evidence in detail", "/evidence#details"],
+  ["Established physics", "/evidence#details"],
+  ["Founder engineering", "/evidence#founder"],
   ["Independent model", "/evidence#model"],
   ["Boundaries", "/evidence#coverage"],
   ["Modeled scenarios", "#top"],
   ["Validation roadmap", "/evidence#roadmap"],
+  ["References", "/evidence#references"],
 ] as const;
 
 const scenarios = [
   {
     number: "1",
-    title: "Standard wood frame",
+    title: "Standard Wood Frame",
     label: "Baseline",
     description:
       "A typical all-electric wood-frame home under full utility rates.",
@@ -53,7 +54,7 @@ const scenarios = [
   {
     number: "2",
     title: "TWT + MPC RES",
-    label: "Optimized demand model",
+    label: "Optimized grid-powered model",
     description:
       "Thermal wall storage coordinated with reserve energy storage.",
     details: [
@@ -67,16 +68,16 @@ const scenarios = [
   },
   {
     number: "3",
-    title: "TWT + solar + MPC RES",
-    label: "Lowest grid reliance",
+    title: "TWT + Solar + MPC RES",
+    label: "Lowest modeled grid dependence",
     description: "A modeled solar-thermal configuration with reserve storage.",
     details: [
       "TWT + solar thermal + MPC + reserve",
       "~850 kWh/yr off-peak equivalent",
       "Solar pre-charging reduces grid reliance",
     ],
-    image: "/evidence/twt-wall.png",
-    imageAlt: "Thermal Wall system for solar thermal operation",
+    image: "/evidence/twt-wall-solar.png",
+    imageAlt: "Thermal Wall system with solar thermal and MPC controls",
     kind: "solar",
   },
 ] as const;
@@ -84,15 +85,15 @@ const scenarios = [
 const forecast = [
   ["2030", "19.83", "$2,380 / yr", "$305 / yr", "$118 / yr", "$2,262 / yr"],
   ["2040", "26.50", "$3,180 / yr", "$408 / yr", "$158 / yr", "$3,022 / yr"],
-  ["2050", "35.50", "$4,257 / yr", "$547 / yr", "$211 / yr", "$4,049 / yr"],
+  ["2050", "35.50", "$4,260 / yr", "$547 / yr", "$211 / yr", "$4,049 / yr"],
   ["2060", "44.50", "$5,340 / yr", "$685 / yr", "$265 / yr", "$5,075 / yr"],
   ["2070", "58.00", "$6,960 / yr", "$893 / yr", "$345 / yr", "$6,615 / yr"],
 ] as const;
 
 const costBars = [
-  [House, "Standard wood frame", "~12,000 kWh/yr", "$2,380 / yr", "standard"],
+  [House, "Standard Wood Frame", "~12,000 kWh/yr", "$2,380 / yr", "standard"],
   [Zap, "TWT + MPC RES", "~2,200 kWh/yr", "$305 / yr", "optimized"],
-  [Sun, "TWT + solar + MPC RES", "~850 kWh/yr", "$118 / yr", "solar"],
+  [Sun, "TWT + Solar + MPC RES", "~850 kWh/yr", "$118 / yr", "solar"],
 ] as const;
 
 export default function ModelingMethodsPage() {
@@ -114,29 +115,18 @@ export default function ModelingMethodsPage() {
 
       <section className={styles.hero}>
         <div className={styles.shell}>
-          <Link className={styles.backLink} href="/evidence#model">
-            <ChevronLeft size={16} /> Back to evidence
-          </Link>
           <div className={styles.heroGrid}>
             <div>
               <p className={styles.eyebrow}>MODELED ECONOMIC SCENARIOS</p>
-              <h1>Modeled energy-cost scenarios.</h1>
+              <h1>Modeled Energy-Cost Scenario</h1>
               <p className={styles.lede}>
                 Illustrative annual electricity-cost comparisons across three
                 building-system scenarios.
               </p>
               <p className={styles.context}>
-                These figures are modeled, not field-measured. Results vary with
-                climate, utility rates, occupancy, controls, and system
-                configuration.
+                
               </p>
-              <aside className={styles.importantNote}>
-                <Info />
-                <p>
-                  <b>Important:</b> This is an illustrative planning model—not a
-                  measured building result or a guaranteed savings forecast.
-                </p>
-              </aside>
+              
             </div>
             <aside className={styles.readPanel}>
               <div className={styles.readPanelHead}>
@@ -203,7 +193,6 @@ export default function ModelingMethodsPage() {
                     <small>{scenario.label}</small>
                   </div>
                 </div>
-                <p>{scenario.description}</p>
                 <div className={styles.scenarioImage}>
                   <Image
                     src={scenario.image}
@@ -212,11 +201,6 @@ export default function ModelingMethodsPage() {
                     height={1067}
                     sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1060px) calc(50vw - 50px), 31vw"
                   />
-                  {scenario.kind === "solar" && (
-                    <span className={styles.solarBadge}>
-                      <Sun /> Solar thermal
-                    </span>
-                  )}
                 </div>
                 <ul>
                   {scenario.details.map((detail) => (
@@ -234,18 +218,16 @@ export default function ModelingMethodsPage() {
 
       <section id="forecast" className={styles.costSection}>
         <div className={styles.shell}>
-          <div className={styles.sectionHeading}>
-            <div>
-              <p className={styles.eyebrow}>
-                2030 ILLUSTRATIVE ANNUAL ELECTRICITY COST
-              </p>
-              <h2>One model. Three very different cost profiles.</h2>
-            </div>
-            <p>
-              Projected rate: <b>19.83¢/kWh</b>
-            </p>
-          </div>
           <div className={styles.costBoard}>
+            <div className={styles.costTop}>
+              <div>
+                <h2>2030 ILLUSTRATIVE ANNUAL ELECTRICITY COST</h2>
+                <p>Modeled rate: 19.83¢/kWh (U.S. average residential)</p>
+              </div>
+              <p>
+                Projected rate: <b>19.83¢/kWh</b>
+              </p>
+            </div>
             <div className={styles.costBars}>
               {costBars.map(([Icon, title, use, value, tone]) => (
                 <div className={styles.costRow} key={title}>
@@ -294,12 +276,12 @@ export default function ModelingMethodsPage() {
           <div className={styles.tableCard}>
             <div className={styles.tableHeading}>
               <div>
-                <p className={styles.eyebrow}>
-                  2030–2070 ILLUSTRATIVE ANNUAL COST COMPARISON
+                <h2>2030–2070 ILLUSTRATIVE ANNUAL COST COMPARISON</h2>
+                <p>
+                  All values in USD. Costs will vary with future electricity
+                  rates and conditions.
                 </p>
-                <h2>Modeled costs over time.</h2>
               </div>
-              <p>All values are USD and reflect modeled rate assumptions.</p>
             </div>
             <div className={styles.tableWrap}>
               <table>

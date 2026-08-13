@@ -41,8 +41,8 @@ const metrics = [
   [
     Target,
     "INDEPENDENT AGREEMENT",
-    "~2%",
-    "Agreement on the relevant heat-flux calculation.",
+    "98%",
+    "Agreement between the independent analysis and founder model for the relevant heat-flux calculation.",
   ],
   [
     Sun,
@@ -65,7 +65,7 @@ const pillars = [
   [
     ShieldCheck,
     "Independently checked",
-    "University engineering analysis closely reproduced the relevant calculation within approximately 2%.",
+    "The independent university analysis achieved 98% agreement with the founder model on the relevant calculation.",
   ],
   [
     FileText,
@@ -235,9 +235,9 @@ export default function Evidence() {
           </aside>
         </div>
       </section>
-      <section id="details" className={styles.evSection}>
+      <section id="details" className={`${styles.evSection} ${styles.metricsSection}`}>
         <div className={`${styles.evShell} ${styles.metricsLayout}`}>
-          <div>
+          <div className={styles.metricsIntro}>
             <Label>EVIDENCE AT A GLANCE</Label>
             <h2>What the evidence establishes</h2>
             <p>Key results from independent analysis and founder modeling.</p>
@@ -272,7 +272,7 @@ export default function Evidence() {
         className={`${styles.evSection} ${styles.modelSection}`}
       >
         <div className={`${styles.evShell} ${styles.modelGrid}`}>
-          <div>
+          <div className={styles.modelCopy}>
             <Label>INDEPENDENT ANALYSIS RESULT</Label>
             <h2>
               The independent analysis that separates TWT from a standard ICF
@@ -425,7 +425,7 @@ export default function Evidence() {
                   "One-sided versus two-sided insulation placement",
                   "Response under the defined 0°F / 72°F scenario",
                   "Six-hour modeled solar loading",
-                  "Relevant heat-flux agreement of approximately 2%",
+                  "98% agreement between the independent analysis and founder model",
                 ].map((x) => (
                   <li key={x}>
                     <Check />

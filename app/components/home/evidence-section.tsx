@@ -34,7 +34,7 @@ const EVIDENCE_STEPS = [
     label: "Independently analyzed",
     title: "USI engineering analysis",
     description:
-      "A 2016 University of Southern Indiana thermal-wall model reached results within approximately 2% of the founder's own figures, and a separate USI heat-pump efficiency analysis independently supported the 39\u201360% modeled gain.",
+      "A 2016 University of Southern Indiana thermal-wall model achieved 98% agreement with the founder model on the relevant calculation, and a separate USI heat-pump efficiency analysis independently supported the 39\u201360% modeled gain.",
     icon: University,
     accent: "bg-twt-primary-navy",
     iconStyle: "bg-twt-blue-white text-twt-primary-navy",

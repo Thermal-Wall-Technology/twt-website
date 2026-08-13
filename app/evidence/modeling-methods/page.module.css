@@ -5,7 +5,7 @@
 }
 
 .shell {
-  @apply mx-auto w-[min(1320px,calc(100%-48px))] max-sm:w-[min(1320px,calc(100%-32px))];
+  @apply mx-auto w-[min(1180px,calc(100%-64px))] max-sm:w-[min(1180px,calc(100%-32px))];
 }
 
 .subnav {
@@ -18,7 +18,7 @@
 }
 
 .subnav > div {
-  @apply mx-auto flex w-[min(1320px,calc(100%-48px))] min-w-max justify-between gap-8 max-[900px]:w-max max-[900px]:px-5;
+  @apply mx-auto flex w-[min(1180px,calc(100%-64px))] min-w-max justify-between gap-7 max-[900px]:w-max max-[900px]:px-5;
 }
 
 .subnav a {
@@ -34,19 +34,15 @@
 .costSection,
 .tableSection,
 .assumptionSection {
-  @apply py-14 max-sm:py-11;
+  @apply py-5 max-sm:py-6;
 }
 
 .hero {
-  @apply bg-white;
-}
-
-.backLink {
-  @apply mb-8 inline-flex items-center gap-1 text-xs font-extrabold text-twt-medium-navy no-underline;
+  @apply bg-white pt-8 pb-5;
 }
 
 .heroGrid {
-  @apply grid grid-cols-[1fr_0.96fr] gap-12 max-[980px]:grid-cols-1 max-[980px]:gap-8;
+  @apply grid grid-cols-[1.12fr_.88fr] items-stretch gap-8 max-[980px]:grid-cols-1 max-[980px]:gap-6;
 }
 
 .eyebrow {
@@ -62,19 +58,19 @@
 }
 
 .hero h1 {
-  @apply max-w-[660px] text-[clamp(2.7rem,4.8vw,5rem)] leading-[0.98];
+  @apply max-w-[650px] text-[clamp(2.25rem,2.7vw,2.45rem)] leading-[1.04] whitespace-nowrap max-[1120px]:whitespace-normal;
 }
 
 .lede {
-  @apply mt-5 mb-0 max-w-[600px] text-lg leading-[1.5] font-medium text-twt-primary-navy max-sm:text-base;
+  @apply mt-4 mb-0 max-w-[540px] text-base leading-[1.5] font-medium text-twt-primary-navy;
 }
 
 .context {
-  @apply mt-3 mb-0 max-w-[600px] text-sm leading-[1.65] font-medium text-twt-slate-gray;
+  @apply mt-3 mb-0 max-w-[540px] text-[13px] leading-[1.6] font-medium text-twt-slate-gray;
 }
 
 .importantNote {
-  @apply mt-6 flex max-w-[620px] gap-3 rounded-xl border border-[#ffd2b6] bg-[#fff7f1] p-4;
+  @apply mt-5 flex max-w-[540px] gap-3 rounded-lg border border-[#ffd2b6] bg-[#fff7f1] p-3.5;
 }
 
 .importantNote svg {
@@ -97,11 +93,11 @@
 }
 
 .readPanel {
-  @apply overflow-hidden p-6 max-sm:p-5;
+  @apply overflow-hidden p-5 max-sm:p-5;
 }
 
 .readPanelHead {
-  @apply flex items-start justify-between gap-5 border-b border-[#e4edf6] pb-5;
+  @apply flex items-start justify-between gap-4 pb-3;
 }
 
 .readPanelHead h2 {
@@ -124,7 +120,7 @@
 }
 
 .readPanel li {
-  @apply mt-5 flex gap-3;
+  @apply mt-4 flex gap-3;
 }
 
 .readIcon {
@@ -144,7 +140,7 @@
 }
 
 .scenarioSection {
-  @apply border-y border-[#e3edf7] bg-[#f8fbff];
+  @apply border-0 bg-white pt-0 pb-4;
 }
 
 .scenarioGrid {
@@ -152,7 +148,7 @@
 }
 
 .scenarioCard {
-  @apply overflow-hidden p-5;
+  @apply overflow-hidden rounded-xl p-4 shadow-[0_5px_16px_rgba(3,26,61,.035)];
 }
 
 .scenarioHead {
@@ -179,16 +175,12 @@
   @apply inline-block rounded-full border border-[#afc9ea] px-2.5 py-1 text-[8px] font-black text-twt-medium-navy;
 }
 
-.scenarioCard > p {
-  @apply mt-4 mb-4 min-h-[38px] text-xs leading-[1.5] font-medium text-twt-slate-gray;
-}
-
 .scenarioImage {
-  @apply relative aspect-[1.5/0.88] overflow-hidden rounded-xl border border-[#e1eaf4] bg-[#f6f9fd];
+  @apply relative mt-3 aspect-[1.55/0.9] overflow-hidden rounded-lg bg-white;
 }
 
 .scenarioImage img {
-  @apply h-full w-full object-contain p-2;
+  @apply h-full w-full object-contain p-1;
 }
 
 .solarBadge {
@@ -200,7 +192,7 @@
 }
 
 .scenarioCard ul {
-  @apply mt-5 grid gap-2;
+  @apply mt-3 grid gap-1.5;
 }
 
 .scenarioCard li {
@@ -212,7 +204,7 @@
 }
 
 .costSection {
-  @apply bg-white;
+  @apply bg-white pt-0 pb-2;
 }
 
 .sectionHeading,
@@ -231,7 +223,23 @@
 }
 
 .costBoard {
-  @apply grid grid-cols-[1fr_265px] gap-8 p-6 max-[850px]:grid-cols-1 max-sm:p-4;
+  @apply grid grid-cols-[1fr_245px] gap-x-7 gap-y-3 p-5 max-[850px]:grid-cols-1 max-sm:p-4;
+}
+
+.costTop {
+  @apply col-span-2 flex items-start justify-between gap-6 max-[850px]:col-span-1 max-sm:block;
+}
+
+.costTop h2 {
+  @apply m-0 text-sm font-extrabold tracking-[.01em] text-twt-deep-navy;
+}
+
+.costTop p {
+  @apply mt-1 mb-0 text-[10px] font-medium text-twt-slate-gray;
+}
+
+.costTop > p {
+  @apply mt-0 text-right max-sm:mt-2 max-sm:text-left;
 }
 
 .costBars {
@@ -346,11 +354,23 @@
 }
 
 .tableSection {
-  @apply border-y border-[#e3edf7] bg-[#f8fbff];
+  @apply border-0 bg-white py-2;
 }
 
 .tableCard {
-  @apply overflow-hidden p-6 max-sm:p-4;
+  @apply overflow-hidden p-4 max-sm:p-4;
+}
+
+.tableHeading {
+  @apply mb-3 block;
+}
+
+.tableHeading h2 {
+  @apply text-sm tracking-[.01em];
+}
+
+.tableHeading p {
+  @apply mt-1 mb-0 text-[10px] font-medium text-twt-slate-gray;
 }
 
 .tableWrap {
@@ -378,7 +398,7 @@
 }
 
 .assumptionSection {
-  @apply bg-white;
+  @apply bg-white pt-2 pb-6;
 }
 
 .whyStrip {

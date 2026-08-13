@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Quote, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, Quote } from "lucide-react";
 import { aboutContent as c } from "./aboutPageContent";
 import styles from "./page.module.css";
 
@@ -74,49 +74,22 @@ export default function About() {
           </aside>
         </div>
 
-        <div className={`${styles.shell} ${styles.proofGrid}`}>
-          {c.hero.proofs.map((proof, index) => (
-            <article key={proof}>
-              <span className={styles.proofIcon}>
-                <ShieldCheck />
-              </span>
-              <div>
-                <b>0{index + 1}</b>
-                <p>{proof}</p>
-              </div>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section id="story" className={styles.storySection}>
-        <div className={`${styles.shell} ${styles.storyGrid}`}>
-          <div className={styles.storyVisual}>
-            <Image
-              src="/home/hero-bg.png"
-              alt="Architectural illustration of a resilient home with heating and cooling energy flows"
-              width={1600}
-              height={960}
-              sizes="(max-width: 900px) 100vw, 44vw"
-              className={styles.storyImage}
-            />
-            <div className={styles.storyVisualLabel}>
-              <span>THE BEGINNING</span>
-              <strong>
-                A practical question became a new building system.
-              </strong>
+        <div className={`${styles.shell} ${styles.storyShell} ${styles.storyGrid}`}>
+          <div className={styles.storyMedia}>
+            <div className={styles.storyVisual}>
+              <Image
+                src="/about/home.png"
+                alt="Architectural illustration of the home that inspired Thermal Wall Technology"
+                width={1456}
+                height={1088}
+                sizes="(max-width: 900px) 100vw, 44vw"
+                className={styles.storyImage}
+              />
             </div>
-          </div>
-
-          <div className={styles.storyCopy}>
-            <p className={styles.eyebrow}>01 · THE STORY BEHIND TWT</p>
-            <h2>From a family mission to a structural breakthrough.</h2>
-            <div className={styles.storyBody}>
-              {c.story.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-            <blockquote>
+            <blockquote className={styles.storyQuote}>
               <Quote aria-hidden="true" />
               <p>
                 “The question was never whether concrete could store heat. The
@@ -128,6 +101,16 @@ export default function About() {
                 <span>Founder and Inventor, Thermal Wall Technology</span>
               </footer>
             </blockquote>
+          </div>
+
+          <div className={styles.storyCopy}>
+            <p className={styles.eyebrow}>01 · THE STORY BEHIND TWT</p>
+            <h2>From a family mission to a structural breakthrough.</h2>
+            <div className={styles.storyBody}>
+              {c.story.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -163,51 +146,14 @@ export default function About() {
         </div>
       </section>
 
-      <section className={styles.assemblySection}>
-        <div className={styles.shell}>
-          <div className={styles.sectionIntro}>
-            <div>
-              <p className={styles.eyebrow}>03 · THE SYSTEM IN ONE ASSEMBLY</p>
-              <h2>One assembly. Multiple jobs.</h2>
-            </div>
-            <Button href="/how-it-works" primary>
-              See how the complete system works
-            </Button>
-          </div>
-          <div className={styles.assemblyGrid}>
-            <div className={styles.assemblyImageWrap}>
-              <Image
-                src="/home/wall_descriptions.png"
-                alt="Thermal Wall Technology assembly showing concrete thermal mass, exterior insulation, interior finish, and embedded hydronic tubing"
-                width={1600}
-                height={1067}
-                sizes="(max-width: 900px) 100vw, 58vw"
-                className={styles.assemblyImage}
-              />
-            </div>
-            <div className={styles.assemblyCards}>
-              {c.assembly.map(([title, copy], index) => (
-                <article key={title}>
-                  <span>0{index + 1}</span>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className={styles.inventorSection}>
         <div className={`${styles.shell} ${styles.inventorGrid}`}>
           <div className={styles.inventorImageWrap}>
             <Image
-              src="/evidence/wood.png"
-              alt="Technical sketch of wood framing on a concrete foundation"
+              src="/about/sketch.png"
+              alt="Thermal Wall Technology concept sketched in an engineering notebook"
               fill
-              sizes="(max-width: 900px) 100vw, 43vw"
+              sizes="(max-width: 900px) 100vw, 48vw"
               className={styles.inventorImage}
             />
           </div>
@@ -238,39 +184,12 @@ export default function About() {
         </div>
       </section>
 
-      <section className={styles.patentSection}>
-        <div className={`${styles.shell} ${styles.patentGrid}`}>
-          <div>
-            <p className={styles.eyebrow}>05 · INTELLECTUAL PROPERTY</p>
-            <h2>Patented in three major jurisdictions.</h2>
-            <p>
-              Patent protection covers the integrated approach across the United
-              States, Canada, and the United Kingdom.
-            </p>
-            <Button href="/evidence">View patent details</Button>
-          </div>
-          <div className={styles.patentCards}>
-            {c.patents.map(([flag, country, type, number, status]) => (
-              <article key={country}>
-                <span>{flag}</span>
-                <div>
-                  <h3>{country}</h3>
-                  <p>{type}</p>
-                  <b>{number}</b>
-                </div>
-                <em>{status}</em>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className={styles.analysisSection}>
         <div className={styles.shell}>
           <div className={styles.sectionIntro}>
             <div>
               <p className={styles.eyebrow}>
-                06 · INDEPENDENT ANALYSIS &amp; TECHNICAL WORK
+                05 · INDEPENDENT ANALYSIS &amp; TECHNICAL WORK
               </p>
               <h2>Founder-developed work, independently examined.</h2>
             </div>
