@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import styles from "./page.module.css";
 
+
 export const metadata: Metadata = {
   title: "Modeled Energy-Cost Scenarios | Thermal Wall Technology",
   description:
