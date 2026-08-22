@@ -323,9 +323,11 @@ export default function HowItWorks() {
                       ))}
                     </ul>
                   </div>
+                  {/*
                   <a href="#overview">
                     Learn more <ArrowRight />
                   </a>
+                  */}
                 </article>
               ),
             )}

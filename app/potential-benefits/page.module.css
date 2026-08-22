@@ -229,11 +229,6 @@
 .accordionTrigger {
   @apply flex w-full cursor-pointer items-center gap-2 p-2.5 text-left outline-offset-[-3px] transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-twt-focus;
 }
-.benefitNumber {
-  @apply grid size-7 shrink-0 place-items-center rounded-full text-[9px] font-extrabold;
-  color: var(--tone);
-  background: color-mix(in srgb, var(--tone) 8%, white);
-}
 .triggerCopy {
   @apply min-w-0 flex-1;
 }

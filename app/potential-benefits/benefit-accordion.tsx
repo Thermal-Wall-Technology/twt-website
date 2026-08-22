@@ -74,9 +74,6 @@ export function BenefitAccordion({
                 aria-controls={panelId}
                 onClick={() => toggle(item.number)}
               >
-                <span className={styles.benefitNumber}>
-                  {String(item.number).padStart(2, "0")}
-                </span>
                 <span className={styles.triggerCopy}>
                   <span className={styles.triggerTitle}>{item.title}</span>
                   <span

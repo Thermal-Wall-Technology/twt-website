@@ -482,11 +482,14 @@ export default function Evidence() {
             <b>Next milestone</b>
             The demonstration program is designed to close these gaps.
           </span>
+          {/*
           <a href="#roadmap">
             See the roadmap <ArrowRight size={14} />
           </a>
+          */}
         </p>
       </section>
+      {/*
       <section
         id="roadmap"
         className={`${styles.evSection} ${styles.detailNav}`}
@@ -548,6 +551,7 @@ export default function Evidence() {
           </div>
         </div>
       </section>
+      */}
       <section id="references" className={styles.evidenceFooterNote}>
         <div className={styles.evShell}>
           <ShieldCheck />
@@ -557,9 +561,11 @@ export default function Evidence() {
             the University of Southern Indiana. The technology is not yet widely
             commercialized.
           </p>
+          {/*
           <a href="#overview">
             Legal & IP <ArrowRight size={14} />
           </a>
+          */}
         </div>
       </section>
     </main>
