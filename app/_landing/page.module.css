@@ -112,6 +112,32 @@
   @apply max-sm:text-[13px];
 }
 
+/* TWT story video ------------------------------------------------------- */
+
+.videoSection {
+  @apply border-b border-twt-light-gray bg-twt-soft-white py-24 max-sm:py-16;
+}
+
+.videoIntro {
+  @apply mx-auto max-w-[780px] text-center;
+}
+
+.videoIntro h2 {
+  @apply m-0 text-[clamp(2rem,3.7vw,3.3rem)] leading-[1.05] font-extrabold tracking-[-0.045em] text-twt-deep-navy;
+}
+
+.videoIntro p:last-child {
+  @apply mx-auto mt-5 mb-0 max-w-[690px] text-[clamp(1rem,1.3vw,1.15rem)] leading-[1.65] font-medium text-twt-slate-gray;
+}
+
+.videoFrame {
+  @apply mx-auto mt-12 max-w-[1120px] overflow-hidden rounded-2xl border border-[#cbd8e4] bg-twt-deep-navy shadow-[0_20px_50px_rgba(3,26,61,0.18)] max-sm:mt-8 max-sm:rounded-xl;
+}
+
+.videoFrame video {
+  @apply block aspect-video w-full;
+}
+
 /* Challenge comparison -------------------------------------------------- */
 
 .challengeSection {

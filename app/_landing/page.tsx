@@ -132,6 +132,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.videoSection} aria-labelledby="video-title">
+        <div className={styles.shell}>
+          <div className={styles.videoIntro}>
+            <p className={styles.eyebrow}>THE TWT STORY</p>
+            <h2 id="video-title">
+              From ancient thermal mass to a new foundation.
+            </h2>
+            <p>
+              See the idea behind Thermal Wall Technology: learning from the
+              past, responding to today&apos;s building challenges, and looking
+              toward a more resilient future.
+            </p>
+          </div>
+          <div className={styles.videoFrame}>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="Thermal Wall Technology story video"
+            >
+              <source src="/home/twt-video.mp4" type="video/mp4" />
+              Your browser does not support video playback.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* Problem and Solution */}
 
       <section className={`${styles.section} ${styles.challengeSection}`}>
